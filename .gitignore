@@ -1,0 +1,17 @@
+# Safety when exporting this review copy to a repository
+.env
+.env.*
+!.env.example
+.icaif/
+private/
+credentials.json
+execution_journal.json
+native_checkpoint.json
+*__secrets__*
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+ICAIF2026_ALPACA_DATA_RESTRICTED_PRIVATE.zip
+alpaca_iex_raw_15m.csv
+output.json
