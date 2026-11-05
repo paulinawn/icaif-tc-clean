@@ -15,3 +15,4 @@ __pycache__/
 ICAIF2026_ALPACA_DATA_RESTRICTED_PRIVATE.zip
 alpaca_iex_raw_15m.csv
 output.json
+.pytest_cache/
