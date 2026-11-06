@@ -1,0 +1,25 @@
+# Runs the test suite automatically on every pull request and on every push to main.
+name: tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the repository code
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"        
+
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt   # req-dev.txt already starts with -r req.txt
+
+      - name: Run the tests
+        run: python -m pytest -v
