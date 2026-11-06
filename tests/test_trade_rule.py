@@ -44,3 +44,11 @@ def test_large_change_is_capped_at_ten_percent():
     current = current_at_distance(target, 0.15)
     result = engine.trim_target(current, target)
     assert l1_distance(result, current) == pytest.approx(0.10)
+
+def test_initial_entry_ignores_band_and_returns_full_target():
+    """On the first purchase, the 3% band must not block buying the full target."""
+    target = equal_target()
+    current = current_at_distance(target, 0.02)
+    result = engine.trim_target(current, target, initial=True)
+    assert result == pytest.approx(target)
+
