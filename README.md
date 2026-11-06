@@ -1,20 +1,39 @@
-# ICAIF Trading Agent – Clean-up and Migration POC
+# ICAIF Trading Agent: Agent-Assisted Refactor
 
-Clean-up and migration proof of concept of my trading strategy from the ACM ICAIF 2026 Trading Agent Competition.
+Readability refactor of my trading strategy from the ACM ICAIF 2026 Trading Agent Competition, done with an AI coding agent and verified by a test harness, so the logic stays exactly the same.
 
-The goal: make the original code readable with an AI coding agent, and prove with automated tests that its behavior did not change.
+See [POC_REPORT.md](POC_REPORT.md) for scope, results and lessons learned.
 
-## How to run it
+## What's in here
+
+- `agent/frozen_strategy/`: the strategy (momentum, reversal, L1 turnover rule)
+- `tools/generate_policy.py`: runs the strategy offline on example data
+- `examples/`: synthetic price data (121 trading days × 30 stocks)
+- `tests/`: golden-output test, trade-rule unit tests, engine self-test
+- `.github/workflows/tests.yml`: CI, running all tests on every pull request
+
+## Setup
 
 ```bash
 python -m venv .venv
 source .venv/Scripts/activate   # Windows (Git Bash); on Linux/Mac: source .venv/bin/activate
-pip install -r requirements.txt
-python tools/generate_policy.py --daily-close-csv examples/synthetic_daily_closes_121.csv --out output.json
+pip install -r requirements-dev.txt
 ```
 
-Expected output: `ICAIF_OFFLINE_POLICY_OK` and the five reversal picks `MSFT,META,CAT,GS,TMO`.
+## Run
 
-## Status
+```bash
+python tools/generate_policy.py --daily-close-csv examples/synthetic_daily_closes_121.csv --out output.json
+```
+Expected: `ICAIF_OFFLINE_POLICY_OK` and the five picks `MSFT,META,CAT,GS,TMO`.
 
-- Day 0: original strategy imported and runs locally in a fresh environment.
+## Test
+
+```bash
+python -m pytest -v
+```
+Expected: 6 passed.
+
+## How changes are made
+
+Every change goes through a branch and pull request. CI must be green before merging. Agent-generated changes are reviewed line by line against the test harness.
