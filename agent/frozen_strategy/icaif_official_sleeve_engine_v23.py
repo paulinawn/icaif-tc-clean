@@ -13,189 +13,349 @@ Exact Phase44 Blended80 + 15%-of-EQUITY five-day reversal sleeve:
 No orders, submissions, model calls, credentials, SSH, or service changes.
 """
 from __future__ import annotations
-import argparse, copy, hashlib, json, math
-from datetime import datetime, timedelta, timezone, date
+
+import argparse
+import copy
+import hashlib
+import json
+import math
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
 import numpy as np
+
 import icaif_official_market_support_v2 as base
 
-ET=ZoneInfo('America/New_York'); UTC=timezone.utc
-SYMBOLS=base.SYMBOLS
-OFFICIAL_DAYS=tuple(date(2026,10,d).isoformat() for d in
-                    (12,13,14,15,16,19,20,21,22,23,26,27,28,29,30))
-SCHEMA=2
-SNAP_STRATEGY='blend80_15pct_equity_fiveday_reversal_phase44_exact'
-STATUS=('PRE_ENTRY','PRIMARY','RECOVERY_PENDING','EQUAL80_LOCKED')
+ET = ZoneInfo('America/New_York')
+UTC = timezone.utc
+SYMBOLS = base.SYMBOLS
+OFFICIAL_DAYS = tuple(
+    date(2026, 10, day).isoformat()
+    for day in (12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 26, 27, 28, 29, 30)
+)
+SCHEMA = 2
+SNAP_STRATEGY = 'blend80_15pct_equity_fiveday_reversal_phase44_exact'
+STATUS = ('PRE_ENTRY', 'PRIMARY', 'RECOVERY_PENDING', 'EQUAL80_LOCKED')
 
 
 def expected_previous_day(day):
-    d=date.fromisoformat(day)-timedelta(days=1)
-    while d.weekday()>=5: d-=timedelta(days=1)
-    return d.isoformat()
+    """Return the previous weekday's ISO date for an official trading day.
+
+    Args:
+        day: ISO date string (e.g. '2026-10-13').
+
+    Returns:
+        str: ISO date of the prior weekday (skips Saturday/Sunday).
+    """
+    previous = date.fromisoformat(day) - timedelta(days=1)
+    while previous.weekday() >= 5:
+        previous -= timedelta(days=1)
+    return previous.isoformat()
 
 
-def z(x):
-    a=np.asarray(x,float)
-    if not np.isfinite(a).all():raise ValueError('Non-finite signal')
-    return np.clip((a-a.mean())/max(float(a.std()),1e-8),-3.,3.)
+def zscore(values):
+    """Z-score an array and clip to [-3, 3] with a variance floor.
+
+    Args:
+        values: array-like of numeric signal values.
+
+    Returns:
+        np.ndarray: clipped z-scores.
+
+    Raises:
+        ValueError: if any value is non-finite.
+    """
+    arr = np.asarray(values, float)
+    if not np.isfinite(arr).all():
+        raise ValueError('Non-finite signal')
+    return np.clip((arr - arr.mean()) / max(float(arr.std()), 1e-8), -3., 3.)
 
 
-def sleeve_target_from_daily(daily):
-    """Exact Phase44 sleeve formula, including stable tie ranking, using 121 closes."""
-    arr=np.asarray(daily[-121:],dtype=float)
-    if arr.shape!=(121,30) or not np.isfinite(arr).all() or np.any(arr<=0):
+def sleeve_target_from_daily(daily_closes):
+    """Compute the exact Phase44 sleeve target weights from daily closes.
+
+    Blends the Phase37 core-80 weights (85%) with a 15% sleeve concentrated
+    in the five strongest reversal candidates, using 121 completed closes.
+
+    Args:
+        daily_closes: sequence of daily close vectors; the last 121 rows
+            must each contain 30 positive prices ordered as SYMBOLS.
+
+    Returns:
+        tuple: (target_weights dict symbol->weight summing to 0.80,
+                selected_five list of symbol names, core_weights dict).
+
+    Raises:
+        ValueError: if the close matrix is not 121x30, non-finite, or
+            contains non-positive prices.
+    """
+    arr = np.asarray(daily_closes[-121:], dtype=float)
+    if arr.shape != (121, 30) or not np.isfinite(arr).all() or np.any(arr <= 0):
         raise ValueError('Require 121 completed 30-stock daily close vectors')
-    core=base.blend_weights(arr.tolist())
-    log=np.log(arr)
-    r1=log[-1]-log[-2];r5=log[-1]-log[-6]
-    reversal=z(-.75*z(r5)-.25*z(r1))
-    chosen=np.argsort(-reversal,kind='stable')[:5]
-    concentrated=np.zeros(30,dtype=float)
-    concentrated[chosen]=.8/5.
-    blend=np.array([core[s] for s in SYMBOLS])
-    final=.85*blend+.15*concentrated
-    result={sym:float(final[i]) for i,sym in enumerate(SYMBOLS)}
-    validate(result,expect_equity=.8)
-    return result, [SYMBOLS[i] for i in chosen], core
+    core_weights = base.blend_weights(arr.tolist())
+    log_prices = np.log(arr)
+    return_1d = log_prices[-1] - log_prices[-2]
+    return_5d = log_prices[-1] - log_prices[-6]
+    reversal = zscore(-.75 * zscore(return_5d) - .25 * zscore(return_1d))
+    chosen_indices = np.argsort(-reversal, kind='stable')[:5]
+    concentrated = np.zeros(30, dtype=float)
+    concentrated[chosen_indices] = .8 / 5.
+    blend = np.array([core_weights[s] for s in SYMBOLS])
+    final = .85 * blend + .15 * concentrated
+    target_weights = {sym: float(final[i]) for i, sym in enumerate(SYMBOLS)}
+    validate(target_weights, expect_equity=.8)
+    return target_weights, [SYMBOLS[i] for i in chosen_indices], core_weights
 
 
 def validate(weights, expect_equity=None):
-    if not isinstance(weights,dict) or set(weights)!=set(SYMBOLS):
+    """Validate a long-only weight dict covering exactly the 30 SYMBOLS.
+
+    Args:
+        weights: dict mapping each official symbol to a numeric weight.
+        expect_equity: optional required total weight (e.g. 0.80).
+
+    Returns:
+        float: the summed total weight.
+
+    Raises:
+        ValueError: on wrong symbol set, non-finite/out-of-range values,
+            leverage above 1, or an equity-total mismatch.
+    """
+    if not isinstance(weights, dict) or set(weights) != set(SYMBOLS):
         raise ValueError('Must include exactly the 30 official stocks')
-    if any(type(weights[s]) not in (float,int) or not math.isfinite(weights[s])
-           or weights[s]<0 or weights[s]>.30 for s in SYMBOLS):
+    if any(type(weights[s]) not in (float, int) or not math.isfinite(weights[s])
+           or weights[s] < 0 or weights[s] > .30 for s in SYMBOLS):
         raise ValueError('Invalid numeric long-only weights')
-    total=sum(float(weights[s]) for s in SYMBOLS)
-    if total>1+1e-10:raise ValueError('Portfolio leverage prohibited')
-    if expect_equity is not None and abs(total-expect_equity)>1e-9:
+    total = sum(float(weights[s]) for s in SYMBOLS)
+    if total > 1 + 1e-10:
+        raise ValueError('Portfolio leverage prohibited')
+    if expect_equity is not None and abs(total - expect_equity) > 1e-9:
         raise ValueError('Unexpected target investment exposure')
     return total
 
 
 def snapshot_from_bars(rows, now_utc, purpose='OFFLINE_DIAGNOSTIC'):
-    """Use the SAME complete 26-bar-session gate as release V1."""
-    dates,daily,missing=base.history_closes(rows,now_utc)
-    target,selected,core=sleeve_target_from_daily(daily)
-    digest=hashlib.sha256(json.dumps({'dates':dates[-121:],
-          'daily':daily[-121:]},sort_keys=True).encode()).hexdigest()
-    return {'schema':SCHEMA,'strategy':SNAP_STRATEGY,'purpose':purpose,
-       'created_utc':now_utc.isoformat(),'last_complete_day_et':dates[-1],
-       'complete_days':len(dates),'incomplete_days':len(missing),
-       'lookback_sha256':digest,'selected_five':selected,
-       'target_weights':target,'base_weights':core,
-       'feed':'Alpaca IEX 15Min raw; completed 15:45ET closes'}
+    """Build a strategy snapshot from raw 15-minute bar rows.
+
+    Uses the SAME complete 26-bar-session gate as release V1 via
+    base.history_closes, then computes sleeve targets on the closes.
+
+    Args:
+        rows: iterable of raw bar records (symbol/timestamp/close).
+        now_utc: timezone-aware UTC instant used as the freshness cutoff.
+        purpose: snapshot 'purpose' label stored in the result.
+
+    Returns:
+        dict: snapshot metadata including target_weights, base_weights,
+            selected_five, and a lookback_sha256 provenance digest.
+    """
+    dates, daily_closes, missing_dates = base.history_closes(rows, now_utc)
+    target_weights, selected_five, core_weights = sleeve_target_from_daily(daily_closes)
+    digest = hashlib.sha256(json.dumps({'dates': dates[-121:],
+                                        'daily': daily_closes[-121:]},
+                                       sort_keys=True).encode()).hexdigest()
+    return {'schema': SCHEMA, 'strategy': SNAP_STRATEGY, 'purpose': purpose,
+            'created_utc': now_utc.isoformat(), 'last_complete_day_et': dates[-1],
+            'complete_days': len(dates), 'incomplete_days': len(missing_dates),
+            'lookback_sha256': digest, 'selected_five': selected_five,
+            'target_weights': target_weights, 'base_weights': core_weights,
+            'feed': 'Alpaca IEX 15Min raw; completed 15:45ET closes'}
 
 
 def sample_state():
-    return {'schema':SCHEMA,'mode':'PRE_ENTRY','first_execution_confirmed':False,
-       'first_execution_day':None,'consecutive_primary_fail_days':0,
-       'last_health_day':None,'last_executed_round_id':None,
-       'recovery_execution_confirmed':False}
+    """Return a fresh pre-entry state dict for the first official day.
+
+    Returns:
+        dict: initial state with mode PRE_ENTRY and all counters zeroed.
+    """
+    return {'schema': SCHEMA, 'mode': 'PRE_ENTRY', 'first_execution_confirmed': False,
+            'first_execution_day': None, 'consecutive_primary_fail_days': 0,
+            'last_health_day': None, 'last_executed_round_id': None,
+            'recovery_execution_confirmed': False}
 
 
 def state_valid(state):
-    if not isinstance(state,dict) or state.get('schema')!=SCHEMA or state.get('mode') not in STATUS:
+    """Fail-closed validation of a persisted strategy state dict.
+
+    Args:
+        state: candidate state dict (schema, mode, counters, flags).
+
+    Returns:
+        dict: the same state object when valid.
+
+    Raises:
+        ValueError: on unknown schema/mode, wrong types, impossible mode
+            combinations, or out-of-range counters.
+    """
+    if not isinstance(state, dict) or state.get('schema') != SCHEMA \
+            or state.get('mode') not in STATUS:
         raise ValueError('Unknown or uninitialized state; HOLD')
-    if type(state.get('first_execution_confirmed'))!=bool:
+    if type(state.get('first_execution_confirmed')) != bool:
         raise ValueError('Unverified first execution')
-    n=state.get('consecutive_primary_fail_days')
-    if type(n)!=int or n<0 or n>15:raise ValueError('Bad failure counter')
-    if state['mode']!='PRE_ENTRY' and not state['first_execution_confirmed']:
+    fail_count = state.get('consecutive_primary_fail_days')
+    if type(fail_count) != int or fail_count < 0 or fail_count > 15:
+        raise ValueError('Bad failure counter')
+    if state['mode'] != 'PRE_ENTRY' and not state['first_execution_confirmed']:
         raise ValueError('Postentry state without confirmed first execution')
-    if state['mode']=='RECOVERY_PENDING' and n<2:
+    if state['mode'] == 'RECOVERY_PENDING' and fail_count < 2:
         raise ValueError('Recovery mode without persistent failures')
-    if state['mode']=='EQUAL80_LOCKED' and state.get('recovery_execution_confirmed') is not True:
+    if state['mode'] == 'EQUAL80_LOCKED' and state.get('recovery_execution_confirmed') is not True:
         raise ValueError('Recovery lock without executed evidence')
     return state
 
 
 def live_round(observation, now):
-    """Require actual organizer-provided phase/round/portfolio fields; fail closed."""
-    if not isinstance(observation,dict):raise ValueError('Observation not mapping')
-    rd=observation.get('round');pf=observation.get('portfolio')
-    if not isinstance(rd,dict) or not isinstance(pf,dict):
+    """Extract and validate the organizer-provided round/portfolio fields.
+
+    Requires actual organizer-supplied phase, round, and portfolio data;
+    fails closed on anything unexpected.
+
+    Args:
+        observation: dict with 'round' and 'portfolio' sub-dicts.
+        now: timezone-aware current instant.
+
+    Returns:
+        tuple: (day ISO string, round number int, current_weights dict).
+
+    Raises:
+        ValueError: on missing/malformed fields, wrong phase/day/round,
+            deadline mismatch, or invalid current weights.
+        AssertionError: if now is timezone-naive.
+    """
+    if not isinstance(observation, dict):
+        raise ValueError('Observation not mapping')
+    round_info = observation.get('round')
+    portfolio = observation.get('portfolio')
+    if not isinstance(round_info, dict) or not isinstance(portfolio, dict):
         raise ValueError('Missing organizer round or portfolio')
-    if rd.get('phase')!='official' or pf.get('phase')!='official':
+    if round_info.get('phase') != 'official' or portfolio.get('phase') != 'official':
         raise ValueError('Wrong competition phase')
-    day=rd.get('day');num=rd.get('number')
-    if day not in OFFICIAL_DAYS or type(num)!=int or num not in range(1,8):
+    day = round_info.get('day')
+    round_number = round_info.get('number')
+    if day not in OFFICIAL_DAYS or type(round_number) != int or round_number not in range(1, 8):
         raise ValueError('Unexpected Official day/round')
     assert now.tzinfo is not None
-    deadline=base.utc_stamp(rd['deadline'] if 'deadline' in rd else rd['deadline_at'])
-    if now.astimezone(ET).date().isoformat()!=day:
+    deadline_raw = round_info['deadline'] if 'deadline' in round_info else round_info['deadline_at']
+    deadline = base.utc_stamp(deadline_raw)
+    if now.astimezone(ET).date().isoformat() != day:
         raise ValueError('Not current ET trading day')
-    if now>=deadline-timedelta(minutes=3):raise ValueError('Insufficient submission buffer')
-    if 'opens_at' in rd and now<base.utc_stamp(rd['opens_at']):
+    if now >= deadline - timedelta(minutes=3):
+        raise ValueError('Insufficient submission buffer')
+    if 'opens_at' in round_info and now < base.utc_stamp(round_info['opens_at']):
         raise ValueError('Round not open')
-    hhmm=base.DEADLINES[num]
-    if deadline.astimezone(ET).strftime('%H:%M')!=hhmm:
+    expected_hhmm = base.DEADLINES[round_number]
+    if deadline.astimezone(ET).strftime('%H:%M') != expected_hhmm:
         raise ValueError('Deadline differs from standard schedule; need review')
-    cur=pf.get('current_weights')
-    validate(cur)
-    return day,num,cur
+    current_weights = portfolio.get('current_weights')
+    validate(current_weights)
+    return day, round_number, current_weights
 
 
-def good_snapshot(snapshot,now,day):
-    if not isinstance(snapshot,dict) or snapshot.get('schema')!=SCHEMA:
+def good_snapshot(snapshot, now, day):
+    """Validate a live data snapshot and return its target weights.
+
+    Args:
+        snapshot: candidate snapshot dict.
+        now: timezone-aware current instant.
+        day: official trading day ISO string being evaluated.
+
+    Returns:
+        dict: snapshot['target_weights'] when all checks pass.
+
+    Raises:
+        ValueError: on wrong schema/strategy/purpose, stale or future
+            timestamp, unconfirmed previous session, thin history, bad
+            digest, or invalid target weights.
+    """
+    if not isinstance(snapshot, dict) or snapshot.get('schema') != SCHEMA:
         raise ValueError('No verified v2 snapshot')
-    if snapshot.get('strategy')!=SNAP_STRATEGY or snapshot.get('purpose')!='LIVE_READONLY_VERIFIED':
+    if snapshot.get('strategy') != SNAP_STRATEGY or snapshot.get('purpose') != 'LIVE_READONLY_VERIFIED':
         raise ValueError('Wrong snapshot strategy/purpose')
-    stamp=base.utc_stamp(snapshot['created_utc'])
-    if stamp>now or now-stamp>timedelta(minutes=30):
+    created = base.utc_stamp(snapshot['created_utc'])
+    if created > now or now - created > timedelta(minutes=30):
         raise ValueError('Missing or stale authenticated data snapshot')
-    if snapshot.get('last_complete_day_et')!=expected_previous_day(day):
+    if snapshot.get('last_complete_day_et') != expected_previous_day(day):
         raise ValueError('Previous full session not confirmed')
-    if type(snapshot.get('complete_days'))!=int or snapshot['complete_days']<121:
+    if type(snapshot.get('complete_days')) != int or snapshot['complete_days'] < 121:
         raise ValueError('Insufficient complete history')
-    if not isinstance(snapshot.get('lookback_sha256'),str) or len(snapshot['lookback_sha256'])!=64:
+    if not isinstance(snapshot.get('lookback_sha256'), str) or len(snapshot['lookback_sha256']) != 64:
         raise ValueError('Missing provenance digest')
-    validate(snapshot.get('target_weights'),expect_equity=.8)
+    validate(snapshot.get('target_weights'), expect_equity=.8)
     return snapshot['target_weights']
 
 
-def trim_target(current,target,initial=False,band=.03,max_l1=.10):
-    """Phase44 L1 turnover band/cap using organizer's pre-execution CURRENT weights."""
-    validate(current);validate(target,expect_equity=.8)
-    if initial:return target
-    old=np.array([float(current[s]) for s in SYMBOLS]);new=np.array([float(target[s]) for s in SYMBOLS]);
-    distance=float(np.abs(new-old).sum())
-    if distance<band:return None
-    if distance>max_l1:new=old+(new-old)*(max_l1/distance)
-    res={s:float(new[j]) for j,s in enumerate(SYMBOLS)}
-    validate(res)
-    return res
+def trim_target(current, target, initial=False, band=.03, max_l1=.10):
+    """Apply the Phase44 L1 turnover band and cap to a target weight dict.
+
+    Args:
+        current: dict of organizer-reported pre-execution current weights.
+        target: dict of desired target weights (must total 0.80 equity).
+        initial: when True, return target unchanged (first allocation).
+        band: minimum L1 distance required to trade (default 0.03).
+        max_l1: maximum L1 distance allowed per scheduled rebalance
+            (default 0.10); larger moves are scaled down proportionally.
+
+    Returns:
+        dict: trimmed target weights, or None when below the band.
+
+    Raises:
+        ValueError: via validate() on malformed weight dicts.
+    """
+    validate(current)
+    validate(target, expect_equity=.8)
+    if initial:
+        return target
+    old = np.array([float(current[s]) for s in SYMBOLS])
+    new = np.array([float(target[s]) for s in SYMBOLS])
+    distance = float(np.abs(new - old).sum())
+    if distance < band:
+        return None
+    if distance > max_l1:
+        new = old + (new - old) * (max_l1 / distance)
+    result = {s: float(new[j]) for j, s in enumerate(SYMBOLS)}
+    validate(result)
+    return result
 
 
-def verified_late_entry_clearance(observation, day, r, now):
+def verified_late_entry_clearance(observation, day, round_number, now):
     """Fail-closed contract for the future authenticated single-writer adapter.
 
     WARNING: Evidence here is a DATA CONTRACT, not independently authenticated.
     A future production runner MUST generate these fields itself from live
     organizer GETs and MUST NOT trust input files/user-supplied booleans.
     This module has NO organizer GET/POST capability and cannot trade.
+
+    Args:
+        observation: dict that may contain 'preentry_reconciliation'.
+        day: official trading day ISO string; only Day 1 qualifies.
+        round_number: round number; only R2-R7 qualify.
+        now: timezone-aware current instant.
+
+    Returns:
+        bool: True only when a fresh, well-formed, matching
+            AUTHENTICATED_ORGANIZER_GET reconciliation is present.
     """
-    if day!=OFFICIAL_DAYS[0] or r<=1:
+    if day != OFFICIAL_DAYS[0] or round_number <= 1:
         return False
-    ev=observation.get('preentry_reconciliation') if isinstance(observation,dict) else None
-    if not isinstance(ev,dict) or ev.get('source')!='AUTHENTICATED_ORGANIZER_GET':
+    evidence = observation.get('preentry_reconciliation') if isinstance(observation, dict) else None
+    if not isinstance(evidence, dict) or evidence.get('source') != 'AUTHENTICATED_ORGANIZER_GET':
         return False
-    if ev.get('round_id')!=f'official-{day}-r{r}':
+    if evidence.get('round_id') != f'official-{day}-r{round_number}':
         return False
-    for key in ('earlier_rounds_finalized','earlier_rounds_no_executed_trade',
-                'current_round_no_attributable_attempt','verified_cash_portfolio'):
-        if ev.get(key) is not True:
+    for key in ('earlier_rounds_finalized', 'earlier_rounds_no_executed_trade',
+                'current_round_no_attributable_attempt', 'verified_cash_portfolio'):
+        if evidence.get(key) is not True:
             return False
     try:
-        checked=base.utc_stamp(ev['checked_utc'])
-    except (ValueError,KeyError,TypeError):
+        checked = base.utc_stamp(evidence['checked_utc'])
+    except (ValueError, KeyError, TypeError):
         return False
-    age=(now-checked).total_seconds()
-    return -5<=age<=120
+    age_seconds = (now - checked).total_seconds()
+    return -5 <= age_seconds <= 120
 
 
-
-def verified_rebalance_catchup(observation, day, r, now, state):
+def verified_rebalance_catchup(observation, day, round_number, now, state):
     """Fail-closed, future runner-supplied history/position reconciliation contract.
 
     This checks ONLY the fields and consistency of a purported reconciliation.
@@ -203,136 +363,208 @@ def verified_rebalance_catchup(observation, day, r, now, state):
     build them directly from real GET responses with a complete history, plus
     an independently enforced single-writer lock. User-provided input must never
     be accepted as proof for a live upload.
+
+    Args:
+        observation: dict that may contain 'rebalance_reconciliation'.
+        day: official trading day ISO string; only the two scheduled
+            five-day rebalance days qualify.
+        round_number: round number; only R2-R7 qualify.
+        now: timezone-aware current instant.
+        state: current strategy state (used to reject repeat catch-ups).
+
+    Returns:
+        bool: True only when a fresh, well-formed, matching
+            AUTHENTICATED_ORGANIZER_GET reconciliation is present and no
+            earlier executed round exists for this day.
     """
-    if day not in (OFFICIAL_DAYS[5], OFFICIAL_DAYS[10]) or r<=1:
+    if day not in (OFFICIAL_DAYS[5], OFFICIAL_DAYS[10]) or round_number <= 1:
         return False
     if str(state.get('last_executed_round_id') or '').startswith(f'official-{day}-r'):
         return False
-    ev=observation.get('rebalance_reconciliation') if isinstance(observation,dict) else None
-    if not isinstance(ev,dict) or ev.get('source')!='AUTHENTICATED_ORGANIZER_GET':
+    evidence = observation.get('rebalance_reconciliation') if isinstance(observation, dict) else None
+    if not isinstance(evidence, dict) or evidence.get('source') != 'AUTHENTICATED_ORGANIZER_GET':
         return False
-    if ev.get('round_id')!=f'official-{day}-r{r}':
+    if evidence.get('round_id') != f'official-{day}-r{round_number}':
         return False
     for flag in ('prior_rounds_finalized', 'no_earlier_executed_primary_trade',
                  'current_round_no_attributable_attempt', 'portfolio_reconciled',
                  'single_writer_lock_held'):
-        if ev.get(flag) is not True:
+        if evidence.get(flag) is not True:
             return False
-    try:checked=base.utc_stamp(ev['checked_utc'])
-    except (KeyError,TypeError,ValueError):return False
-    age=(now-checked).total_seconds()
-    return -5<=age<=120
+    try:
+        checked = base.utc_stamp(evidence['checked_utc'])
+    except (KeyError, TypeError, ValueError):
+        return False
+    age_seconds = (now - checked).total_seconds()
+    return -5 <= age_seconds <= 120
 
 
-def evaluate(observation,snapshot,state,now=None):
+def evaluate(observation, snapshot, state, now=None):
     """PURE proposal. State must be committed by external reconciled runner.
 
-    Returns {action: HOLD|PRIMARY_TARGET|EQUAL80_RECOVERY_TARGET,
-             target: dict|None, next_state: dict, note: str}.
-    Crucially, an intent to trade is NOT proof that any organizer trade executed.
+    Args:
+        observation: organizer round/portfolio dict (see live_round).
+        snapshot: live data snapshot dict (see good_snapshot), or None.
+        state: current strategy state dict (see state_valid).
+        now: optional timezone-aware current instant; defaults to UTC now.
+
+    Returns:
+        dict: {action: HOLD|PRIMARY_TARGET|EQUAL80_RECOVERY_TARGET,
+               target: dict|None, next_state: dict, note: str}.
+        Crucially, an intent to trade is NOT proof that any organizer
+        trade executed.
     """
-    now=now or datetime.now(UTC)
-    if now.tzinfo is None:raise ValueError('Naive clock')
-    st=copy.deepcopy(state)
-    try:state_valid(st)
-    except Exception as e:
-        return {'action':'HOLD','target':None,'next_state':copy.deepcopy(state),'note':'INVALID_STATE_'+type(e).__name__}
-    def result(action='HOLD',target=None,note=''):
-        return {'action':action,'target':target,'next_state':st,'note':note}
+    current_time = now or datetime.now(UTC)
+    if current_time.tzinfo is None:
+        raise ValueError('Naive clock')
+    next_state = copy.deepcopy(state)
+
+    def result(action='HOLD', target=None, note=''):
+        return {'action': action, 'target': target, 'next_state': next_state, 'note': note}
+
     try:
-        day,r,cur=live_round(observation,now)
-    except Exception as e:
-        return result(note='INVALID_OR_UNAVAILABLE_OBSERVATION_'+type(e).__name__)
-    idx=OFFICIAL_DAYS.index(day)
+        state_valid(next_state)
+    except Exception as exc:
+        return {'action': 'HOLD', 'target': None,
+                'next_state': copy.deepcopy(state),
+                'note': 'INVALID_STATE_' + type(exc).__name__}
+    try:
+        day, round_number, current_weights = live_round(observation, current_time)
+    except Exception as exc:
+        return result(note='INVALID_OR_UNAVAILABLE_OBSERVATION_' + type(exc).__name__)
+    day_index = OFFICIAL_DAYS.index(day)
     # Fail-closed if state and verified current holdings conflict.
-    actual_equity=sum(cur.values())
-    if st['mode']=='PRE_ENTRY':
-        if st['first_execution_confirmed'] or actual_equity>.0001:
+    actual_equity = sum(current_weights.values())
+    if next_state['mode'] == 'PRE_ENTRY':
+        if next_state['first_execution_confirmed'] or actual_equity > .0001:
             return result(note='PRE_ENTRY_STATE_PORTFOLIO_CONFLICT')
-        if day!=OFFICIAL_DAYS[0]:
+        if day != OFFICIAL_DAYS[0]:
             return result(note='NO_NEXT_DAY_INITIAL_ENTRY_POLICY')
-        if r>1 and not verified_late_entry_clearance(observation,day,r,now):
+        if round_number > 1 and not verified_late_entry_clearance(
+                observation, day, round_number, current_time):
             return result(note='LATE_ENTRY_REQUIRES_AUTHENTICATED_ROUND_RECONCILIATION')
-        try:target=good_snapshot(snapshot,now,day)
-        except Exception as e:return result(note='PREENTRY_WAIT_FOR_PRIMARY_'+type(e).__name__)
-        return result('PRIMARY_TARGET',target,'INITIAL_SLEEVE_ALLOCATION_PENDING_EXECUTION')
-    if actual_equity<.01:
+        try:
+            target = good_snapshot(snapshot, current_time, day)
+        except Exception as exc:
+            return result(note='PREENTRY_WAIT_FOR_PRIMARY_' + type(exc).__name__)
+        return result('PRIMARY_TARGET', target, 'INITIAL_SLEEVE_ALLOCATION_PENDING_EXECUTION')
+    if actual_equity < .01:
         return result(note='POSTENTRY_PORTFOLIO_IS_CASH_OR_UNCONFIRMED')
-    if st['mode']=='EQUAL80_LOCKED':return result(note='RECOVERY_COMPLETED_HOLD_REMAINDER')
+    if next_state['mode'] == 'EQUAL80_LOCKED':
+        return result(note='RECOVERY_COMPLETED_HOLD_REMAINDER')
     # A recovery target may be issued by the external runner only once it has
     # confirmed that no prior attempt already consumed this decision slot.
-    if st['mode']=='RECOVERY_PENDING':
-        if r!=1:return result(note='RECOVERY_PENDING_WAIT_R1')
-        target={s:float(.8/30) for s in SYMBOLS}
-        if sum(abs(cur[s]-target[s]) for s in SYMBOLS)<.002:
+    if next_state['mode'] == 'RECOVERY_PENDING':
+        if round_number != 1:
+            return result(note='RECOVERY_PENDING_WAIT_R1')
+        equal80_target = {s: float(.8 / 30) for s in SYMBOLS}
+        if sum(abs(current_weights[s] - equal80_target[s]) for s in SYMBOLS) < .002:
             return result(note='EQUAL80_ALREADY_NEAR_TARGET_REQUIRE_EXECUTION_RECONCILIATION')
-        return result('EQUAL80_RECOVERY_TARGET',target,'ONE_WAY_RECOVERY_REQUIRES_CONFIRMED_EXECUTION')
+        return result('EQUAL80_RECOVERY_TARGET', equal80_target,
+                      'ONE_WAY_RECOVERY_REQUIRES_CONFIRMED_EXECUTION')
     # PRIMARY: R2-R7 catch-up exists ONLY on the two scheduled rebalance days.
     # Recompute the *same prior-close target*, never an intraday alpha signal.
     # The production writer must authenticate the reconciliation itself.
-    if r!=1:
-        if idx not in (5,10):return result(note='SCHEDULED_R2_R7_HOLD')
-        if not verified_rebalance_catchup(observation,day,r,now,st):
+    if round_number != 1:
+        if day_index not in (5, 10):
+            return result(note='SCHEDULED_R2_R7_HOLD')
+        if not verified_rebalance_catchup(observation, day, round_number, current_time, next_state):
             return result(note='REBALANCE_CATCHUP_REQUIRES_AUTHENTICATED_RECONCILIATION')
-        try:target=good_snapshot(snapshot,now,day)
-        except Exception as e:return result(note='REBALANCE_CATCHUP_DATA_NOT_READY_'+type(e).__name__)
-        desired=trim_target(cur,target,initial=False)
-        st['last_health_day']=day
-        st['consecutive_primary_fail_days']=0
-        if desired is None:return result(note='REBALANCE_CATCHUP_BELOW_3PCT_BAND_HOLD')
-        return result('PRIMARY_TARGET',desired,'SLEEVE_FIVEDAY_SAME_DAY_CATCHUP_PENDING_EXECUTION')
+        try:
+            target = good_snapshot(snapshot, current_time, day)
+        except Exception as exc:
+            return result(note='REBALANCE_CATCHUP_DATA_NOT_READY_' + type(exc).__name__)
+        desired = trim_target(current_weights, target, initial=False)
+        next_state['last_health_day'] = day
+        next_state['consecutive_primary_fail_days'] = 0
+        if desired is None:
+            return result(note='REBALANCE_CATCHUP_BELOW_3PCT_BAND_HOLD')
+        return result('PRIMARY_TARGET', desired, 'SLEEVE_FIVEDAY_SAME_DAY_CATCHUP_PENDING_EXECUTION')
     # Daily R1 telemetry counts at most once. A failed scheduled review gets
     # its same-day R2-R7 recovery opportunity before terminal-mode escalation.
-    if st.get('last_health_day')==day:
+    if next_state.get('last_health_day') == day:
         return result(note='R1_ALREADY_PROCESSED_WAIT_FOR_RECONCILIATION')
-    try:target=good_snapshot(snapshot,now,day)
-    except Exception as e:
-        st['last_health_day']=day
-        st['consecutive_primary_fail_days']+=1
-        if st['consecutive_primary_fail_days']>=2:
-            if idx in (5,10):
+    try:
+        target = good_snapshot(snapshot, current_time, day)
+    except Exception as exc:
+        next_state['last_health_day'] = day
+        next_state['consecutive_primary_fail_days'] += 1
+        if next_state['consecutive_primary_fail_days'] >= 2:
+            if day_index in (5, 10):
                 # Preserve same-day opportunity to repair data and execute the
                 # planned rebalance at R2-R7. Recheck persistent failure at
                 # the next day's R1 if it never recovers.
-                return result(note='REVIEW_DAY_FAILURE_DEFER_RECOVERY_ALLOW_CATCHUP_'+type(e).__name__)
-            st['mode']='RECOVERY_PENDING'
+                return result(note='REVIEW_DAY_FAILURE_DEFER_RECOVERY_ALLOW_CATCHUP_' + type(exc).__name__)
+            next_state['mode'] = 'RECOVERY_PENDING'
             # Safety: HOLD in the round that flips state. A separate authenticated
             # next-round decision must reconcile the prior outcome first.
-            return result(note='PERSISTENT_FAILURE_ENTER_RECOVERY_PENDING_'+type(e).__name__)
-        return result(note='TRANSIENT_FAILURE_HOLD_'+type(e).__name__)
-    st['consecutive_primary_fail_days']=0
-    st['last_health_day']=day
-    if idx not in (5,10):return result(note='HEALTHY_NON_REBALANCE_DAY_HOLD')
-    desired=trim_target(cur,target,initial=False)
-    if desired is None:return result(note='BELOW_3PCT_L1_TRADE_BAND_HOLD')
-    return result('PRIMARY_TARGET',desired,'SLEEVE_FIVEDAY_R1_REBALANCE_PENDING_EXECUTION')
+            return result(note='PERSISTENT_FAILURE_ENTER_RECOVERY_PENDING_' + type(exc).__name__)
+        return result(note='TRANSIENT_FAILURE_HOLD_' + type(exc).__name__)
+    next_state['consecutive_primary_fail_days'] = 0
+    next_state['last_health_day'] = day
+    if day_index not in (5, 10):
+        return result(note='HEALTHY_NON_REBALANCE_DAY_HOLD')
+    desired = trim_target(current_weights, target, initial=False)
+    if desired is None:
+        return result(note='BELOW_3PCT_L1_TRADE_BAND_HOLD')
+    return result('PRIMARY_TARGET', desired, 'SLEEVE_FIVEDAY_R1_REBALANCE_PENDING_EXECUTION')
 
 
-def confirm_execution(state,kind,day,round_id,verified):
+def confirm_execution(state, kind, day, round_id, verified):
     """Test helper. In production, ONLY reconciled organizer EXECUTED evidence
     may supply verified=True, never a local callback return or upload receipt.
+
+    Args:
+        state: current strategy state dict.
+        kind: transition kind — 'initial', 'recovery', or 'primary_rebalance'.
+        day: official trading day ISO string; must be in OFFICIAL_DAYS.
+        round_id: organizer round identifier recorded in the state.
+        verified: must be exactly True to accept the transition.
+
+    Returns:
+        dict: a new state dict with the transition applied.
+
+    Raises:
+        ValueError: on unverified evidence, invalid day/round, or an
+            impossible mode transition.
     """
-    st=copy.deepcopy(state);state_valid(st)
+    new_state = copy.deepcopy(state)
+    state_valid(new_state)
     if verified is not True or day not in OFFICIAL_DAYS or not round_id:
         raise ValueError('EXECUTED organizer evidence required')
-    if kind=='initial' and st['mode']=='PRE_ENTRY':
-        st.update(mode='PRIMARY',first_execution_confirmed=True,
-                  first_execution_day=day,last_executed_round_id=round_id)
-    elif kind=='recovery' and st['mode']=='RECOVERY_PENDING':
-        st.update(mode='EQUAL80_LOCKED',recovery_execution_confirmed=True,
-                  last_executed_round_id=round_id)
-    elif kind=='primary_rebalance' and st['mode']=='PRIMARY':
-        st['last_executed_round_id']=round_id
-    else:raise ValueError('Invalid mode transition')
-    return st
+    if kind == 'initial' and new_state['mode'] == 'PRE_ENTRY':
+        new_state.update(mode='PRIMARY', first_execution_confirmed=True,
+                         first_execution_day=day, last_executed_round_id=round_id)
+    elif kind == 'recovery' and new_state['mode'] == 'RECOVERY_PENDING':
+        new_state.update(mode='EQUAL80_LOCKED', recovery_execution_confirmed=True,
+                         last_executed_round_id=round_id)
+    elif kind == 'primary_rebalance' and new_state['mode'] == 'PRIMARY':
+        new_state['last_executed_round_id'] = round_id
+    else:
+        raise ValueError('Invalid mode transition')
+    return new_state
 
 
-def demo_obs(day='2026-10-12',r=1,amount=0.,now=None):
-    h,m=map(int,base.DEADLINES[r].split(':'))
-    deadline=datetime.fromisoformat(day).replace(hour=h,minute=m,tzinfo=ET)
-    return {'round':{'phase':'official','day':day,'number':r,
-       'deadline':deadline.isoformat()},'portfolio':{'phase':'official',
-       'current_weights':{s:float(amount/30) for s in SYMBOLS}}}
+def demo_obs(day='2026-10-12', r=1, amount=0., now=None):
+    """Build a synthetic organizer observation for tests and dry runs.
+
+    Args:
+        day: official trading day ISO string.
+        r: round number (1-7); deadline is taken from base.DEADLINES.
+        amount: total equity weight to spread equally across SYMBOLS.
+        now: unused; accepted for call-site compatibility.
+
+    Returns:
+        dict: observation with 'round' (phase/day/number/deadline) and
+            'portfolio' (phase/current_weights) sub-dicts.
+    """
+    deadline_hour, deadline_minute = map(int, base.DEADLINES[r].split(':'))
+    deadline = datetime.fromisoformat(day).replace(
+        hour=deadline_hour, minute=deadline_minute, tzinfo=ET)
+    return {'round': {'phase': 'official', 'day': day, 'number': r,
+                      'deadline': deadline.isoformat()},
+            'portfolio': {'phase': 'official',
+                          'current_weights': {s: float(amount / 30) for s in SYMBOLS}}}
 
 
 def regression_self_test():
@@ -444,23 +676,32 @@ def regression_self_test():
 
 
 def main():
-    p=argparse.ArgumentParser()
-    p.add_argument('action',choices=['self-test','inspect-csv','offline-dry-run'])
-    p.add_argument('--csv',type=Path)
-    args=p.parse_args()
-    if args.action=='self-test':regression_self_test();return
-    if not args.csv or not args.csv.is_file():p.error('Must provide --csv original Alpaca 15-minute bars')
-    rows=list(base.load_csv(args.csv))
-    snap=snapshot_from_bars(rows,datetime.now(UTC))
-    print('COMPLETED_DAYS',snap['complete_days'],'LAST_COMPLETE',snap['last_complete_day_et'])
-    print('SLEEVE_SELECTED_FIVE',','.join(snap['selected_five']))
-    print('SLEEVE_TOTAL_EQUITY',sum(snap['target_weights'].values()))
-    print('TOP_TARGET_WEIGHTS',json.dumps(dict(sorted(snap['target_weights'].items(),key=lambda x:-x[1])[:8]),sort_keys=True))
-    if args.action=='offline-dry-run':
+    """Command-line entry point for self-test and offline CSV inspection.
+
+    Actions: 'self-test' runs regression_self_test; 'inspect-csv' and
+    'offline-dry-run' require --csv pointing at Alpaca 15-minute bars.
+    """
+    parser = argparse.ArgumentParser()
+    parser.add_argument('action', choices=['self-test', 'inspect-csv', 'offline-dry-run'])
+    parser.add_argument('--csv', type=Path)
+    args = parser.parse_args()
+    if args.action == 'self-test':
+        regression_self_test()
+        return
+    if not args.csv or not args.csv.is_file():
+        parser.error('Must provide --csv original Alpaca 15-minute bars')
+    rows = list(base.load_csv(args.csv))
+    snapshot = snapshot_from_bars(rows, datetime.now(UTC))
+    print('COMPLETED_DAYS', snapshot['complete_days'], 'LAST_COMPLETE', snapshot['last_complete_day_et'])
+    print('SLEEVE_SELECTED_FIVE', ','.join(snapshot['selected_five']))
+    print('SLEEVE_TOTAL_EQUITY', sum(snapshot['target_weights'].values()))
+    top_weights = dict(sorted(snapshot['target_weights'].items(), key=lambda x: -x[1])[:8])
+    print('TOP_TARGET_WEIGHTS', json.dumps(top_weights, sort_keys=True))
+    if args.action == 'offline-dry-run':
         # Deliberately mark offline packet as NOT authenticated live data.
-        now=datetime(2026,10,12,8,55,tzinfo=ET)
-        o=evaluate(demo_obs(),snap,sample_state(),now)
-        print('OFFLINE_PACKET_CANNOT_TRADE',o['action'],o['note'])
+        dry_run_now = datetime(2026, 10, 12, 8, 55, tzinfo=ET)
+        proposal = evaluate(demo_obs(), snapshot, sample_state(), dry_run_now)
+        print('OFFLINE_PACKET_CANNOT_TRADE', proposal['action'], proposal['note'])
     print('OFFLINE_ONLY_NO_ORGANIZER_NO_SUBMISSION')
 
 if __name__=='__main__': main()
