@@ -1,0 +1,28 @@
+# Version control: not needed inside the container
+.git
+
+# Local environment and caches: the container builds its own
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Generated output
+output.json
+
+# Secrets and credentials: must never be baked into an image
+.env
+.env.*
+credentials.json
+*__secrets__*
+
+# Private trading state from the competition
+.icaif/
+private/
+execution_journal.json
+native_checkpoint.json
+
+# Licensed market data: Alpaca does not allow redistribution
+ICAIF2026_ALPACA_DATA_RESTRICTED_PRIVATE.zip
+alpaca_iex_raw_15m.csv
