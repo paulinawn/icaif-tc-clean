@@ -11,6 +11,7 @@ See [POC_REPORT.md](POC_REPORT.md) for scope, results and lessons learned.
 - `examples/`: synthetic price data (121 trading days × 30 stocks)
 - `tests/`: golden-output test, trade-rule unit tests, engine self-test
 - `.github/workflows/tests.yml`: CI, running all tests on every pull request
+- `Dockerfile`: runs the test suite in a Linux container, identically on any machine
 
 ## Setup
 
@@ -33,6 +34,16 @@ Expected: `ICAIF_OFFLINE_POLICY_OK` and the five picks `MSFT,META,CAT,GS,TMO`.
 python -m pytest -v
 ```
 Expected: 6 passed.
+
+## Test with Docker
+
+No local Python setup needed, only Docker:
+
+```bash
+docker build -t icaif-tests .
+docker run --rm icaif-tests
+```
+Expected: 6 passed, on Linux with Python 3.14.
 
 ## How changes are made
 
