@@ -9,11 +9,11 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 GOLDEN = ROOT / "tests" / "golden" / "sample_policy.json"
 DATA = ROOT / "examples" / "synthetic_daily_closes_121.csv"
-SCRIPT = ROOT / "tools" / "generate_policy.py"
+SCRIPT = ROOT / "tools" / "generate_policy.py" 
 
 
 def test_output_matches_golden(tmp_path):
-    out_file = tmp_path / "output.json"
+    out_file = tmp_path / "output.json" 
     subprocess.run(
         [sys.executable, str(SCRIPT), "--daily-close-csv", str(DATA), "--out", str(out_file)],
         check=True,
@@ -21,6 +21,6 @@ def test_output_matches_golden(tmp_path):
     actual = json.loads(out_file.read_text())
     expected = json.loads(GOLDEN.read_text())
 
-    assert actual["action"] == expected["action"]
+    assert actual["action"] == expected["action"] #assert means "X must be true, otherwise fail the test right here and show me why."
     assert actual["reversal_selected_five"] == expected["reversal_selected_five"]
-    assert actual["target_weights"] == pytest.approx(expected["target_weights"], abs=1e-12)
+    assert actual["target_weights"] == pytest.approx(expected["target_weights"], abs=1e-12) #approx means "X must be approximately equal to Y, within a small tolerance"
