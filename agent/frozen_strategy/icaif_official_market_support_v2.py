@@ -29,8 +29,8 @@ ET = ZoneInfo('America/New_York')
 UTC = timezone.utc
 SYMBOLS = ('AAPL', 'MSFT', 'NVDA', 'INTC', 'CRM', 'JPM', 'BAC', 'GS', 'V', 'PYPL',
            'LLY', 'JNJ', 'UNH', 'PFE', 'TMO', 'AMZN', 'TSLA', 'WMT', 'NKE', 'KO',
-           'CAT', 'GE', 'BA', 'XOM', 'CVX', 'GOOGL', 'META', 'DIS', 'T', 'NEE')
-GROUPS = tuple(tuple(range(i, i + 5)) for i in range(0, 30, 5))
+           'CAT', 'GE', 'BA', 'XOM', 'CVX', 'GOOGL', 'META', 'DIS', 'T', 'NEE') # Never change the order, ordered by industry
+GROUPS = tuple(tuple(range(i, i + 5)) for i in range(0, 30, 5)) # Devin found: Never used, dead end
 DEADLINES = {1: '09:10', 2: '10:25', 3: '11:25', 4: '12:25', 5: '13:25',
              6: '14:25', 7: '15:25'}
 API = 'https://data.alpaca.markets/v2/stocks/bars'
@@ -55,7 +55,7 @@ def utc_stamp(iso_text):
     return parsed.astimezone(UTC)
 
 
-def standardize(values):
+def standardize(values): # Fairly compare x-day returns later
     """Z-score each value, clip to [-3, 3], and guard against zero variance.
 
     Args:
@@ -68,13 +68,14 @@ def standardize(values):
         ValueError: if any value is non-finite.
     """
     numbers = [float(x) for x in values]
-    if any(not math.isfinite(x) for x in numbers):
-        raise ValueError('Non-finite weight or feature')
+    if any(not math.isfinite(x) for x in numbers): # To refuse to calculate with broken data
+        raise ValueError('Non-finite weight or feature') # Appears when something upstream went wrong, e.g., missing piece or log(0) = minus infinity
     mean = sum(numbers) / len(numbers)
     std_dev = math.sqrt(sum((x - mean) ** 2 for x in numbers) / len(numbers))
-    return [min(3., max(-3., (x - mean) / max(std_dev, 1e-8))) for x in numbers]
+    return [min(3., max(-3., (x - mean) / max(std_dev, 1e-8))) for x in numbers] # max/min value of z-score capped to 3 and -3; 1e-8 is to avoid division by 0
 
 
+# Calculate 34% diversified core and 34% momentum-based weights
 def blend_weights(daily_closes):
     """Compute the exact Phase30 v2/Phase37 blended target weights.
 
@@ -93,32 +94,42 @@ def blend_weights(daily_closes):
             is malformed.
         AssertionError: if the blended total deviates from 0.80.
     """
+
+    # Fail-closed input checks
     if len(daily_closes) < 121:
         raise ValueError('Need >=121 complete daily closes')
     import numpy as np
     prices = np.array(daily_closes[-121:], dtype=float)
     if prices.shape != (121, 30) or not np.isfinite(prices).all() or (prices <= 0).any():
         raise ValueError('Bad historical market shape or prices')
+    
+    # Converting into log returns (for accurate addition over time)
     log_prices = np.log(prices)
-    return_20d = log_prices[-1] - log_prices[-21]
+    return_20d = log_prices[-1] - log_prices[-21] # Negative indexing, -1 is most recent day
     return_60d = log_prices[-1] - log_prices[-61]
     return_120d = log_prices[-1] - log_prices[-121]
-    daily_log_returns = log_prices[-20:] - log_prices[-21:-1]
+    daily_log_returns = log_prices[-20:] - log_prices[-21:-1] # 20 day-to-day log returns per stock, spread = sd = volatility
     volatility = np.std(daily_log_returns, axis=0, ddof=1)
-    relative_momentum = return_20d - np.repeat(return_20d.reshape(6, 5).mean(axis=1), 5)
+    
+    # Building momentum features: momentum score, industry momentum, and combined score
+    relative_momentum = return_20d - np.repeat(return_20d.reshape(6, 5).mean(axis=1), 5) # Unused; Reshape: build groups; mean: 1 momentum per industry; repeat: each stock receives industry avg
     features = np.stack((standardize(return_20d), standardize(return_60d),
                          standardize(return_120d), standardize(-volatility),
-                         standardize(relative_momentum)), axis=1)
-    momentum = .25 * features[:, 0] + .50 * features[:, 1] + .25 * features[:, 2]
+                         standardize(relative_momentum)), axis=1) # Last two features unused in most recent code
+    momentum = .25 * features[:, 0] + .50 * features[:, 1] + .25 * features[:, 2] # Weights medium-term momentum most
     group_momentum = np.repeat(momentum.reshape(6, 5).mean(axis=1), 5)
-    score = .65 * np.array(standardize(group_momentum)) + .35 * np.array(standardize(momentum))
+    score = .65 * np.array(standardize(group_momentum)) + .35 * np.array(standardize(momentum)) # Combine industry and stock momentum
     standardized_score = np.array(standardize(score))
-    proportional_weights = np.clip(1. + .35 * standardized_score, .01, None)
-    industry_weights = .8 * proportional_weights / proportional_weights.sum()
-    blended = .5 * industry_weights + .5 * np.full(30, .8 / 30)
+
+    # Convert scores to weights
+    proportional_weights = np.clip(1. + .35 * standardized_score, .01, None) # Multiplier around 1, ensures weights are positive (long-only)
+    industry_weights = .8 * proportional_weights / proportional_weights.sum() # Normalize to sum to 0.8
+    blended = .5 * industry_weights + .5 * np.full(30, .8 / 30) # 50% industry weights, 50% equal weights
+
+    # Final checks
     validate_targets(dict(zip(SYMBOLS, map(float, blended))))
     if abs(blended.sum() - .8) > 1e-9:
-        raise AssertionError('Blend total equity wrong')
+        raise AssertionError('Blend total equity wrong') # Sanity check for total weight of 0.8
     return dict(zip(SYMBOLS, map(float, blended)))
 
 
