@@ -6,9 +6,9 @@ An AI coding agent (Devin's local agent in the Windsurf/Devin IDE) refactored th
 
 ## 2. Scope and success criteria
 
-**In scope:** two files in `agent/frozen_strategy/`
-- `icaif_official_market_support_v2.py` (~190 lines)
-- `icaif_official_sleeve_engine_v23.py` (~470 lines)
+**In scope:** two files in `agent/strategy/`
+- `market_support.py` (~190 lines)
+- `sleeve_engine.py` (~470 lines)
 
 **Off-limits:** all other files, especially `tests/` and the golden output.
 
