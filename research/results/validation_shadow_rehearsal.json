@@ -1,0 +1,21 @@
+{
+  "artifact_type": "VALIDATION_SHADOW_REHEARSAL_NO_SUBMISSION",
+  "generated_at_utc": "2026-10-07T12:12:57.972937+00:00",
+  "git_branch": "our-agent",
+  "git_head": "7fd93f6797965fe648aa3297f171af6b148b6c61",
+  "submission_enabled": false,
+  "organizer_calls": [
+    "schedule GET/read-only",
+    "portfolio GET/read-only"
+  ],
+  "candidate_artifact": {
+    "path": "C:\\Users\\pauli\\Documents\\ICAIF2026\\2026ICAIF_Trading_Agent_Competition\\starter-kit\\artifacts\\candidate_v0_dry_run.json",
+    "sha256": "a36a08c8f33753c1e70d7919e7eb3f19d880f8db4525b5c23c0ac340f528aff2"
+  },
+  "schedule_output_captured": true,
+  "portfolio_output_captured": true,
+  "alpaca_diagnostic": {
+    "path": "C:\\Users\\pauli\\Documents\\ICAIF2026\\2026ICAIF_Trading_Agent_Competition\\starter-kit\\artifacts\\alpaca_smoke_test.json",
+    "sha256": "81aa5aa2bfc281d05cb79e085dd2841f63b0db7fddb7edf2742b68931eb54eae"
+  }
+}

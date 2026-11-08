@@ -1,0 +1,51 @@
+{
+  "asof": "2026-10-09",
+  "input_csv": "C:\\Users\\pauli\\Documents\\ICAIF2026\\2026ICAIF_Trading_Agent_Competition\\starter-kit\\artifacts\\phase29_alpaca_refresh\\alpaca_iex_15m_through_2026-10-09.csv",
+  "input_sha256": "c3e02d68c8af0b5f26f28b11e82901ce1e72192295304710ae919d7661cfa259",
+  "excluded_incomplete_sessions": 36,
+  "network_requests": 0,
+  "organizer_submissions": 0,
+  "live_agent_activated": false,
+  "llm_requests": 0,
+  "policies": [
+    "equal60_hold",
+    "equal80_hold",
+    "industry80_hold",
+    "core80_blend_hold",
+    "core80_sector_lowvol_hold",
+    "core80_riskmix_hold",
+    "core80_sector_lowvol_monthly",
+    "core80_vol_guard_weekly",
+    "core80_trend_guard_weekly",
+    "core80_joint_guard_weekly",
+    "core80_joint_guard_sticky",
+    "core80_riskmix_joint_guard",
+    "core80_opportunistic_weekly"
+  ],
+  "data_provenance": "unadjusted Alpaca IEX 15-min raw prices",
+  "price_fill_proxy": "seven decision rounds with fill bar open, prior close as R1 information",
+  "evaluation_style": "independent Jul-Aug and exposed Sep-Oct resets; overlapping contiguous sensitivity",
+  "nonrobustness": [
+    "Unadjusted prices omit dividends and corporate actions",
+    "IEX feed is not organizer execution price",
+    "36 incomplete dates/early close dates skipped by previous loader",
+    "Sep-Oct 2026 is already exposed and cannot justify parameter optimization",
+    "Four-metric ranks depend on these synthetic opponent policies; not actual leaderboard",
+    "Stress regime thresholds predeclared heuristics, not independently fitted or optimized",
+    "Contiguous test overlaps two other segments and is not independent evidence"
+  ],
+  "parameters": {
+    "fee": 0.001,
+    "vol_guard_ratio": 1.25,
+    "low_vol_hysteresis": 1.1,
+    "weak20_logret": -0.025,
+    "strong20_logret": 0.025,
+    "strong60_logret": 0.05,
+    "rebalance_weekly_interval": 5,
+    "min_exposure_l1": 0.1,
+    "min_stock_rotation_l1": 0.04,
+    "equity_low": 0.6,
+    "equity_baseline": 0.8,
+    "equity_high": 0.9
+  }
+}

@@ -1,0 +1,698 @@
+[
+  {
+    "symbol": "AAPL",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "SalesRevenueNet"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThan12MonthsAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThanTwelveMonthsFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionTwelveMonthsOrLongerFairValue",
+      "AvailableForSaleSecuritiesCurrent"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "MSFT",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "SalesRevenueNet",
+      "SalesRevenueGoodsNet"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThan12MonthsAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThanTwelveMonthsFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionTwelveMonthsOrLongerFairValue",
+      "AvailableForSaleSecuritiesCurrent"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "NVDA",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax"
+    ],
+    "other_revenue_like_tags": [
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesChangeInNetUnrealizedHoldingGainLossNetOfTax",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThan12MonthsAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThan12MonthsAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThanTwelveMonthsFairValue"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "INTC",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "SalesRevenueNet"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAggregateLosses",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesNextRollingTwelveMonthsFairValue"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "CRM",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "RevenueFromContractWithCustomerIncludingAssessedTax",
+      "SalesRevenueServicesNet"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AmortizationOfDeferredSalesCommissions",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThan12MonthsAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThan12MonthsAggregateLosses"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "JPM",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenuesNetOfInterestExpense"
+    ],
+    "other_revenue_like_tags": [
+      "AdministrativeServicesRevenue",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesAndHeldToMaturitySecurities",
+      "AvailableForSaleSecuritiesChangeInNetUnrealizedHoldingGainLossNetOfTax",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThan12MonthsAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThanTwelveMonthsFairValue"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "BAC",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThan12MonthsAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThanTwelveMonthsFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionTwelveMonthsOrLongerFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesFairValue"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "GS",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "RevenuesNetOfInterestExpense"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearFairValue",
+      "AvailableForSaleSecuritiesDebtSecurities",
+      "AvailableForSaleSecuritiesFairValueDisclosure",
+      "AvailableForSaleSecuritiesGrossRealizedGainLossNet",
+      "BrokerageCommissionsRevenue",
+      "FairValueAssetsMeasuredOnRecurringBasisGainLossIncludedInTradingRevenue",
+      "FairValueNetDerivativeAssetLiabilityMeasuredOnRecurringBasisUnobservableInputsReconciliationSales",
+      "InvestmentBankingRevenue"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "V",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesCurrent",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsFairValue"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "PYPL",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "SalesRevenueNet"
+    ],
+    "other_revenue_like_tags": [
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionTwelveMonthsOrLongerFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsAmortizedCost"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "LLY",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "SalesRevenueGoodsNet"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionFairValue",
+      "AvailableForSaleSecuritiesCurrent",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearFairValue",
+      "AvailableForSaleSecuritiesDebtSecurities",
+      "AvailableForSaleSecuritiesGrossRealizedGains",
+      "AvailableForSaleSecuritiesGrossRealizedLosses"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "JNJ",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "SalesRevenueGoodsNet"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesAndHeldToMaturitySecurities",
+      "AvailableForSaleSecuritiesCurrent",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesSingleMaturityDate",
+      "AvailableForSaleSecuritiesDebtMaturitiesSingleMaturityDateAmortizedCostBasis"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "UNH",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "SalesRevenueGoodsNet",
+      "SalesRevenueServicesNet"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearFairValue",
+      "AvailableForSaleSecuritiesDebtSecurities"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "PFE",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "SalesRevenueNet",
+      "SalesRevenueGoodsNet"
+    ],
+    "other_revenue_like_tags": [
+      "AvailableForSaleSecuritiesAndHeldToMaturitySecurities",
+      "AvailableForSaleSecuritiesCurrent",
+      "AvailableForSaleSecuritiesDebtSecuritiesCurrent",
+      "AvailableForSaleSecuritiesDebtSecuritiesNoncurrent",
+      "AvailableForSaleSecuritiesEquitySecurities",
+      "AvailableForSaleSecuritiesGrossRealizedGains",
+      "AvailableForSaleSecuritiesGrossRealizedGainsLossesSaleProceeds",
+      "AvailableForSaleSecuritiesGrossRealizedLosses",
+      "AvailableForSaleSecuritiesNoncurrent",
+      "DisposalGroupIncludingDiscontinuedOperationRevenue",
+      "EntityWideDisclosureOnGeographicAreasRevenueFromExternalCustomersAttributedToEntitysCountryOfDomicile",
+      "GainsLossesOnSalesOfAssets"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "TMO",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "SalesRevenueGoodsNet",
+      "SalesRevenueServicesNet"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesDebtSecuritiesCurrent",
+      "AvailableForSaleSecuritiesGrossRealizedGains",
+      "AvailableForSaleSecuritiesGrossUnrealizedLosses1",
+      "AvailableforsaleSecuritiesGrossUnrealizedGain",
+      "BusinessAcquisitionsProFormaRevenue",
+      "ContractWithCustomerLiabilityRevenueRecognized",
+      "DeferredRevenueCurrent"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "AMZN",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "SalesRevenueNet",
+      "SalesRevenueGoodsNet",
+      "SalesRevenueServicesNet"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesSingleMaturityDate",
+      "AvailableForSaleSecuritiesDebtMaturitiesSingleMaturityDateAmortizedCostBasis",
+      "AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearFairValue",
+      "AvailableForSaleSecuritiesDebtSecurities"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "TSLA",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "SalesRevenueGoodsNet",
+      "SalesRevenueServicesNet"
+    ],
+    "other_revenue_like_tags": [
+      "AdvertisingRevenueCost",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesNextRollingTwelveMonthsAmortizedCostBasis",
+      "AvailableForSaleSecuritiesDebtMaturitiesNextRollingTwelveMonthsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesRollingAfterYearTenAmortizedCostBasis",
+      "AvailableForSaleSecuritiesDebtMaturitiesRollingYearSixThroughTenAmortizedCostBasis",
+      "AvailableForSaleSecuritiesDebtMaturitiesRollingYearSixThroughTenFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesRollingYearTwoThroughFiveAmortizedCostBasis",
+      "AvailableForSaleSecuritiesDebtMaturitiesRollingYearTwoThroughFiveFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesSingleMaturityDate",
+      "AvailableForSaleSecuritiesDebtMaturitiesSingleMaturityDateAmortizedCostBasis"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "WMT",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "SalesRevenueNet"
+    ],
+    "other_revenue_like_tags": [
+      "CostOfRevenue",
+      "DeferredRevenue",
+      "DeferredRevenueAdditions",
+      "DeferredRevenueRevenueRecognized",
+      "DeferredRevenueRevenueRecognized1",
+      "EntityWideDisclosureOnGeographicAreasRevenueFromExternalCustomersAttributedToEntitysCountryOfDomicile",
+      "EntityWideDisclosureOnGeographicAreasRevenueFromExternalCustomersAttributedToForeignCountries",
+      "OtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "PaymentsToAcquireAvailableForSaleSecurities",
+      "SegmentReportingInformationRevenue"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "NKE",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "SalesRevenueNet",
+      "RevenueFromContractWithCustomerIncludingAssessedTax"
+    ],
+    "other_revenue_like_tags": [
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesCurrent",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearFairValue",
+      "AvailableForSaleSecuritiesDebtSecuritiesCurrent",
+      "CostOfRevenue",
+      "DisposalGroupIncludingDiscontinuedOperationRevenue",
+      "PaymentsToAcquireAvailableForSaleSecuritiesDebt",
+      "ProceedsFromMaturitiesPrepaymentsAndCallsOfAvailableForSaleSecurities",
+      "ProceedsFromSaleOfAvailableForSaleSecuritiesDebt"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "KO",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "SalesRevenueGoodsNet"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearAmortizedCost"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "CAT",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "SalesRevenueNet"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedGainLossBeforeTax",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThan12MonthsAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThan12MonthsAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThanTwelveMonthsFairValue"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "GE",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "SalesRevenueNet",
+      "RevenueFromContractWithCustomerIncludingAssessedTax",
+      "SalesRevenueGoodsNet",
+      "SalesRevenueServicesNet"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedGainBeforeTax",
+      "AvailableForSaleSecuritiesAccumulatedGrossUnrealizedLossBeforeTax",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThan12MonthsAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThanTwelveMonthsFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionTwelveMonthsOrLongerFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsAmortizedCost",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsAmortizedCost"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "BA",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "SalesRevenueGoodsNet",
+      "SalesRevenueServicesNet"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecurities",
+      "AvailableForSaleSecuritiesAmortizedCost",
+      "AvailableForSaleSecuritiesDebtSecurities",
+      "AvailableForSaleSecuritiesGrossRealizedGainLossNet",
+      "AvailableForSaleSecuritiesGrossRealizedGains",
+      "AvailableForSaleSecuritiesGrossRealizedLosses",
+      "CapitalLeasesNetInvestmentInSalesTypeLeasesDeferredIncome",
+      "CapitalLeasesNetInvestmentInSalesTypeLeasesUnguaranteedResidualValuesOfLeasedProperty",
+      "ContractWithCustomerLiabilityRevenueRecognized",
+      "CostOfRevenue",
+      "GainsLossesOnSalesOfAssets"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "XOM",
+    "revenue_feature_days": 0,
+    "revenue_tag_names": [
+      "Revenues"
+    ],
+    "other_revenue_like_tags": [
+      "ProceedsFromSalesOfBusinessAffiliateAndProductiveAssets"
+    ],
+    "revenue_missing": true
+  },
+  {
+    "symbol": "CVX",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "RevenueFromContractWithCustomerIncludingAssessedTax"
+    ],
+    "other_revenue_like_tags": [
+      "DeferredRevenueAndCreditsNoncurrent",
+      "ExciseAndSalesTaxes",
+      "FairValueMeasurementWithUnobservableInputsReconciliationRecurringBasisAssetPurchasesSalesIssuancesSettlements",
+      "GainsLossesOnSalesOfAssets",
+      "OilAndGasRevenue",
+      "OperatingLeasesIncomeStatementSubleaseRevenue",
+      "OtherComprehensiveIncomeAvailableForSaleSecuritiesAdjustmentNetOfTaxPeriodIncreaseDecrease",
+      "ProceedsFromSalesOfAssetsInvestingActivities",
+      "RelatedPartyTransactionOtherRevenuesFromTransactionsWithRelatedParty",
+      "RevenueFromRelatedParties",
+      "SegmentReportingInformationIntersegmentRevenue"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "GOOGL",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax"
+    ],
+    "other_revenue_like_tags": [
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThan12MonthsAccumulatedLoss",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionLessThanTwelveMonthsFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionTwelveMonthsOrLongerFairValue",
+      "AvailableForSaleSecuritiesCurrent",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterFiveThroughTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterTenYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearFairValue",
+      "AvailableForSaleSecuritiesDebtSecurities"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "META",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax"
+    ],
+    "other_revenue_like_tags": [
+      "AdvertisingRevenue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesNextRollingTwelveMonthsFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearFairValue",
+      "AvailableForSaleSecuritiesDebtSecuritiesCurrent",
+      "AvailableforsaleSecuritiesInUnrealizedLossPositionsQualitativeDisclosureNumberOfPositions1",
+      "CostOfRevenue",
+      "DeferredRevenueAndCreditsCurrent",
+      "DeferredRevenueCurrent",
+      "DeferredTaxAssetsUnrealizedLossesOnAvailableforSaleSecuritiesGross",
+      "IncreaseDecreaseInDeferredRevenueAndCustomerAdvancesAndDeposits",
+      "InterestRevenueExpenseNet"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "DIS",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues"
+    ],
+    "other_revenue_like_tags": [
+      "AvailableForSaleSecurities",
+      "BusinessAcquisitionsProFormaRevenue",
+      "ContractWithCustomerLiabilityRevenueRecognized",
+      "DeferredRevenue",
+      "DeferredRevenueAndCreditsCurrent",
+      "DeferredRevenueAndCreditsNoncurrent",
+      "DeferredRevenueCurrent",
+      "DisposalGroupIncludingDiscontinuedOperationDeferredRevenue",
+      "EquityMethodInvestmentSummarizedFinancialInformationRevenue",
+      "OtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "RevenueFromRelatedParties",
+      "RevenueRemainingPerformanceObligation"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "T",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerExcludingAssessedTax"
+    ],
+    "other_revenue_like_tags": [
+      "AccumulatedOtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentNetOfTax",
+      "AvailableForSaleSecuritiesDebtMaturitiesWithinOneYearFairValue",
+      "AvailableForSaleSecuritiesDebtSecurities",
+      "BusinessAcquisitionsProFormaRevenue",
+      "ContractWithCustomerLiabilityRevenueRecognized",
+      "CostOfRevenue",
+      "DeferredRevenue",
+      "DisposalGroupIncludingDiscontinuedOperationRevenue",
+      "EquityMethodInvestmentNetSalesProceeds",
+      "GainLossOnSalesOfAssetsAndAssetImpairmentCharges",
+      "LossesGainsOnSalesOfAssetsAndAssetImpairmentCharges",
+      "OtherComprehensiveIncomeLossAvailableForSaleSecuritiesAdjustmentBeforeReclassificationAdjustmentsNetOfTax"
+    ],
+    "revenue_missing": false
+  },
+  {
+    "symbol": "NEE",
+    "revenue_feature_days": 1240,
+    "revenue_tag_names": [
+      "Revenues",
+      "RevenueFromContractWithCustomerIncludingAssessedTax",
+      "RegulatedAndUnregulatedOperatingRevenue"
+    ],
+    "other_revenue_like_tags": [
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPosition12MonthsOrLongerAggregateLosses",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionFairValue",
+      "AvailableForSaleSecuritiesContinuousUnrealizedLossPositionTwelveMonthsOrLongerFairValue",
+      "AvailableForSaleSecuritiesDebtMaturitiesAmortizedCost",
+      "AvailableForSaleSecuritiesGrossRealizedGains",
+      "AvailableForSaleSecuritiesGrossRealizedGainsLossesSaleProceeds",
+      "AvailableForSaleSecuritiesGrossRealizedLosses",
+      "GainsLossesOnSalesOfAssets",
+      "ProceedsFromSaleAndMaturityOfAvailableForSaleSecurities",
+      "SalesTypeAndDirectFinancingLeasesLeaseReceivablePaymentsToBeReceived",
+      "SalesTypeLeaseNetInvestmentInLease",
+      "SalesTypeLeaseSellingProfitLoss"
+    ],
+    "revenue_missing": false
+  }
+]

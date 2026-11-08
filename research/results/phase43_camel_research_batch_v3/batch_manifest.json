@@ -1,0 +1,713 @@
+{
+  "created_utc": "2026-10-11T18:26:56.469949Z",
+  "selection": "SEC evidence first within each issuer; round-robin, one event per issuer/day; no price outcomes",
+  "including_finnhub_snippets_with_edit_risk": false,
+  "batches": [
+    {
+      "batch_id": "fa02c9c97d15ef4e",
+      "cases": [
+        {
+          "event_id": "5caf3c681a6b69f73b9bd3f3",
+          "symbol": "GOOGL",
+          "published_utc": "2026-07-22T21:01:36Z",
+          "modeled_available_utc": "2026-07-22T21:01:36Z",
+          "headline": "GOOGL SEC 8-K accepted 2026-07-22",
+          "summary": "EX-99.1 2 googexhibit991q22026.htm EX-99.1 Document Exhibit 99.1 Alphabet Announces Second Quarter 2026 Results MOUNTAIN VIEW, Calif. – July 22, 2026 – Alphabet Inc. (NASDAQ: GOOG, GOOGL) today announced financial results for the quarter ended June 30, 2026. • Consolidated Alphabet revenues increased 24%, or 23% in constant currency, to $119.8 billion, reflecting strong performance across the business and our 12th consecutive quarter of double-digit revenue growth. • Google Services revenues increased 15% to $94.5 billion, led by 17% growth in Google Search & other, 15% in Google subscriptions, platforms, and devices, and 13% in YouTube ads. • Google Cloud saw a meaningful acceleration in growth as revenues increased 82% to $24.8 billion, led by an increase in Google Cloud Platform (GCP) across enterprise AI Solutions and enterprise AI Infrastructure, as well as core GCP services. • Consolidated Alphabet operating income increased 30% and operating margin expanded by 2 percentage points to 34%. • Other income reflected a net gain of $98.0 billion, primarily the result of net unrealized gains on our equity securities. • Net income available to common stockholders increased 298% and ",
+          "publisher": "SEC EDGAR",
+          "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+          "evidence_text": "GOOGL SEC 8-K accepted 2026-07-22\nEX-99.1 2 googexhibit991q22026.htm EX-99.1 Document Exhibit 99.1 Alphabet Announces Second Quarter 2026 Results MOUNTAIN VIEW, Calif. – July 22, 2026 – Alphabet Inc. (NASDAQ: GOOG, GOOGL) today announced financial results for the quarter ended June 30, 2026. • Consolidated Alphabet revenues increased 24%, or 23% in constant currency, to $119.8 billion, reflecting strong performance across the business and our 12th consecutive quarter of double-digit revenue growth. • Google Services revenues increased 15% to $94.5 billion, led by 17% growth in Google Search & other, 15% in Google subscriptions, platforms, and devices, and 13% in YouTube ads. • Google Cloud saw a meaningful acceleration in growth as revenues increased 82% to $24.8 billion, led by an increase in Google Cloud Platform (GCP) across enterprise AI Solutions and enterprise AI Infrastructure, as well as core GCP services. • Consolidated Alphabet operating income increased 30% and operating margin expanded by 2 percentage points to 34%. • Other income reflected a net gain of $98.0 billion, primarily the result of net unrealized gains on our equity securities. • Net income available to common stockholders increased 298% and EPS increased 294% to $9.11. Sundar Pichai, CEO of Google and Alphabet, said: “Our AI investments are redefining what’s possible across every part of our business. Q2 was an amazing quarter, with Alphabet revenues growing 24% year-over-year and Google Cloud revenues accelerating to 82% growth, driven by demand for AI infrastructure and AI solutions. It’s great to ",
+          "source_quality": "SEC_ORIGINAL_ACCESSION_EXHIBIT",
+          "source_observed_now_utc": "2026-10-11T18:26:12.422712Z",
+          "issuer_verified": true,
+          "sec_accession": "0001652044-26-000066",
+          "sec_context_asof": {
+            "prior_filings": [],
+            "prior_asof_companyfacts": [
+              {
+                "tag": "NetIncomeLoss",
+                "USD": [
+                  {
+                    "val": 62578000000,
+                    "start": "2026-01-01",
+                    "end": "2026-03-31",
+                    "filed": "2026-04-30",
+                    "form": "10-Q",
+                    "accn": "0001652044-26-000048"
+                  },
+                  {
+                    "val": 34540000000,
+                    "start": "2025-01-01",
+                    "end": "2025-03-31",
+                    "filed": "2026-04-30",
+                    "form": "10-Q",
+                    "accn": "0001652044-26-000048"
+                  }
+                ]
+              },
+              {
+                "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+                "USD": [
+                  {
+                    "val": 90234000000,
+                    "start": "2025-01-01",
+                    "end": "2025-03-31",
+                    "filed": "2025-04-25",
+                    "form": "10-Q",
+                    "accn": "0001652044-25-000043"
+                  },
+                  {
+                    "val": 80539000000,
+                    "start": "2024-01-01",
+                    "end": "2024-03-31",
+                    "filed": "2025-04-25",
+                    "form": "10-Q",
+                    "accn": "0001652044-25-000043"
+                  }
+                ]
+              },
+              {
+                "tag": "Revenues",
+                "USD": [
+                  {
+                    "val": 109896000000,
+                    "start": "2026-01-01",
+                    "end": "2026-03-31",
+                    "filed": "2026-04-30",
+                    "form": "10-Q",
+                    "accn": "0001652044-26-000048"
+                  },
+                  {
+                    "val": 90234000000,
+                    "start": "2025-01-01",
+                    "end": "2025-03-31",
+                    "filed": "2026-04-30",
+                    "form": "10-Q",
+                    "accn": "0001652044-26-000048"
+                  }
+                ]
+              }
+            ]
+          },
+          "evidence_sha256": "a1e86a506ef4ddfff5d31af1423d5ac21b659c32942acb3d062437a344e03b59"
+        },
+        {
+          "event_id": "39ef72c8cb4900a6998ca121",
+          "symbol": "JNJ",
+          "published_utc": "2026-07-29T22:25:05Z",
+          "modeled_available_utc": "2026-07-29T22:25:05Z",
+          "headline": "JNJ SEC 8-K accepted 2026-07-29",
+          "summary": " KRAS. About the agreement The transaction will be accounted for as an asset acquisition, resulting in an in-process research and development charge of approximately $1 billion in the third quarter of 2026. Johnson & Johnson expects the transaction to dilute adjusted operational earnings per share and adjusted earnings per share by approximately $0.46 in 2026 and approximately $0.08 in 2027. Please refer to the Current Report on Form 8-K furnished to the SEC on the date of this press release for updated full year 2026 guidance. About Johnson & Johnson At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, where treatments are smarter and less invasive, and solutions are personal. Through our expertise in Innovative Medicine and MedTech, we are uniquely positioned to innovate across the full spectrum of healthcare solutions today to deliver the breakthroughs of tomorrow and profoundly impact health for humanity. Learn more at https://www.jnj.com/ or at www.innovativemedicine.jnj.com. Follow us @JNJInnovMed. Caution Concerning Forward-Looking Statements : 1 htt",
+          "publisher": "SEC EDGAR",
+          "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000163/exhibit991firefly.htm",
+          "evidence_text": "JNJ SEC 8-K accepted 2026-07-29\n KRAS. About the agreement The transaction will be accounted for as an asset acquisition, resulting in an in-process research and development charge of approximately $1 billion in the third quarter of 2026. Johnson & Johnson expects the transaction to dilute adjusted operational earnings per share and adjusted earnings per share by approximately $0.46 in 2026 and approximately $0.08 in 2027. Please refer to the Current Report on Form 8-K furnished to the SEC on the date of this press release for updated full year 2026 guidance. About Johnson & Johnson At Johnson & Johnson, we believe health is everything. Our strength in healthcare innovation empowers us to build a world where complex diseases are prevented, treated, and cured, where treatments are smarter and less invasive, and solutions are personal. Through our expertise in Innovative Medicine and MedTech, we are uniquely positioned to innovate across the full spectrum of healthcare solutions today to deliver the breakthroughs of tomorrow and profoundly impact health for humanity. Learn more at https://www.jnj.com/ or at www.innovativemedicine.jnj.com. Follow us @JNJInnovMed. Caution Concerning Forward-Looking Statements : 1 https://www.sciencedirect.com/science/article/pii/S1535610826000103#bib19 This press release contains “forward-looking statements” as defined in the Private Securities Litigation Reform Act of 1995 regarding the acquisition of Firefly Bio, Inc. The reader is cautioned not to rely on these forward-looking statements. These statements are based on current expectations of",
+          "source_quality": "SEC_ORIGINAL_ACCESSION_EXHIBIT",
+          "source_observed_now_utc": "2026-10-11T18:26:44.156728Z",
+          "issuer_verified": true,
+          "sec_accession": "0000200406-26-000163",
+          "sec_context_asof": {
+            "prior_filings": [
+              {
+                "form": "8-K",
+                "filed": "2026-07-28",
+                "acceptance_raw": "2026-07-28T00:15:31.000Z",
+                "available_utc_conservative": "2026-07-28T01:15:31Z",
+                "accession": "0000200406-26-000155",
+                "primary_document": "jnj-20260727.htm"
+              },
+              {
+                "form": "10-Q",
+                "filed": "2026-07-23",
+                "acceptance_raw": "2026-07-23T20:04:19.000Z",
+                "available_utc_conservative": "2026-07-23T21:04:19Z",
+                "accession": "0000200406-26-000153",
+                "primary_document": "jnj-20260628.htm"
+              }
+            ],
+            "prior_asof_companyfacts": [
+              {
+                "tag": "NetIncomeLoss",
+                "USD": [
+                  {
+                    "val": 10769000000,
+                    "start": "2025-12-29",
+                    "end": "2026-06-28",
+                    "filed": "2026-07-23",
+                    "form": "10-Q",
+                    "accn": "0000200406-26-000153"
+                  },
+                  {
+                    "val": 5534000000,
+                    "start": "2026-03-30",
+                    "end": "2026-06-28",
+                    "filed": "2026-07-23",
+                    "form": "10-Q",
+                    "accn": "0000200406-26-000153"
+                  }
+                ]
+              },
+              {
+                "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+                "USD": [
+                  {
+                    "val": 49372000000,
+                    "start": "2025-12-29",
+                    "end": "2026-06-28",
+                    "filed": "2026-07-23",
+                    "form": "10-Q",
+                    "accn": "0000200406-26-000153"
+                  },
+                  {
+                    "val": 25310000000,
+                    "start": "2026-03-30",
+                    "end": "2026-06-28",
+                    "filed": "2026-07-23",
+                    "form": "10-Q",
+                    "accn": "0000200406-26-000153"
+                  }
+                ]
+              },
+              {
+                "tag": "Revenues",
+                "USD": [
+                  {
+                    "val": 56077000000,
+                    "start": "2013-12-30",
+                    "end": "2014-09-28",
+                    "filed": "2014-10-30",
+                    "form": "10-Q",
+                    "accn": "0000200406-14-000097"
+                  },
+                  {
+                    "val": 18467000000,
+                    "start": "2014-06-30",
+                    "end": "2014-09-28",
+                    "filed": "2014-10-30",
+                    "form": "10-Q",
+                    "accn": "0000200406-14-000097"
+                  }
+                ]
+              }
+            ]
+          },
+          "evidence_sha256": "304d4d2b08a0cd28c5382ce6a0a7a9a2b92419f02af64c7189bb99116027b586"
+        }
+      ]
+    },
+    {
+      "batch_id": "ce5bf10eb7357b17",
+      "cases": [
+        {
+          "event_id": "35ef5fc3fa4bc78adcf40556",
+          "symbol": "META",
+          "published_utc": "2026-07-30T01:03:23Z",
+          "modeled_available_utc": "2026-07-30T01:03:23Z",
+          "headline": "META SEC 8-K accepted 2026-07-29",
+          "summary": "EX-99.1 2 meta-06302026xexhibit991.htm EX-99.1 Document Meta Reports Second Quarter 2026 Results MENLO PARK, Calif. – July 29, 2026 – Meta Platforms, Inc. (Nasdaq: META) today reported financial results for the quarter ended June 30, 2026. \"AI is accelerating our core business today, powering our next generation of products, and opening the door to entirely new enterprise opportunities,\" said Mark Zuckerberg, Meta founder and CEO. \"The results are already showing, and I'm optimistic about the potential ahead.\" Second Quarter 2026 Financial Highlights Three Months Ended June 30, % Change In millions, except percentages and per share amounts 2026 2025 Revenue $ 60,801 $ 47,516 28 % Costs and expenses 42,026 27,075 55 % Income from operations $ 18,775 $ 20,441 (8) % Operating margin 31 % 43 % Provision for income taxes $ 2,908 $ 2,197 32 % Effective tax rate 16 % 11 % Net income $ 15,848 $ 18,337 (14) % Diluted earnings per share (EPS) $ 6.18 $ 7.14 (13) % Second Quarter 2026 Operational and Other Financial Highlights • Family daily active people (DAP) – DAP was 3.60 billion on average for June 2026, an increase of 3% year-over-year. • Ad impressions – Ad impressions delivered across ",
+          "publisher": "SEC EDGAR",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+          "evidence_text": "META SEC 8-K accepted 2026-07-29\nEX-99.1 2 meta-06302026xexhibit991.htm EX-99.1 Document Meta Reports Second Quarter 2026 Results MENLO PARK, Calif. – July 29, 2026 – Meta Platforms, Inc. (Nasdaq: META) today reported financial results for the quarter ended June 30, 2026. \"AI is accelerating our core business today, powering our next generation of products, and opening the door to entirely new enterprise opportunities,\" said Mark Zuckerberg, Meta founder and CEO. \"The results are already showing, and I'm optimistic about the potential ahead.\" Second Quarter 2026 Financial Highlights Three Months Ended June 30, % Change In millions, except percentages and per share amounts 2026 2025 Revenue $ 60,801 $ 47,516 28 % Costs and expenses 42,026 27,075 55 % Income from operations $ 18,775 $ 20,441 (8) % Operating margin 31 % 43 % Provision for income taxes $ 2,908 $ 2,197 32 % Effective tax rate 16 % 11 % Net income $ 15,848 $ 18,337 (14) % Diluted earnings per share (EPS) $ 6.18 $ 7.14 (13) % Second Quarter 2026 Operational and Other Financial Highlights • Family daily active people (DAP) – DAP was 3.60 billion on average for June 2026, an increase of 3% year-over-year. • Ad impressions – Ad impressions delivered across our Family of Apps increased by 14% year-over-year. • Average price per ad – Average price per ad increased by 12% year-over-year. • Revenue – Revenue was $60.80 billion, an increase of 28% year-over-year. Revenue on a constant currency basis would have increased by 27% year-over-year. • Costs and expenses – Total costs and expenses were $42.03 billion, an increase",
+          "source_quality": "SEC_ORIGINAL_ACCESSION_EXHIBIT",
+          "source_observed_now_utc": "2026-10-11T18:26:12.422712Z",
+          "issuer_verified": true,
+          "sec_accession": "0001628280-26-050596",
+          "sec_context_asof": {
+            "prior_filings": [],
+            "prior_asof_companyfacts": [
+              {
+                "tag": "NetIncomeLoss",
+                "USD": [
+                  {
+                    "val": 26773000000,
+                    "start": "2026-01-01",
+                    "end": "2026-03-31",
+                    "filed": "2026-04-30",
+                    "form": "10-Q",
+                    "accn": "0001628280-26-028526"
+                  },
+                  {
+                    "val": 16644000000,
+                    "start": "2025-01-01",
+                    "end": "2025-03-31",
+                    "filed": "2026-04-30",
+                    "form": "10-Q",
+                    "accn": "0001628280-26-028526"
+                  }
+                ]
+              },
+              {
+                "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+                "USD": [
+                  {
+                    "val": 56311000000,
+                    "start": "2026-01-01",
+                    "end": "2026-03-31",
+                    "filed": "2026-04-30",
+                    "form": "10-Q",
+                    "accn": "0001628280-26-028526"
+                  },
+                  {
+                    "val": 42314000000,
+                    "start": "2025-01-01",
+                    "end": "2025-03-31",
+                    "filed": "2026-04-30",
+                    "form": "10-Q",
+                    "accn": "0001628280-26-028526"
+                  }
+                ]
+              },
+              {
+                "tag": "Revenues",
+                "USD": [
+                  {
+                    "val": 38924000000,
+                    "start": "2018-01-01",
+                    "end": "2018-09-30",
+                    "filed": "2018-10-31",
+                    "form": "10-Q",
+                    "accn": "0001326801-18-000067"
+                  },
+                  {
+                    "val": 13727000000,
+                    "start": "2018-07-01",
+                    "end": "2018-09-30",
+                    "filed": "2018-10-31",
+                    "form": "10-Q",
+                    "accn": "0001326801-18-000067"
+                  }
+                ]
+              }
+            ]
+          },
+          "evidence_sha256": "ae969eb17b2865a66d73f3c16aead9860e10ec89ec5cf41c4f1404ff656114a2"
+        },
+        {
+          "event_id": "d46934de24d1a2a27d70e94a",
+          "symbol": "MSFT",
+          "published_utc": "2026-07-29T21:04:53Z",
+          "modeled_available_utc": "2026-07-29T21:04:53Z",
+          "headline": "MSFT SEC 8-K accepted 2026-07-29",
+          "summary": "tm EX-99.1 EX-99.1 Exhibit 99.1 Microsoft Cloud and AI Strength Fuels Fourth Quarter Results REDMOND, Wash. — July 29, 2026 — Microsoft Corp. today announced the following results for the quarter ended June 30, 2026, as compared to the corresponding period of last fiscal year: • Revenue was $90.0 billion and increased 18% (up 17% in constant currency) • Operating income was $40.6 billion and increased 18% • Net income was $35.8 billion and increased 31% on a GAAP basis, and was $35.3 billion and increased 22% on a non-GAAP basis • Diluted earnings per share was $4.81 and increased 32% on a GAAP basis, and was $4.74 and increased 23% on a non-GAAP basis • Non-GAAP results exclude the impact from investments in OpenAI, explained in the Non-GAAP Definition section below Several discrete items impacted our financial results in the quarter when compared to our forward-looking guidance provided on April 29, 2026, resulting in a benefit of $0.27 on diluted earnings per share. These include a $3.2 billion gain from our investment in Anthropic and lower-than-expected expenses related to the Voluntary Retirement Program which were partially offset by severance expense and impairment charges ",
+          "publisher": "SEC EDGAR",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm",
+          "evidence_text": "MSFT SEC 8-K accepted 2026-07-29\ntm EX-99.1 EX-99.1 Exhibit 99.1 Microsoft Cloud and AI Strength Fuels Fourth Quarter Results REDMOND, Wash. — July 29, 2026 — Microsoft Corp. today announced the following results for the quarter ended June 30, 2026, as compared to the corresponding period of last fiscal year: • Revenue was $90.0 billion and increased 18% (up 17% in constant currency) • Operating income was $40.6 billion and increased 18% • Net income was $35.8 billion and increased 31% on a GAAP basis, and was $35.3 billion and increased 22% on a non-GAAP basis • Diluted earnings per share was $4.81 and increased 32% on a GAAP basis, and was $4.74 and increased 23% on a non-GAAP basis • Non-GAAP results exclude the impact from investments in OpenAI, explained in the Non-GAAP Definition section below Several discrete items impacted our financial results in the quarter when compared to our forward-looking guidance provided on April 29, 2026, resulting in a benefit of $0.27 on diluted earnings per share. These include a $3.2 billion gain from our investment in Anthropic and lower-than-expected expenses related to the Voluntary Retirement Program which were partially offset by severance expense and impairment charges in XBOX. When adjusting for these items, we exceeded expectations across revenue, operating income, and diluted earnings per share. “We are advancing the frontier on the cost-to-outcome curve, ensuring every customer can turn tokens into business results,” said Satya Nadella, chairman and chief executive officer of Microsoft. “This year, Azure revenue surpassed $10",
+          "source_quality": "SEC_ORIGINAL_ACCESSION_EXHIBIT",
+          "source_observed_now_utc": "2026-10-11T18:26:12.422712Z",
+          "issuer_verified": true,
+          "sec_accession": "0001193125-26-323632",
+          "sec_context_asof": {
+            "prior_filings": [],
+            "prior_asof_companyfacts": [
+              {
+                "tag": "NetIncomeLoss",
+                "USD": [
+                  {
+                    "val": 97983000000,
+                    "start": "2025-07-01",
+                    "end": "2026-03-31",
+                    "filed": "2026-04-29",
+                    "form": "10-Q",
+                    "accn": "0001193125-26-191507"
+                  },
+                  {
+                    "val": 31778000000,
+                    "start": "2026-01-01",
+                    "end": "2026-03-31",
+                    "filed": "2026-04-29",
+                    "form": "10-Q",
+                    "accn": "0001193125-26-191507"
+                  }
+                ]
+              },
+              {
+                "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+                "USD": [
+                  {
+                    "val": 241832000000,
+                    "start": "2025-07-01",
+                    "end": "2026-03-31",
+                    "filed": "2026-04-29",
+                    "form": "10-Q",
+                    "accn": "0001193125-26-191507"
+                  },
+                  {
+                    "val": 82886000000,
+                    "start": "2026-01-01",
+                    "end": "2026-03-31",
+                    "filed": "2026-04-29",
+                    "form": "10-Q",
+                    "accn": "0001193125-26-191507"
+                  }
+                ]
+              },
+              {
+                "tag": "Revenues",
+                "USD": [
+                  {
+                    "val": 36148000000,
+                    "start": "2010-07-01",
+                    "end": "2010-12-31",
+                    "filed": "2011-01-27",
+                    "form": "10-Q",
+                    "accn": "0001193125-11-015947"
+                  },
+                  {
+                    "val": 19953000000,
+                    "start": "2010-10-01",
+                    "end": "2010-12-31",
+                    "filed": "2011-01-27",
+                    "form": "10-Q",
+                    "accn": "0001193125-11-015947"
+                  }
+                ]
+              }
+            ]
+          },
+          "evidence_sha256": "58d03a1888adbccf1c1708c81ce9c1efda9d5de0729373f5af19e1670aca5b35"
+        }
+      ]
+    },
+    {
+      "batch_id": "a0e6e3e42b163783",
+      "cases": [
+        {
+          "event_id": "30314c556d6653233ca6e979",
+          "symbol": "NVDA",
+          "published_utc": "2026-08-27T01:21:19Z",
+          "modeled_available_utc": "2026-08-27T01:21:19Z",
+          "headline": "NVDA SEC 8-K accepted 2026-08-26",
+          "summary": "e by the Company, whether made before or after the date hereof, regardless of any general incorporation language in such filing. Item 9.01 Financial Statements and Exhibits. (d) Exhibits Exhibit Description 99.1 Press Release, dated Augu st 2 6 , 2026, entitled \"NVIDIA Announces Financial Results for Second Quarter Fiscal 2027\" 99.2 CFO Commentary on Se cond Quarter Fiscal 2027 Results 104 The cover page of this Current Report on Form 8-K, formatted in inline XBRL (included as Exhibit 101) SIGNATURE Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized. NVIDIA Corporation Date: August 26, 2026 By: /s/ Colette M. Kress Colette M. Kress Executive Vice President and Chief Financial Officer",
+          "publisher": "SEC EDGAR",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm",
+          "evidence_text": "NVDA SEC 8-K accepted 2026-08-26\ne by the Company, whether made before or after the date hereof, regardless of any general incorporation language in such filing. Item 9.01 Financial Statements and Exhibits. (d) Exhibits Exhibit Description 99.1 Press Release, dated Augu st 2 6 , 2026, entitled \"NVIDIA Announces Financial Results for Second Quarter Fiscal 2027\" 99.2 CFO Commentary on Se cond Quarter Fiscal 2027 Results 104 The cover page of this Current Report on Form 8-K, formatted in inline XBRL (included as Exhibit 101) SIGNATURE Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized. NVIDIA Corporation Date: August 26, 2026 By: /s/ Colette M. Kress Colette M. Kress Executive Vice President and Chief Financial Officer",
+          "source_quality": "SEC_ORIGINAL_ACCESSION_DOCUMENT",
+          "source_observed_now_utc": "2026-10-11T18:26:31.323003Z",
+          "issuer_verified": true,
+          "sec_accession": "0001045810-26-000073",
+          "sec_context_asof": {
+            "prior_filings": [
+              {
+                "form": "8-K",
+                "filed": "2026-08-17",
+                "acceptance_raw": "2026-08-17T16:41:33.000Z",
+                "available_utc_conservative": "2026-08-17T17:41:33Z",
+                "accession": "0001045810-26-000069",
+                "primary_document": "nvda-20260817.htm"
+              }
+            ],
+            "prior_asof_companyfacts": [
+              {
+                "tag": "NetIncomeLoss",
+                "USD": [
+                  {
+                    "val": 118010000000,
+                    "start": "2026-01-26",
+                    "end": "2026-07-26",
+                    "filed": "2026-08-26",
+                    "form": "10-Q",
+                    "accn": "0001045810-26-000075"
+                  },
+                  {
+                    "val": 59688000000,
+                    "start": "2026-04-27",
+                    "end": "2026-07-26",
+                    "filed": "2026-08-26",
+                    "form": "10-Q",
+                    "accn": "0001045810-26-000075"
+                  }
+                ]
+              },
+              {
+                "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+                "USD": [
+                  {
+                    "val": 26914000000,
+                    "start": "2021-02-01",
+                    "end": "2022-01-30",
+                    "filed": "2022-03-18",
+                    "form": "10-K",
+                    "accn": "0001045810-22-000036"
+                  },
+                  {
+                    "val": 16675000000,
+                    "start": "2020-01-27",
+                    "end": "2021-01-31",
+                    "filed": "2022-03-18",
+                    "form": "10-K",
+                    "accn": "0001045810-22-000036"
+                  }
+                ]
+              },
+              {
+                "tag": "Revenues",
+                "USD": [
+                  {
+                    "val": 177837000000,
+                    "start": "2026-01-26",
+                    "end": "2026-07-26",
+                    "filed": "2026-08-26",
+                    "form": "10-Q",
+                    "accn": "0001045810-26-000075"
+                  },
+                  {
+                    "val": 96221000000,
+                    "start": "2026-04-27",
+                    "end": "2026-07-26",
+                    "filed": "2026-08-26",
+                    "form": "10-Q",
+                    "accn": "0001045810-26-000075"
+                  }
+                ]
+              }
+            ]
+          },
+          "evidence_sha256": "9455114f94999039090082023d94561f54f0abb51fc95a01a49247a55c60dc7d"
+        },
+        {
+          "event_id": "a4cac7d6a3015914949fccc2",
+          "symbol": "UNH",
+          "published_utc": "2026-07-16T15:00:59Z",
+          "modeled_available_utc": "2026-07-16T15:00:59Z",
+          "headline": "UNH SEC 8-K accepted 2026-07-16",
+          "summary": "ty related to 2026 dates of service. • The operating cost ratio of 12.7% included targeted investments in infrastructure, artificial intelligence, care delivery enhancements, consumer experience and community support. • UnitedHealthcare served 48.5 million consumers and reported revenues of $86.0 billion and earnings of $3.9 billion, with operating margins of 4.6%. • Optum supported more than 120 million consumers and generated revenues of $65.7 billion and earnings of $4.0 billion, representing 160 basis points of margin expansion year-over-year. Updated Full Year 2026 Earnings Outlook Range to $18.45 to $18.95 Per Share Adjusted Earnings Range of $19.50 to $20.00 Per Share (a) Refer to page 6 of this release for a bridge of Optum Reported to Adjusted Operating Earnings. (b) Refer to page 16 of this release for a reconciliation of the non-GAAP measure. UnitedHealth Group Updated 2026 Full Year Guidance Adjusted Operating Earnings Reported Operating Earnings($ in millions, except per share data) > $12,000> $12,000 UnitedHealthcare > $2,215 > $2,275 Optum Health > $4,750 > $4,925 Optum Insight > $6,250 > $6,250 Optum Rx > $13,215> $13,450 Optum (a) > $25,215> $25,450UnitedHealth Gro",
+          "publisher": "SEC EDGAR",
+          "url": "https://www.sec.gov/Archives/edgar/data/731766/000073176626000191/uhgearnings_q22026vpower.htm",
+          "evidence_text": "UNH SEC 8-K accepted 2026-07-16\nty related to 2026 dates of service. • The operating cost ratio of 12.7% included targeted investments in infrastructure, artificial intelligence, care delivery enhancements, consumer experience and community support. • UnitedHealthcare served 48.5 million consumers and reported revenues of $86.0 billion and earnings of $3.9 billion, with operating margins of 4.6%. • Optum supported more than 120 million consumers and generated revenues of $65.7 billion and earnings of $4.0 billion, representing 160 basis points of margin expansion year-over-year. Updated Full Year 2026 Earnings Outlook Range to $18.45 to $18.95 Per Share Adjusted Earnings Range of $19.50 to $20.00 Per Share (a) Refer to page 6 of this release for a bridge of Optum Reported to Adjusted Operating Earnings. (b) Refer to page 16 of this release for a reconciliation of the non-GAAP measure. UnitedHealth Group Updated 2026 Full Year Guidance Adjusted Operating Earnings Reported Operating Earnings($ in millions, except per share data) > $12,000> $12,000 UnitedHealthcare > $2,215 > $2,275 Optum Health > $4,750 > $4,925 Optum Insight > $6,250 > $6,250 Optum Rx > $13,215> $13,450 Optum (a) > $25,215> $25,450UnitedHealth Group 88.1% ± 25 bpsMedical Care Ratio ~18.5%Tax Rate ~$24,000Cash Flows from Operations At Least $5,000Share Repurchase > $16,750Net Earnings to UNH Shareholders Adjusted (b)Diluted $19.50 - $20.00$18.45 - $18.95Net Earnings per Share © 2026 UnitedHealth Group, Inc. All rights reserved. 2 UnitedHealth Group remains committed to addressing the issues that make health c",
+          "source_quality": "SEC_ORIGINAL_ACCESSION_EXHIBIT",
+          "source_observed_now_utc": "2026-10-11T18:26:44.156728Z",
+          "issuer_verified": true,
+          "sec_accession": "0000731766-26-000191",
+          "sec_context_asof": {
+            "prior_filings": [],
+            "prior_asof_companyfacts": [
+              {
+                "tag": "NetIncomeLoss",
+                "USD": [
+                  {
+                    "val": 6280000000,
+                    "start": "2026-01-01",
+                    "end": "2026-03-31",
+                    "filed": "2026-05-05",
+                    "form": "10-Q",
+                    "accn": "0000731766-26-000127"
+                  },
+                  {
+                    "val": 6292000000,
+                    "start": "2025-01-01",
+                    "end": "2025-03-31",
+                    "filed": "2026-05-05",
+                    "form": "10-Q",
+                    "accn": "0000731766-26-000127"
+                  }
+                ]
+              },
+              {
+                "tag": "Revenues",
+                "USD": [
+                  {
+                    "val": 111721000000,
+                    "start": "2026-01-01",
+                    "end": "2026-03-31",
+                    "filed": "2026-05-05",
+                    "form": "10-Q",
+                    "accn": "0000731766-26-000127"
+                  },
+                  {
+                    "val": 109575000000,
+                    "start": "2025-01-01",
+                    "end": "2025-03-31",
+                    "filed": "2026-05-05",
+                    "form": "10-Q",
+                    "accn": "0000731766-26-000127"
+                  }
+                ]
+              }
+            ]
+          },
+          "evidence_sha256": "20928629c1d8792e6d35ca4ff218aee669f532a0248cf76e558e527b3e63530f"
+        }
+      ]
+    },
+    {
+      "batch_id": "7867262164e96651",
+      "cases": [
+        {
+          "event_id": "30f1274fdc2b7c4e3a4cbeb2",
+          "symbol": "WMT",
+          "published_utc": "2026-08-20T15:59:01Z",
+          "modeled_available_utc": "2026-08-20T15:59:01Z",
+          "headline": "WMT SEC 8-K accepted 2026-08-20",
+          "summary": "EX-99.1 2 earningsreleasefy27q2.htm EX-99.1 Document Walmart reports second quarter results • Revenue growth of 5.9%, up 5.1% in constant currency (cc) 1 • Operating income growth of 28.8%, up 17.4% adjusted (cc) 1 • eCommerce sales up 23% globally • GAAP EPS of $0.80; Adjusted EPS 1 of $0.81 • Company issues guidance for Q3; raises outlook for FY27 “ BENTONVILLE, Ark., August 20, 2026 – Walmart Inc. (NASDAQ: WMT) announces second-quarter results with strong growth in revenue, including eCommerce, which grew 23% globally with strength across segments. Walmart U.S. comp sales 2 grew 2.6%, led by growth in transactions and includes 80 bps headwind from health & wellness. The Company issues guidance for the third quarter and raises its outlook for the fiscal year. For Q3, net sales are expected to grow 3.0% to 3.75% and adjusted operating income to grow 2.0% to 4.0%. Net sales for FY27 are expected to grow 4.0% to 5.0% and adjusted operating income to grow 7.0% to 8.5%, all in constant currency (“cc”) 1 . Adjusted EPS 1 is expected to be $0.62 to $0.64 for Q3 and $2.80 to $2.87 for FY27. Our team delivered another good quarter, and we continue to make steady progress on the long-term ",
+          "publisher": "SEC EDGAR",
+          "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000145/earningsreleasefy27q2.htm",
+          "evidence_text": "WMT SEC 8-K accepted 2026-08-20\nEX-99.1 2 earningsreleasefy27q2.htm EX-99.1 Document Walmart reports second quarter results • Revenue growth of 5.9%, up 5.1% in constant currency (cc) 1 • Operating income growth of 28.8%, up 17.4% adjusted (cc) 1 • eCommerce sales up 23% globally • GAAP EPS of $0.80; Adjusted EPS 1 of $0.81 • Company issues guidance for Q3; raises outlook for FY27 “ BENTONVILLE, Ark., August 20, 2026 – Walmart Inc. (NASDAQ: WMT) announces second-quarter results with strong growth in revenue, including eCommerce, which grew 23% globally with strength across segments. Walmart U.S. comp sales 2 grew 2.6%, led by growth in transactions and includes 80 bps headwind from health & wellness. The Company issues guidance for the third quarter and raises its outlook for the fiscal year. For Q3, net sales are expected to grow 3.0% to 3.75% and adjusted operating income to grow 2.0% to 4.0%. Net sales for FY27 are expected to grow 4.0% to 5.0% and adjusted operating income to grow 7.0% to 8.5%, all in constant currency (“cc”) 1 . Adjusted EPS 1 is expected to be $0.62 to $0.64 for Q3 and $2.80 to $2.87 for FY27. Our team delivered another good quarter, and we continue to make steady progress on the long-term value drivers of our business. Our multi-year growth in eCommerce is evidence that customers are choosing Walmart because we deliver price, speed, and convenience across a broad assortment. At Walmart, they can have it all.” John Furner President and CEO, Walmart Second Quarter Highlights • Revenue of $187.9 billion, up 5.9%, or 5.1% (cc) 1 • Global eCommerce sales ",
+          "source_quality": "SEC_ORIGINAL_ACCESSION_EXHIBIT",
+          "source_observed_now_utc": "2026-10-11T18:26:31.323003Z",
+          "issuer_verified": true,
+          "sec_accession": "0000104169-26-000145",
+          "sec_context_asof": {
+            "prior_filings": [],
+            "prior_asof_companyfacts": [
+              {
+                "tag": "NetIncomeLoss",
+                "USD": [
+                  {
+                    "val": 5330000000,
+                    "start": "2026-02-01",
+                    "end": "2026-04-30",
+                    "filed": "2026-05-29",
+                    "form": "10-Q",
+                    "accn": "0000104169-26-000102"
+                  },
+                  {
+                    "val": 4487000000,
+                    "start": "2025-02-01",
+                    "end": "2025-04-30",
+                    "filed": "2026-05-29",
+                    "form": "10-Q",
+                    "accn": "0000104169-26-000102"
+                  }
+                ]
+              },
+              {
+                "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+                "USD": [
+                  {
+                    "val": 175684000000,
+                    "start": "2026-02-01",
+                    "end": "2026-04-30",
+                    "filed": "2026-05-29",
+                    "form": "10-Q",
+                    "accn": "0000104169-26-000102"
+                  },
+                  {
+                    "val": 163981000000,
+                    "start": "2025-02-01",
+                    "end": "2025-04-30",
+                    "filed": "2026-05-29",
+                    "form": "10-Q",
+                    "accn": "0000104169-26-000102"
+                  }
+                ]
+              },
+              {
+                "tag": "Revenues",
+                "USD": [
+                  {
+                    "val": 177751000000,
+                    "start": "2026-02-01",
+                    "end": "2026-04-30",
+                    "filed": "2026-05-29",
+                    "form": "10-Q",
+                    "accn": "0000104169-26-000102"
+                  },
+                  {
+                    "val": 165609000000,
+                    "start": "2025-02-01",
+                    "end": "2025-04-30",
+                    "filed": "2026-05-29",
+                    "form": "10-Q",
+                    "accn": "0000104169-26-000102"
+                  }
+                ]
+              }
+            ]
+          },
+          "evidence_sha256": "1676151598a1b10a7621656a0e663d416fbbee0916daee3e813422786efe7155"
+        },
+        {
+          "event_id": "eb05ac27e175bac9238fb1f9",
+          "symbol": "WMT",
+          "published_utc": "2026-08-29T01:11:28Z",
+          "modeled_available_utc": "2026-08-29T01:11:28Z",
+          "headline": "WMT SEC 10-Q accepted 2026-08-28",
+          "summary": " Signatures 35 Table of Contents PART I. FINANCIAL INFORMATION Item 1. Financial Statements Walmart Inc. Condensed Consolidated Statements of Income (Unaudited) Three Months Ended July 31, Six Months Ended July 31, (Amounts in millions, except per share data) 2026 2025 2026 2025 Revenues: Net sales $ 186,100 $ 175,750 $ 361,784 $ 339,731 Membership and other income 1,837 1,652 3,904 3,280 Total revenues 187,937 177,402 365,688 343,011 Costs and expenses: Cost of sales 138,804 132,771 271,862 257,074 Operating, selling, general and administrative expenses 39,750 37,345 76,950 71,516 Operating income 9,383 7,286 16,876 14,421 Interest: Debt 137 651 711 1,170 Finance lease 126 118 251 236 Interest income ( 92 ) ( 94 ) ( 171 ) ( 187 ) Interest, net 171 675 791 1,219 Other (gains) and losses 1,200 ( 2,708 ) 925 ( 2,111 ) Income before income taxes 8,012 9,319 15,160 15,313 Provision for income taxes 1,483 2,168 3,141 3,523 Consolidated net income 6,529 7,151 12,019 11,790 Consolidated net income attributable to noncontrolling interest ( 163 ) ( 125 ) ( 323 ) ( 277 ) Consolidated net income attributable to Walmart $ 6,366 $ 7,026 $ 11,696 $ 11,513 Net income per common share: Basic net i",
+          "publisher": "SEC EDGAR",
+          "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000154/wmt-20260731.htm",
+          "evidence_text": "WMT SEC 10-Q accepted 2026-08-28\n Signatures 35 Table of Contents PART I. FINANCIAL INFORMATION Item 1. Financial Statements Walmart Inc. Condensed Consolidated Statements of Income (Unaudited) Three Months Ended July 31, Six Months Ended July 31, (Amounts in millions, except per share data) 2026 2025 2026 2025 Revenues: Net sales $ 186,100 $ 175,750 $ 361,784 $ 339,731 Membership and other income 1,837 1,652 3,904 3,280 Total revenues 187,937 177,402 365,688 343,011 Costs and expenses: Cost of sales 138,804 132,771 271,862 257,074 Operating, selling, general and administrative expenses 39,750 37,345 76,950 71,516 Operating income 9,383 7,286 16,876 14,421 Interest: Debt 137 651 711 1,170 Finance lease 126 118 251 236 Interest income ( 92 ) ( 94 ) ( 171 ) ( 187 ) Interest, net 171 675 791 1,219 Other (gains) and losses 1,200 ( 2,708 ) 925 ( 2,111 ) Income before income taxes 8,012 9,319 15,160 15,313 Provision for income taxes 1,483 2,168 3,141 3,523 Consolidated net income 6,529 7,151 12,019 11,790 Consolidated net income attributable to noncontrolling interest ( 163 ) ( 125 ) ( 323 ) ( 277 ) Consolidated net income attributable to Walmart $ 6,366 $ 7,026 $ 11,696 $ 11,513 Net income per common share: Basic net income per common share attributable to Walmart $ 0.80 $ 0.88 $ 1.47 $ 1.44 Diluted net income per common share attributable to Walmart 0.80 0.88 1.46 1.43 Weighted-average common shares outstanding: Basic 7,954 7,978 7,962 7,994 Diluted 7,978 8,016 7,989 8,033 Dividends declared per common share $ — $ — $ 0.99 $ 0.94 See accompanying notes. 3 Table of Contents Walm",
+          "source_quality": "SEC_ORIGINAL_ACCESSION_DOCUMENT",
+          "source_observed_now_utc": "2026-10-11T18:26:31.323003Z",
+          "issuer_verified": true,
+          "sec_accession": "0000104169-26-000154",
+          "sec_context_asof": {
+            "prior_filings": [
+              {
+                "form": "8-K",
+                "filed": "2026-08-20",
+                "acceptance_raw": "2026-08-20T14:59:01.000Z",
+                "available_utc_conservative": "2026-08-20T15:59:01Z",
+                "accession": "0000104169-26-000145",
+                "primary_document": "wmt-20260820.htm"
+              }
+            ],
+            "prior_asof_companyfacts": [
+              {
+                "tag": "NetIncomeLoss",
+                "USD": [
+                  {
+                    "val": 11696000000,
+                    "start": "2026-02-01",
+                    "end": "2026-07-31",
+                    "filed": "2026-08-28",
+                    "form": "10-Q",
+                    "accn": "0000104169-26-000154"
+                  },
+                  {
+                    "val": 6366000000,
+                    "start": "2026-05-01",
+                    "end": "2026-07-31",
+                    "filed": "2026-08-28",
+                    "form": "10-Q",
+                    "accn": "0000104169-26-000154"
+                  }
+                ]
+              },
+              {
+                "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+                "USD": [
+                  {
+                    "val": 361784000000,
+                    "start": "2026-02-01",
+                    "end": "2026-07-31",
+                    "filed": "2026-08-28",
+                    "form": "10-Q",
+                    "accn": "0000104169-26-000154"
+                  },
+                  {
+                    "val": 186100000000,
+                    "start": "2026-05-01",
+                    "end": "2026-07-31",
+                    "filed": "2026-08-28",
+                    "form": "10-Q",
+                    "accn": "0000104169-26-000154"
+                  }
+                ]
+              },
+              {
+                "tag": "Revenues",
+                "USD": [
+                  {
+                    "val": 365688000000,
+                    "start": "2026-02-01",
+                    "end": "2026-07-31",
+                    "filed": "2026-08-28",
+                    "form": "10-Q",
+                    "accn": "0000104169-26-000154"
+                  },
+                  {
+                    "val": 187937000000,
+                    "start": "2026-05-01",
+                    "end": "2026-07-31",
+                    "filed": "2026-08-28",
+                    "form": "10-Q",
+                    "accn": "0000104169-26-000154"
+                  }
+                ]
+              }
+            ]
+          },
+          "evidence_sha256": "38960022bab5d1190a158bda53106848d53489eaf0049b6177a52698ef3e6a76"
+        }
+      ]
+    }
+  ]
+}

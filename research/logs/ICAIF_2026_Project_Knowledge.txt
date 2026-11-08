@@ -1,0 +1,409 @@
+ICAIF 2026 TRADING AGENT COMPETITION — PROJECT KNOWLEDGE PACK
+Checked: 2026-10-04
+Purpose: Persistent factual/strategic context for a ChatGPT Project. Re-check official sources before consequential live actions because organizer rules, schedules and repository code may change.
+
+======================================================================
+1. AUTHORITATIVE SOURCES
+======================================================================
+
+Competition page:
+https://hackathon2.deepintomlf.ai/competitions/99/#/pages-tab
+
+Official participant repository:
+https://github.com/DeepIntoStreams/2026ICAIF_Trading_Agent_Competition
+
+Official starter-kit README:
+https://github.com/DeepIntoStreams/2026ICAIF_Trading_Agent_Competition/blob/main/starter-kit/README.md
+
+Participant guide:
+https://github.com/DeepIntoStreams/2026ICAIF_Trading_Agent_Competition/blob/main/starter-kit/docs/guide.md
+
+Rules:
+https://github.com/DeepIntoStreams/2026ICAIF_Trading_Agent_Competition/blob/main/starter-kit/docs/rules.md
+
+Evaluation:
+https://github.com/DeepIntoStreams/2026ICAIF_Trading_Agent_Competition/blob/main/starter-kit/docs/evaluation.md
+
+LLM/external-data policy:
+https://github.com/DeepIntoStreams/2026ICAIF_Trading_Agent_Competition/blob/main/starter-kit/docs/llm_and_external_data.md
+
+Automation:
+https://github.com/DeepIntoStreams/2026ICAIF_Trading_Agent_Competition/blob/main/starter-kit/docs/automatic_submission.md
+
+Universe:
+https://github.com/DeepIntoStreams/2026ICAIF_Trading_Agent_Competition/blob/main/starter-kit/universe.json
+
+If this file conflicts with current organizer-issued materials, the organizer-issued materials win.
+
+======================================================================
+2. CURRENT COMPETITION TIMELINE
+======================================================================
+
+All official times are US Eastern Time.
+
+Competition launch: 2026-09-20.
+Registration/Development: starts 2026-09-20.
+Register before 2026-10-08 00:00 ET to be eligible for both Validation and Official.
+Live Validation: 2026-10-08 to 2026-10-09.
+Official-only registration remains open until 2026-10-12 00:00 ET exclusive.
+Official Competition: 2026-10-12 to 2026-10-30.
+Final materials window: 2026-10-30 16:00 ET through 2026-11-03 23:59:00 ET inclusive.
+Winner announcement: 2026-11-10.
+
+There are normally 7 decision rounds per trading day. The standard Official phase has 15 trading days and normally 105 decision periods.
+
+Standard daily execution times:
+Round 1: 09:30 ET
+Round 2: 10:30 ET
+Round 3: 11:30 ET
+Round 4: 12:30 ET
+Round 5: 13:30 ET
+Round 6: 14:30 ET
+Round 7: 15:30 ET
+
+Standard deadlines:
+R1 09:10 ET
+R2 10:25 ET
+R3 11:25 ET
+R4 12:25 ET
+R5 13:25 ET
+R6 14:25 ET
+R7 15:25 ET
+
+Always query the live schedule. Early closes/cancellations can alter the normal pattern.
+
+======================================================================
+3. PORTFOLIO / TRADING RULES
+======================================================================
+
+Validation and Official each start with USD 1,000,000 cash in independent accounts.
+Long-only.
+No leverage.
+No short selling.
+Fractional shares allowed.
+Every decision contains all 30 symbols, including zeros.
+Each stock target weight must be a finite JSON number between 0 and 0.30 inclusive.
+Total stock weight must be <= 1. Any remainder stays in cash.
+Weights are target portfolio weights, not trade quantities.
+The backend derives buys/sells from current holdings and execution prices.
+Transaction fee: 0.1% of total buy-plus-sell notional on each rebalance, including initial allocation.
+Holdings carry between rounds and overnight.
+Missing/invalid selected decisions generally mean no rebalance and existing holdings continue.
+A valid all-zero target liquidates equities to cash.
+The earliest attributable in-window attempt can consume the slot even if invalid; a later upload cannot simply correct it. This makes pre-submit validation critical.
+
+30-stock universe:
+Technology: AAPL, MSFT, NVDA, INTC, CRM
+Finance: JPM, BAC, GS, V, PYPL
+Healthcare: LLY, JNJ, UNH, PFE, TMO
+Consumer: AMZN, TSLA, WMT, NKE, KO
+Industrial & Energy: CAT, GE, BA, XOM, CVX
+Communication & Utilities: GOOGL, META, DIS, T, NEE
+
+======================================================================
+4. EVALUATION — THIS SHOULD DRIVE STRATEGY DESIGN
+======================================================================
+
+Official ranking uses four metrics:
+M1 Cumulative Return — higher is better.
+M2 Sharpe Ratio — higher is better.
+M3 Maximum Drawdown — lower is better.
+M4 Turnover — lower is better.
+
+Teams receive a rank on each metric.
+Overall Rank Score = mean of the four metric ranks.
+Lower Overall Rank Score is better.
+Tie-break order: higher cumulative return, higher Sharpe, lower maximum drawdown, lower turnover.
+
+Implication:
+Do NOT optimize only raw P&L. A strategy that generates excellent return by taking unstable concentrated positions or constantly rebalancing may lose on Sharpe, drawdown and turnover. The portfolio constructor should explicitly trade off expected alpha versus risk and trading cost.
+
+Sharpe is computed on decision-period returns, annualized using sqrt(252*7)=42.
+Turnover averages buy-plus-sell notional divided by pre-round NAV.
+Maximum drawdown also observes official daily closes in addition to completed period endpoints.
+
+======================================================================
+5. LLM AND EXTERNAL-DATA POLICY
+======================================================================
+
+LLM use is optional.
+
+Current supported hosted API model families listed by the organizer:
+- OpenAI GPT-5 / GPT-5-mini
+- Anthropic Claude Opus 5 / Sonnet 5 / Haiku 4.5
+- Google Gemini 2.5 Pro / Flash
+- xAI Grok 4
+
+Current supported open-weight model families listed:
+- Llama 4
+- Qwen3
+- DeepSeek-V3 / DeepSeek-R1
+- Gemma 3
+- Mistral Large
+
+Important distinction:
+Using ChatGPT/Claude/etc. to HELP DEVELOP the code is not the same as making a hosted-model API call INSIDE the live trading agent.
+
+If the live agent uses an LLM, final materials must disclose model name/version/provider/prompts/inference settings/API configuration as required by rules.
+
+GPT-6 Astra can be useful as a development/coding assistant, but as of this file's check date it is NOT on the competition's listed supported live-agent hosted-model list. Do not embed it in the live agent unless the organizer later updates the allowed list.
+
+External information:
+- Must be freely and publicly accessible.
+- Must have been available at or before the relevant submission deadline.
+- Private, paid, proprietary or non-public feeds are not allowed.
+- Organizer examples include Yahoo Finance for financial news and SEC EDGAR for filings.
+- Document all actual sources and access methods.
+- Comply with each source's terms/licenses.
+
+Limited API credits for selected hosted models may be offered by Nodexi Agentics via organizers, but availability is not guaranteed.
+
+======================================================================
+6. RECOMMENDED BEGINNER-FRIENDLY DEVELOPMENT STACK
+======================================================================
+
+Primary AI development environment:
+- ChatGPT Project for persistent context, planning, research, debugging and competition operations.
+- Use the strongest available reasoning/coding mode for difficult architecture, debugging and code-review work.
+- Use ChatGPT Codex/Work for repo-level coding when available.
+- Claude is optional as an independent second-opinion reviewer; do not pay for multiple AI products at the beginning unless a concrete bottleneck appears.
+
+Local software:
+1. Python 3.11 or newer.
+2. Visual Studio Code.
+3. Git.
+4. GitHub account and preferably a PRIVATE repository for your working code.
+5. Optional GitHub Desktop if command-line Git feels risky.
+6. The official ICAIF starter kit cloned/downloaded locally.
+7. Windows PowerShell as the default terminal on Windows.
+
+Python environment:
+Use a project-specific virtual environment (.venv). Keep dependencies pinned. The official starter kit itself uses standard-library tooling in the participant guide, but your research stack may add packages.
+
+Likely research packages, only if actually needed:
+- numpy
+- pandas
+- scipy
+- scikit-learn
+- statsmodels
+- yfinance or another explicitly permitted public-access method
+- matplotlib
+Potential later additions only after a baseline exists:
+- xgboost or lightgbm
+- optuna
+- cvxpy
+
+Do not begin with a giant dependency stack. Every package adds failure surface.
+
+Accounts/tokens:
+REQUIRED:
+- Codabench account.
+- Competition registration.
+- CODABENCH_TOKEN for automated Codabench/API interaction.
+- TEAM_ID and one-time TEAM_TOKEN returned after registration; preserve securely.
+
+NOT REQUIRED initially:
+- OpenAI API key.
+- Anthropic API key.
+- Paid market-data account.
+- AWS/GCP/Azure account.
+- GPU.
+- Expensive cloud instance.
+
+ONLY if the live agent later calls a hosted LLM:
+- Provider API account/key for an organizer-supported model, or organizer-provided credits if awarded.
+- Keep key in .env or secret manager, never Git.
+
+Strongly recommended for Official live reliability:
+- An inexpensive always-on VPS/cloud VM or equivalent, configured only after the local pipeline works.
+Reason: the organizer's watch automation runs wherever your strategy is running. If you depend on your laptop alone, it must be awake, connected, correctly clocked and running through every submission window. A small remote server reduces missed-round risk. It does NOT replace local development; it is a deployment target.
+Do not put secrets in GitHub Actions logs or public repositories.
+
+======================================================================
+7. TARGET SYSTEM ARCHITECTURE
+======================================================================
+
+Do not start with a monolithic "AI trader." Build layers:
+
+A. DATA LAYER
+- Pull permitted public price/volume data and optional public news/filings.
+- Normalize timestamps/time zones.
+- Cache raw snapshots with retrieval time.
+- Validate freshness/missingness.
+- Never use post-deadline information for a decision.
+
+B. FEATURE LAYER
+Candidate groups:
+- Cross-sectional momentum at several horizons.
+- Intraday short-horizon reversal.
+- Realized volatility/range.
+- Relative volume/liquidity.
+- Gap/open-to-current behavior.
+- Market and sector breadth.
+- Beta/market sensitivity.
+- Dispersion/correlation regime.
+- Optional public-news/filing sentiment/event features.
+
+C. ALPHA/MODEL LAYER
+Start with transparent baselines:
+1) equal-weight / cash baseline;
+2) momentum rank;
+3) short-horizon reversal rank;
+4) volatility-scaled relative strength;
+5) sector-relative signals.
+
+Then test combinations:
+- regularized linear model;
+- tree-based model;
+- regime-dependent ensemble;
+- optional LLM-produced event/news score.
+
+Avoid deep RL/neural networks merely for sophistication. With only 30 assets, seven intraday decision points and a short official horizon, robust signal engineering + portfolio/risk design may outperform a brittle high-capacity model.
+
+D. PORTFOLIO CONSTRUCTION
+Input: expected relative attractiveness + risk estimates + current holdings.
+Output: 30 target weights.
+Constraints:
+- 0 <= w_i <= 0.30
+- sum(w_i) <= 1
+- cash allowed
+- long-only
+Objectives should account for:
+- expected alpha
+- volatility/covariance
+- concentration
+- drawdown risk
+- estimated turnover
+- 0.1% trading fee
+Use a no-trade threshold/hysteresis so small signal changes do not trigger fees.
+
+E. SAFETY / EXECUTION
+Before every candidate live decision:
+- verify correct phase and round;
+- verify timestamp and data cut-off;
+- include exactly all 30 tickers;
+- confirm numeric finite weights;
+- confirm each <= 0.30;
+- confirm sum <= 1;
+- compare against current holdings and turnover;
+- log data snapshot hash/version, strategy version and proposed weights;
+- perform dry-run validation;
+- upload once only when valid;
+- save receipt/checkpoint.
+
+======================================================================
+8. EXPERIMENTAL METHOD
+======================================================================
+
+Never judge strategies only on one backtest.
+
+Use time-series/walk-forward evaluation:
+- train/tune only on past data;
+- test on future slices;
+- use realistic intraday timestamps matching decision/execution logic;
+- include transaction fees;
+- model data latency/conservative execution assumptions;
+- measure M1/M2/M3/M4 analogues;
+- assess stability across bull, bear, high-volatility, low-volatility, trending and mean-reverting periods.
+
+Maintain an experiment table:
+Experiment ID
+Hypothesis
+Data window
+Features
+Model
+Portfolio rule
+Cost assumptions
+Cumulative return
+Sharpe
+Max drawdown
+Turnover
+Notes
+Keep/Reject decision
+
+Always compare to simple baselines. A complex model must beat them robustly, not just in-sample.
+
+Potential ensemble philosophy:
+- medium-horizon momentum provides trend capture;
+- short-horizon reversal can reduce chasing;
+- volatility scaling prevents single-name risk domination;
+- sector-relative ranking reduces broad market beta;
+- cash/risk-off regime protects drawdown;
+- turnover penalty prevents score destruction through fees;
+- optional public-news layer should be small and only retained if incremental.
+
+======================================================================
+9. LIVE PHASE OPERATING PRINCIPLES
+======================================================================
+
+Validation is a rehearsal for:
+- credentials;
+- schedule parsing;
+- data ingestion;
+- strategy execution;
+- submission serialization;
+- pre-submit validator;
+- one-shot upload discipline;
+- checkpoint/restart;
+- portfolio/round receipt retrieval;
+- logging.
+
+Do not overfit a trading strategy to two Validation days.
+
+During Official:
+- use the live organizer schedule, not hard-coded assumptions;
+- preserve one canonical strategy/config version per change;
+- make emergency changes only for real bugs/data failures, not emotional reaction to short-term P&L;
+- keep a fallback strategy that can output safe valid weights if a data/model dependency fails;
+- keep a kill switch/all-cash path;
+- monitor machine/network/clock/data freshness;
+- keep credentials private.
+
+======================================================================
+10. SECRETS / SECURITY
+======================================================================
+
+Never share:
+- CODABENCH_TOKEN
+- TEAM_TOKEN
+- provider API keys
+- .env contents
+- private credentials/checkpoints
+
+Do not commit:
+.env
+.icaif/
+private live decision files
+secret-bearing logs
+API keys/tokens
+
+If a secret is ever pasted into a chat, public issue, screenshot or Git commit, assume exposure and rotate/revoke it where possible.
+
+======================================================================
+11. WHAT "WINNING-ORIENTED" MEANS FOR THIS USER
+======================================================================
+
+The user is a complete coding/quant beginner but is willing to use AI intensively. Therefore:
+- AI should write/review most boilerplate and code.
+- The user should still understand each module's purpose, inputs, outputs and failure modes.
+- Every critical path must have tests and observable logs.
+- Complexity should be earned via measured incremental value.
+- Reliability and scoring-aware risk control are competitive advantages.
+- The project should first become VALID + REPRODUCIBLE, then COMPETITIVE, then SOPHISTICATED.
+
+Preferred development sequence:
+Stage 0: account + repo + Python + starter-kit setup.
+Stage 1: register and verify API/credentials without exposing secrets.
+Stage 2: build a completely valid rule-based baseline and local evaluator.
+Stage 3: build historical data pipeline and backtest harness.
+Stage 4: develop multiple transparent alpha baselines.
+Stage 5: add portfolio optimizer, turnover control and regime/risk layer.
+Stage 6: run walk-forward comparisons and ablations.
+Stage 7: optionally test ML and LLM news overlay.
+Stage 8: harden automation, logging, fallback and VPS deployment.
+Stage 9: rehearse end-to-end in Validation.
+Stage 10: freeze a robust Official version and operate conservatively.
+Stage 11: prepare reproducible final materials/disclosures.
+
+The correct mindset is not "use the fanciest model." It is:
+"Build the most reliable system that extracts repeatable edge under the actual scoring formula and rules."

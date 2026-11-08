@@ -1,0 +1,17 @@
+{
+  "research_only": true,
+  "lookahead_policy": "prior-close or completed bar only",
+  "historical_sec_llm_alpha": "NOT_BACKFILLED",
+  "input_file": "C:\\Users\\pauli\\Documents\\ICAIF2026\\2026ICAIF_Trading_Agent_Competition\\starter-kit\\artifacts\\phase29_alpaca_refresh\\alpaca_iex_15m_through_2026-10-09.csv",
+  "input_sha256": "c3e02d68c8af0b5f26f28b11e82901ce1e72192295304710ae919d7661cfa259",
+  "episodes": 6,
+  "policies": 14,
+  "round_decisions": 8820,
+  "execution_proxy": "Alpaca IEX 15m open, not organizer fills",
+  "limitations": [
+    "already-examined 2026 periods",
+    "no slippage beyond 0.1% fee",
+    "excluded incomplete dates",
+    "forward verified event paper tilt only; absent from historic data"
+  ]
+}

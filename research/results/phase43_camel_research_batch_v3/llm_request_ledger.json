@@ -1,0 +1,43 @@
+{
+  "version": 3,
+  "limit": 8,
+  "attempts": [
+    {
+      "batch_id": "d1f8a0feb4c69d8e",
+      "batch_index": 1,
+      "prompt_sha256": "01e183994223c331864d4e15419178fc8e8e99f6ba63db6db7dfa37a2c8c058f",
+      "case_ids": [
+        "e8590411b9bafb2704863679",
+        "8db81acc7e809f80128a57d2"
+      ],
+      "reserved_at_utc": "2026-10-11T18:25:43.161147Z",
+      "model": "gemini-2.5-flash",
+      "prompt_bytes": 5677,
+      "status": "ok",
+      "finished_at_utc": "2026-10-11T18:25:45.347741Z",
+      "usage": {
+        "prompt_tokens": 2906,
+        "completion_tokens": 394,
+        "total_tokens": 3300,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "claude_cache_creation_5_m_tokens": 0,
+        "claude_cache_creation_1_h_tokens": 0
+      }
+    },
+    {
+      "batch_id": "fa02c9c97d15ef4e",
+      "batch_index": 1,
+      "prompt_sha256": "6b081003ae52214d7f8b013840bf2c51f3e85e2b8debc7ae182c219081d571bd",
+      "case_ids": [
+        "5caf3c681a6b69f73b9bd3f3",
+        "39ef72c8cb4900a6998ca121"
+      ],
+      "reserved_at_utc": "2026-10-11T18:27:06.948297Z",
+      "model": "gemini-2.5-flash",
+      "prompt_bytes": 6980,
+      "status": "failed_or_invalid",
+      "failure_type": "ValueError"
+    }
+  ]
+}

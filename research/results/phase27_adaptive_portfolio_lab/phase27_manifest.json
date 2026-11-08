@@ -1,0 +1,22 @@
+{
+  "status": "RESEARCH_ONLY_NO_DEPLOYMENT",
+  "parquet_sha256": "d2d60204836769b7d9472965dbcbde5c5d068ddd4a52b2f3111fded8e17b6f2a",
+  "model_training": "strict expanding pre-year; 1d+5d IC shrinkage",
+  "windows": "independent 15-session 2023-24 development; 2025 exposed",
+  "signals": "price-only, no SEC/news/LLM archives",
+  "fees": 0.001,
+  "metrics": [
+    "return",
+    "sharpe",
+    "drawdown",
+    "turnover"
+  ],
+  "limitations": [
+    "historical bar times not exact Official fill times",
+    "2025 already exposed; no tuning based on it",
+    "price adjustment source/provenance still unverified",
+    "IC-based adaptive coefficient estimation only exploratory",
+    "noncontinuous 15d windows",
+    "no investment claim until stronger evaluation"
+  ]
+}

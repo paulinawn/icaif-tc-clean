@@ -1,0 +1,10 @@
+Id=icaif-official-v391.service
+LoadState=loaded
+FragmentPath=/etc/systemd/system/icaif-official-v391.service
+DropInPaths=/etc/systemd/system/icaif-official-v391.service.d/10-credentials-state.conf /etc/systemd/system/icaif-official-v391.service.d/20-v3921-adapter.conf /etc/systemd/system/icaif-official-v391.service.d/40-v3932-adapter.conf /etc/systemd/system/icaif-official-v391.service.d/50-v3933-adapter.conf
+UnitFileState=static
+Type=oneshot
+Restart=no
+ExecStart={ path=/opt/icaif2026/.venv/bin/python ; argv[]=/opt/icaif2026/.venv/bin/python -B /opt/icaif2026/official_v3933_release/icaif_v39_live_writer.py --official-submit-armed ; ignore_errors=no ; start_time=[Fri 2026-10-30 19:05:06 UTC] ; stop_time=[Fri 2026-10-30 19:05:07 UTC] ; pid=506145 ; code=exited ; status=2 }
+WorkingDirectory=/opt/icaif2026/official_v391_release
+User=icaif

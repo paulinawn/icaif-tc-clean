@@ -1,0 +1,652 @@
+{
+  "symbol": "GS",
+  "first_observed_utc": "2026-10-11T17:54:51.600637Z",
+  "read_only": true,
+  "point_in_time_historical_backfill_allowed": false,
+  "SEC": {
+    "cik": "0000886982",
+    "filings": [
+      {
+        "form": "8-K",
+        "filingDate": "2026-08-11",
+        "acceptanceDateTime": "2026-08-12T00:50:15.000Z",
+        "primaryDocument": "d179572d8k.htm",
+        "accessionNumber": "0001193125-26-344912"
+      },
+      {
+        "form": "10-Q",
+        "filingDate": "2026-08-03",
+        "acceptanceDateTime": "2026-08-04T01:24:06.000Z",
+        "primaryDocument": "gs-20260630.htm",
+        "accessionNumber": "0000886982-26-000297"
+      },
+      {
+        "form": "8-K",
+        "filingDate": "2026-07-27",
+        "acceptanceDateTime": "2026-07-28T00:27:40.000Z",
+        "primaryDocument": "d113214d8k.htm",
+        "accessionNumber": "0001193125-26-318147"
+      },
+      {
+        "form": "8-K",
+        "filingDate": "2026-07-21",
+        "acceptanceDateTime": "2026-07-22T00:35:18.000Z",
+        "primaryDocument": "d102046d8k.htm",
+        "accessionNumber": "0001193125-26-310408"
+      },
+      {
+        "form": "8-K",
+        "filingDate": "2026-07-20",
+        "acceptanceDateTime": "2026-07-20T16:07:58.000Z",
+        "primaryDocument": "d279459d8k.htm",
+        "accessionNumber": "0001193125-26-308384"
+      },
+      {
+        "form": "8-K",
+        "filingDate": "2026-07-14",
+        "acceptanceDateTime": "2026-07-14T15:30:40.000Z",
+        "primaryDocument": "gs-20260714.htm",
+        "accessionNumber": "0000886982-26-000294"
+      }
+    ],
+    "companyfacts": [
+      {
+        "metric": "NetIncomeLoss",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": "2026-01-01",
+            "end": "2026-06-30",
+            "filed": "2026-08-03",
+            "form": "10-Q",
+            "accn": "0000886982-26-000297",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": 12258000000
+          },
+          {
+            "start": "2026-04-01",
+            "end": "2026-06-30",
+            "filed": "2026-08-03",
+            "form": "10-Q",
+            "accn": "0000886982-26-000297",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2026Q2",
+            "val": 6628000000
+          },
+          {
+            "start": "2025-01-01",
+            "end": "2025-06-30",
+            "filed": "2026-08-03",
+            "form": "10-Q",
+            "accn": "0000886982-26-000297",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": 8461000000
+          }
+        ]
+      },
+      {
+        "metric": "NetCashProvidedByUsedInOperatingActivities",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": "2026-01-01",
+            "end": "2026-06-30",
+            "filed": "2026-08-03",
+            "form": "10-Q",
+            "accn": "0000886982-26-000297",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": -25763000000
+          },
+          {
+            "start": "2025-01-01",
+            "end": "2025-06-30",
+            "filed": "2026-08-03",
+            "form": "10-Q",
+            "accn": "0000886982-26-000297",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": -31558000000
+          },
+          {
+            "start": "2026-01-01",
+            "end": "2026-03-31",
+            "filed": "2026-05-01",
+            "form": "10-Q",
+            "accn": "0000886982-26-000118",
+            "fy": 2026,
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "val": -31868000000
+          }
+        ]
+      },
+      {
+        "metric": "Assets",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": null,
+            "end": "2026-06-30",
+            "filed": "2026-08-03",
+            "form": "10-Q",
+            "accn": "0000886982-26-000297",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2026Q2I",
+            "val": 2127711000000
+          },
+          {
+            "start": null,
+            "end": "2026-03-31",
+            "filed": "2026-08-03",
+            "form": "10-Q",
+            "accn": "0000886982-26-000297",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2026Q1I",
+            "val": 2060180000000
+          },
+          {
+            "start": null,
+            "end": "2025-12-31",
+            "filed": "2026-08-03",
+            "form": "10-Q",
+            "accn": "0000886982-26-000297",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2025Q4I",
+            "val": 1809320000000
+          }
+        ]
+      },
+      {
+        "metric": "Liabilities",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": null,
+            "end": "2026-06-30",
+            "filed": "2026-08-03",
+            "form": "10-Q",
+            "accn": "0000886982-26-000297",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2026Q2I",
+            "val": 2004969000000
+          },
+          {
+            "start": null,
+            "end": "2026-03-31",
+            "filed": "2026-08-03",
+            "form": "10-Q",
+            "accn": "0000886982-26-000297",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2026Q1I",
+            "val": 1937398000000
+          },
+          {
+            "start": null,
+            "end": "2025-12-31",
+            "filed": "2026-08-03",
+            "form": "10-Q",
+            "accn": "0000886982-26-000297",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2025Q4I",
+            "val": 1684348000000
+          }
+        ]
+      }
+    ]
+  },
+  "FINNHUB": {
+    "news": [
+      {
+        "event_id": "e2c68329e8b2fc7a1ba6c2592271f1c8",
+        "symbol": "GS",
+        "headline": "Dow Jones Futures: Trump Claims Russia-Ukraine 'Energy Ceasefire'; ASML, Nvidia Chipmaker Taiwan Semi Earnings Loom",
+        "published_utc": "2026-10-11T15:37:54Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=1615ad8b4df6bf9cdd43a5cd983dd35b044c35f215602863c9c2aae659cabd91",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "47128126c69f2c90046afd2ac449a660",
+        "symbol": "GS",
+        "headline": "By The Way: Headlines You May Have Missed",
+        "published_utc": "2026-10-11T13:38:30Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=d2c74bb954e3a536a4dd31ce094f39f9f29f2a5dc42ace487397bb4599109674",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "29bea8b1dd28c1dcaa4d6cdea9a6efa4",
+        "symbol": "GS",
+        "headline": "Dow Jones Futures Loom; ASML, Nvidia Chipmaker Taiwan Semi To Kick Off AI Earnings",
+        "published_utc": "2026-10-11T11:53:40Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=76138a8289e5b88d1550f8a97dd7b0848e3fa561e822d860ab4dbbabfa6fa8b4",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "e9b10308a130fbb0adf8494e226df4e8",
+        "symbol": "GS",
+        "headline": "Wall Street Week Ahead",
+        "published_utc": "2026-10-11T06:57:52Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "SeekingAlpha",
+        "source_url": "https://finnhub.io/api/news?id=3d4fc2e376dab5b8cd33e165814050e7c200db7e30067e8f8149a1723ca39726",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "0413e226be09ded7117aee623fc0f848",
+        "symbol": "GS",
+        "headline": "How to Earn $500 a Month From Goldman Sachs Stock Ahead of Q3 Earnings",
+        "published_utc": "2026-10-10T21:30:21Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=a9bb1442baed8f441e1c83ab89f575a47f1206132dc02f02439bce6ea01c22aa",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "1c4939e2b785bea6a7861f6ec2336fc1",
+        "symbol": "GS",
+        "headline": "Stock Market Week Ahead: Gathering Election, Earnings Momentum",
+        "published_utc": "2026-10-10T14:06:23Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=52d496ae164b8e30604ca8969c4e7d6651bd2e60dfcf9b64032c4b9535fcf79e",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "132237239f00129d8b7b883cede29754",
+        "symbol": "GS",
+        "headline": "Banking Bellwethers Kick Off Earnings, Fed Chair's Speech In Focus",
+        "published_utc": "2026-10-10T11:00:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "SeekingAlpha",
+        "source_url": "https://finnhub.io/api/news?id=11a786498782afaccf0262d5570d06ee18a18ddd114c981cf9f7594cc7351290",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "0122c04490fff349b5ba12256b893388",
+        "symbol": "GS",
+        "headline": "Goldman Sachs (GS) Surpasses Market Returns: Some Facts Worth Knowing",
+        "published_utc": "2026-10-09T20:45:05Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=28df36eca5767f04191da648724c726974b0bb7f658afbab1f58eacfb5e47ad6",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "c61446dfc93158f0aad83612c9e26383",
+        "symbol": "GS",
+        "headline": "Dow Jones Futures: S&P 500, Nasdaq Near Highs; ASML, Nvidia's Chipmaker Taiwan Semi To Kick Off AI Earnings",
+        "published_utc": "2026-10-09T20:44:20Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=1d72605c0992870fb58e326702fcc43d866e4c10a8462e08d3bcecd7536e0013",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "a686e41c942e86023716a5d7b193e8c2",
+        "symbol": "GS",
+        "headline": "Goldman Sachs (GS) Stock May Be 17% Undervalued Following CEO Succession Talk",
+        "published_utc": "2026-10-09T19:17:14Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=60705d319b81a9309cb676c645da95f0b51695977d586799abdf3f9e094c1031",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "94272b9836425b42848a0b36d8cc9afc",
+        "symbol": "GS",
+        "headline": "Technoprobe (BIT:TPRO) Stock Gets Fair Value Bump After Positive Analyst Calls",
+        "published_utc": "2026-10-09T19:14:09Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=adad364b9f05e7a4169d24160c4524f741a9c2eb3ff5ff7aecbe55495a47759d",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "33252e5a7b6a33a34712d3fa5e187d90",
+        "symbol": "GS",
+        "headline": "Friday's session: top gainers and losers in the dow jones index",
+        "published_utc": "2026-10-09T19:10:08Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "ChartMill",
+        "source_url": "https://finnhub.io/api/news?id=e8e3b8da2da0d6ae4d9558e72857a3ca0885d2701f5b383c0d396564a0c319c7",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "5c345ac222086f22d134852b78f61956",
+        "symbol": "GS",
+        "headline": "Why Goldman Sachs Thinks You Should Buy the Palantir Stock Dip",
+        "published_utc": "2026-10-09T18:36:35Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=38bc2a044633d334a50e705895085a5192586fd67c591a7c449d68a916c0b49a",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "56e7c3bdcad67212874afa747664b324",
+        "symbol": "GS",
+        "headline": "Goldman Sachs Upgrades Palantir to Buy, Sees 18% Upside and Further Outperformance Into 2027",
+        "published_utc": "2026-10-09T17:30:36Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=71320f77b5d0f83552886bf98489d57924b52ba18f9d9e77331ebfdebeb452c2",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "295f6f197ffef86424c6c5324297f38f",
+        "symbol": "GS",
+        "headline": "How Much Growth Are You Paying For In Palantir Stock?",
+        "published_utc": "2026-10-09T17:30:02Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=6aab87c6ca422474a925eecc8e61885d388f995b6c7a7ece674f489d417fd193",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "0cfc7845d989f36a5ffddf96bd603d83",
+        "symbol": "GS",
+        "headline": "Palantir’s Rally Puts Wall Street in Catch-Up Mode Ahead of November Earnings",
+        "published_utc": "2026-10-09T16:00:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=d948e815624a82e031d47d87e045a448291c98843228a0510b56b589497f060b",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "e40ae0fd63d92fb5b231e1881f6deda0",
+        "symbol": "GS",
+        "headline": "Goldman Stock Before Q3 Earnings: Buy Now or Wait for Results?",
+        "published_utc": "2026-10-09T15:57:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=2354b4a6289dca8775039831e3ef51c3ba716ebbf4daea640eb3b4ed5acf5a4b",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "cc2190db6d55c39eb27fa6cf00844386",
+        "symbol": "GS",
+        "headline": "Treasury Yields Reach 24-Year Highs, Telecom Stocks Sell Off: This Week On Wall Street",
+        "published_utc": "2026-10-09T15:05:08Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Benzinga",
+        "source_url": "https://finnhub.io/api/news?id=a01fdbbf381abfc66fb7f10807b0c331aa0c31963ff054fd711cdf9b15ff2219",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "6ceebb57e994deb159489ed0f2849355",
+        "symbol": "GS",
+        "headline": "Palantir's Growth Story Gets a Goldman Boost: ETFs to Consider",
+        "published_utc": "2026-10-09T14:39:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=35b9fee1783540a4f1fbed3968baabfd5579e45f6e1a5cf8508603e710fefcda",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "7ccac602ac100ec01462cacc22537d0e",
+        "symbol": "GS",
+        "headline": "Volta launches $5B leveraged loan package to support data center lease, GPU capital expenditures",
+        "published_utc": "2026-10-09T14:29:10Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=81b348a205feb10d83554addceb75845d8003460ce9009259066e06cde5dad81",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "f06fe43f87a6b5917cd4e1829ac04ffc",
+        "symbol": "GS",
+        "headline": "Morgan Stanley Stock Ahead of Q3 Earnings: Buy, Hold or Sell?",
+        "published_utc": "2026-10-09T14:17:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=6021dac68782e2ce4b57895b889f187884cab67c92978a8aafc254f24b8cfa40",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "ce8abfdae66694df11889e653e8c92c2",
+        "symbol": "GS",
+        "headline": "The Biggest Change to Stock Trading in Decades Is Coming to Wall Street",
+        "published_utc": "2026-10-09T13:56:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=a50c92ef7c319b294a211c09dcbdd47e8ce4043ec6e202edf39e9dfce5745b86",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "e434cf334bfc6731d1be1a33cee00a81",
+        "symbol": "GS",
+        "headline": "Goldman Sachs’ Top Bosses Are in Line for $500 Million in Special Stock Awards",
+        "published_utc": "2026-10-09T12:05:28Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=b656e1a4246f02fa430928771c600297fea3c76f762c05aafa6f48e75abf5e93",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "b9a7d91ed466de18559ef050e58e0dd9",
+        "symbol": "GS",
+        "headline": "Goldman Set to Lead Wall Street’s $19 Billion Stock-Trading Haul",
+        "published_utc": "2026-10-09T11:15:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=782ffdb4e8d96ee6e1100c79ff1e26d7208bbcd46781644e3cbf62c6f691e4f3",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "598e2edc677c30997f6deabf458146b6",
+        "symbol": "GS",
+        "headline": "Transaction in Own Shares",
+        "published_utc": "2026-10-09T10:50:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=7ffccd2f2ad957d89859dd3e95899eb25768b25d710b995249d9c8eddd7ee2a1",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "4f1850c8289144133c5b058c8477575c",
+        "symbol": "GS",
+        "headline": "Michael Saylor Calls Elon Musk’s SpaceX Vision ‘Bullish’: Could Bitcoin Benefit?",
+        "published_utc": "2026-10-09T10:41:46Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Benzinga",
+        "source_url": "https://finnhub.io/api/news?id=5b8577abc8184bc8980daacc1e4cf5a508ab414b5596f2602ffeb64ec12ca3ff",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "990d9522cb46f34ad469bbb70e4e8cef",
+        "symbol": "GS",
+        "headline": "New Strong Buy Stocks for October 9th",
+        "published_utc": "2026-10-09T09:46:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=4b2684a06d68840cf5ae15dfe26180ab6f572c4399cdb3b0a1a4c152e7ba63ab",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "baeadd06054dd9ce244bbb3175f4e406",
+        "symbol": "GS",
+        "headline": "Market Chatter: Goldman Sachs Hired by Cinven to Revive $2 Billion JLA Sale",
+        "published_utc": "2026-10-09T09:45:51Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=eff90db16acdea1b118c287c725da2092051292db2689eb13a8cd4bb050a560f",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "637bd6d757910b7be0788b903864226d",
+        "symbol": "GS",
+        "headline": "Goldman Says Investors to Shift Focus to AI Monetization",
+        "published_utc": "2026-10-09T09:43:34Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=350a892755d3e2a9bef133e2ef576654774382f6ea621c659a612196fc9503e7",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "883e3d22ee6ef5abeea871390033ad92",
+        "symbol": "GS",
+        "headline": "Best Value Stocks to Buy for October 9th",
+        "published_utc": "2026-10-09T08:08:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=e484bb2648905b642dba8688ba052e09cf4dfd263444d1a16663edd5457fbc09",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "9801cff656b48c4d3dca26162abc94e2",
+        "symbol": "GS",
+        "headline": "Best Income Stocks to Buy for October 9th",
+        "published_utc": "2026-10-09T06:40:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=6bbdedf0bfcdd9afba43cb986a9c4dfd56787d25d9e4708ad172840829b85d1d",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "11c5b5939a770df5f25f31e99d9f9edc",
+        "symbol": "GS",
+        "headline": "Wall Street Is Headed to the Blockchain. Inside the Token Revolution.",
+        "published_utc": "2026-10-09T05:00:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=264c90519181cca9ed034716f8c83ac253beec8cfea5f9678d2f5b035da34790",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "5fd0925397821bc53a5c0cb5fe18cdba",
+        "symbol": "GS",
+        "headline": "The Age of Tokenized Trading Is Dawning. How Companies and Customers Could Win.",
+        "published_utc": "2026-10-09T05:00:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=3b5de6494aff26235be8dbb44dbe06b365e9969b5fd291c462935379d6af24bc",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "e13a5b78f3c1ecab5c4e28d58a4575c8",
+        "symbol": "GS",
+        "headline": "Palantir’s Poised to Win in the Sovereign AI Era, Goldman Says",
+        "published_utc": "2026-10-09T04:01:00Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=dea14f428d225a551448a9fa85614f6c5839de06ecd8229cd36c280fdcfbc0aa",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "62c0d877d9a3f441581384a4345be4fb",
+        "symbol": "GS",
+        "headline": "PEP Stock Looks To Snap 6-Week Losing Streak: Goldman Sachs Trims Price Target But Sees ‘Decade Of Growth’ For PepsiCo",
+        "published_utc": "2026-10-09T02:02:01Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=90cec8579e326ba16cbe6c0ef3a05253806f320f63450f144498fd01802f66b7",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "0efe9a8ea2e6e23f30345066ae0891a4",
+        "symbol": "GS",
+        "headline": "SEB (OM:SEB A) Stock Gets Fair Value Bump After Higher Analyst Price Targets",
+        "published_utc": "2026-10-09T01:16:37Z",
+        "first_observed_utc": "2026-10-11T17:54:54.538771Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=5b19aef9338842919ca51ec26c2a80b67c74647784ac8239ce46e8da0cdfb0aa",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      }
+    ]
+  },
+  "source_status": {
+    "sec_filings": "OK",
+    "sec_companyfacts": "OK",
+    "finnhub": "OK_36"
+  }
+}

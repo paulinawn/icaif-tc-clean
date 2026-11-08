@@ -1,0 +1,823 @@
+{
+  "symbol": "JPM",
+  "first_observed_utc": "2026-10-11T17:54:47.317235Z",
+  "read_only": true,
+  "point_in_time_historical_backfill_allowed": false,
+  "SEC": {
+    "cik": "0000019617",
+    "filings": [
+      {
+        "form": "10-Q",
+        "filingDate": "2026-08-06",
+        "acceptanceDateTime": "2026-08-07T00:19:03.000Z",
+        "primaryDocument": "jpm-20260630.htm",
+        "accessionNumber": "0001628280-26-054343"
+      },
+      {
+        "form": "8-K",
+        "filingDate": "2026-07-23",
+        "acceptanceDateTime": "2026-07-24T00:15:21.000Z",
+        "primaryDocument": "d103985d8k.htm",
+        "accessionNumber": "0001193125-26-314128"
+      },
+      {
+        "form": "8-K",
+        "filingDate": "2026-07-23",
+        "acceptanceDateTime": "2026-07-24T00:15:21.000Z",
+        "primaryDocument": "jpm-20260721.htm",
+        "accessionNumber": "0000019617-26-000288"
+      },
+      {
+        "form": "8-K",
+        "filingDate": "2026-07-14",
+        "acceptanceDateTime": "2026-07-14T17:52:21.000Z",
+        "primaryDocument": "jpm-20260714.htm",
+        "accessionNumber": "0001628280-26-048086"
+      },
+      {
+        "form": "8-K",
+        "filingDate": "2026-07-14",
+        "acceptanceDateTime": "2026-07-14T14:30:38.000Z",
+        "primaryDocument": "jpm-20260714.htm",
+        "accessionNumber": "0001628280-26-048078"
+      },
+      {
+        "form": "8-K",
+        "filingDate": "2026-06-25",
+        "acceptanceDateTime": "2026-06-25T15:59:33.000Z",
+        "primaryDocument": "jpm-20260624.htm",
+        "accessionNumber": "0000019617-26-000241"
+      }
+    ],
+    "companyfacts": [
+      {
+        "metric": "Revenues",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "filed": "2026-02-13",
+            "form": "10-K",
+            "accn": "0001628280-26-008131",
+            "fy": 2025,
+            "fp": "FY",
+            "frame": "CY2025",
+            "val": 182447000000
+          },
+          {
+            "start": "2024-01-01",
+            "end": "2024-12-31",
+            "filed": "2026-02-13",
+            "form": "10-K",
+            "accn": "0001628280-26-008131",
+            "fy": 2025,
+            "fp": "FY",
+            "frame": "CY2024",
+            "val": 177556000000
+          },
+          {
+            "start": "2023-01-01",
+            "end": "2023-12-31",
+            "filed": "2026-02-13",
+            "form": "10-K",
+            "accn": "0001628280-26-008131",
+            "fy": 2025,
+            "fp": "FY",
+            "frame": "CY2023",
+            "val": 158104000000
+          }
+        ]
+      },
+      {
+        "metric": "NetIncomeLoss",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": "2026-01-01",
+            "end": "2026-06-30",
+            "filed": "2026-08-06",
+            "form": "10-Q",
+            "accn": "0001628280-26-054343",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": 37649000000
+          },
+          {
+            "start": "2026-04-01",
+            "end": "2026-06-30",
+            "filed": "2026-08-06",
+            "form": "10-Q",
+            "accn": "0001628280-26-054343",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2026Q2",
+            "val": 21155000000
+          },
+          {
+            "start": "2025-01-01",
+            "end": "2025-06-30",
+            "filed": "2026-08-06",
+            "form": "10-Q",
+            "accn": "0001628280-26-054343",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": 29630000000
+          }
+        ]
+      },
+      {
+        "metric": "NetCashProvidedByUsedInOperatingActivities",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": "2026-01-01",
+            "end": "2026-06-30",
+            "filed": "2026-08-06",
+            "form": "10-Q",
+            "accn": "0001628280-26-054343",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": -237044000000
+          },
+          {
+            "start": "2025-01-01",
+            "end": "2025-06-30",
+            "filed": "2026-08-06",
+            "form": "10-Q",
+            "accn": "0001628280-26-054343",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": -222292000000
+          },
+          {
+            "start": "2026-01-01",
+            "end": "2026-03-31",
+            "filed": "2026-05-01",
+            "form": "10-Q",
+            "accn": "0001628280-26-029344",
+            "fy": 2026,
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "val": -211761000000
+          }
+        ]
+      },
+      {
+        "metric": "Assets",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": null,
+            "end": "2026-06-30",
+            "filed": "2026-08-06",
+            "form": "10-Q",
+            "accn": "0001628280-26-054343",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2026Q2I",
+            "val": 5015069000000
+          },
+          {
+            "start": null,
+            "end": "2025-12-31",
+            "filed": "2026-08-06",
+            "form": "10-Q",
+            "accn": "0001628280-26-054343",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2025Q4I",
+            "val": 4424900000000
+          },
+          {
+            "start": null,
+            "end": "2025-06-30",
+            "filed": "2026-08-06",
+            "form": "10-Q",
+            "accn": "0001628280-26-054343",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2025Q2I",
+            "val": 4552482000000
+          }
+        ]
+      },
+      {
+        "metric": "Liabilities",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": null,
+            "end": "2026-06-30",
+            "filed": "2026-08-06",
+            "form": "10-Q",
+            "accn": "0001628280-26-054343",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2026Q2I",
+            "val": 4640471000000
+          },
+          {
+            "start": null,
+            "end": "2025-12-31",
+            "filed": "2026-08-06",
+            "form": "10-Q",
+            "accn": "0001628280-26-054343",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2025Q4I",
+            "val": 4062462000000
+          },
+          {
+            "start": null,
+            "end": "2026-03-31",
+            "filed": "2026-05-01",
+            "form": "10-Q",
+            "accn": "0001628280-26-029344",
+            "fy": 2026,
+            "fp": "Q1",
+            "frame": "CY2026Q1I",
+            "val": 4536437000000
+          }
+        ]
+      }
+    ]
+  },
+  "FINNHUB": {
+    "news": [
+      {
+        "event_id": "f16530d6811508677b4cb0681096f5ad",
+        "symbol": "JPM",
+        "headline": "Dow Jones Futures: Trump Claims Russia-Ukraine 'Energy Ceasefire'; ASML, Nvidia Chipmaker Taiwan Semi Earnings Loom",
+        "published_utc": "2026-10-11T15:37:54Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=1615ad8b4df6bf9cdd43a5cd983dd35b044c35f215602863c9c2aae659cabd91",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "1a22717e71a6eef90a03e476f1d200e7",
+        "symbol": "JPM",
+        "headline": "3 Big Bank Stocks Facing A Q3 Test As Treasury Yields Rise",
+        "published_utc": "2026-10-11T15:10:46Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=e960c03e188affb24135bd385027dbcbe73132f1f96c5f44a06642b829ba188a",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "e39940d564bf884a9c2d2425a89a2957",
+        "symbol": "JPM",
+        "headline": "Wall Street Brunch: Start Your Earnings Engines",
+        "published_utc": "2026-10-11T13:29:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "SeekingAlpha",
+        "source_url": "https://finnhub.io/api/news?id=0e1f88e32d684ef29a5ec2cd4b8e528f14b92837c8da37909f2d611a40cee4d4",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "e306a7b767c93435a40c9388c16d0715",
+        "symbol": "JPM",
+        "headline": "In 2000, A 62-Year-Old Texas Man Retired After Working 33 Years With $1.3 Million In Company Stock. Twenty Months Later, He Said It Was Worth About $8,000. The Unlucky Story Of Charles Prestwood Holds An Important Lesson For Every Investor",
+        "published_utc": "2026-10-11T12:18:02Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=55b9072bf8d98e2520548e235723beb920028f2ee30844099769babe2fa9d2fe",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "08f6077f72694c6bd283c58ebfe49c9e",
+        "symbol": "JPM",
+        "headline": "Dow Jones Futures Loom; ASML, Nvidia Chipmaker Taiwan Semi To Kick Off AI Earnings",
+        "published_utc": "2026-10-11T11:53:40Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=76138a8289e5b88d1550f8a97dd7b0848e3fa561e822d860ab4dbbabfa6fa8b4",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "cd9a0cab6fcecf3205dbf5d4100de2ba",
+        "symbol": "JPM",
+        "headline": "Wall Street Week Ahead",
+        "published_utc": "2026-10-11T06:57:52Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "SeekingAlpha",
+        "source_url": "https://finnhub.io/api/news?id=3d4fc2e376dab5b8cd33e165814050e7c200db7e30067e8f8149a1723ca39726",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "48adb483065f17dceb7b09f6a8e3311f",
+        "symbol": "JPM",
+        "headline": "Fed Official: “Rates Ought to Be Going up Further.” Cue the Trump Fireworks",
+        "published_utc": "2026-10-10T15:16:14Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=637ffb27b47b1b9046e666348e75a4db0dbef2b0ade727236b91aa0325d17efd",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "4da58c96ae5b72596c6d941f12140d9e",
+        "symbol": "JPM",
+        "headline": "Stock Market Week Ahead: Gathering Election, Earnings Momentum",
+        "published_utc": "2026-10-10T14:06:23Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=52d496ae164b8e30604ca8969c4e7d6651bd2e60dfcf9b64032c4b9535fcf79e",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "908cae5ec50e23e3e9b2deeaf28a678e",
+        "symbol": "JPM",
+        "headline": "How Much More Dividend Income a Roth IRA Keeps on a Half-Million-Dollar Portfolio",
+        "published_utc": "2026-10-10T14:00:39Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=97371cf754bec6351a4b79af870a8da732ba9eb407fd85cb89a34a39d5305481",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "411eb10b85423795e92dd0a2fa2a7f4b",
+        "symbol": "JPM",
+        "headline": "Jamie Dimon warns the next credit crisis could be severe — take these steps to protect your wallet now",
+        "published_utc": "2026-10-10T12:35:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=09a26bc90cf0ea2867507a1a5bdaaeceeec2e54d5b5a6f4deaed45fb3f064863",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "8cd56f2e0bee9f36075c148bc99686a0",
+        "symbol": "JPM",
+        "headline": "Banking Bellwethers Kick Off Earnings, Fed Chair's Speech In Focus",
+        "published_utc": "2026-10-10T11:00:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "SeekingAlpha",
+        "source_url": "https://finnhub.io/api/news?id=11a786498782afaccf0262d5570d06ee18a18ddd114c981cf9f7594cc7351290",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "3479a11f9593b512eac1a152d41299e6",
+        "symbol": "JPM",
+        "headline": "Jamie Dimon Revealed 1 of the Biggest Risks to JPMorgan Chase, and This Stock Could Benefit",
+        "published_utc": "2026-10-10T10:47:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=8e07a7237b14efe8692af58a7ebb99b686a5f417f8a8cbfc5364d4f5d4e54eb3",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "b27a5704a7d7e8e9153f748ec021f844",
+        "symbol": "JPM",
+        "headline": "Visible Alpha Breakdown Of U.S. Banks' Q3 2026 Earnings Expectations",
+        "published_utc": "2026-10-10T01:15:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "SeekingAlpha",
+        "source_url": "https://finnhub.io/api/news?id=e0a1bf7e6e65ee6abe78b73033df69d4da08fb13b65265f5f19838dc282f2505",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "bb077ecc3b20523d38d015d19551eab3",
+        "symbol": "JPM",
+        "headline": "Anthropic AI Model Submits Fake Homicide Tip to Philadelphia Police: 'Delay In Detecting and Reporting' Is Unacceptable, Says Department",
+        "published_utc": "2026-10-09T23:57:18Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Benzinga",
+        "source_url": "https://finnhub.io/api/news?id=3960c58a285a83f3d62edfb5d155e2811e06d84bdfe41326fc3f51130bdbb552",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "709a184ef1156c819e8cbd6202a9051e",
+        "symbol": "JPM",
+        "headline": "Estimates Keep Rising as Q3 Earnings Season Takes Center Stage",
+        "published_utc": "2026-10-09T22:37:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=73b59c6d79519f821571c067bc86a653580406c019b010d3e65a46f0a8aaa077",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "9b1d9300f06da4012a24c8574915fa86",
+        "symbol": "JPM",
+        "headline": "OPmobility (ENXTPA:OPM) Stock Fair Value Falls After Analysts Cut Targets",
+        "published_utc": "2026-10-09T22:12:11Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=6cfe98aaf7d504774f42b260370d81c1177f0bf9d2b94c3bbde109612a36b5da",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "5326d589cf6133d4c8f25c299a1bd3fc",
+        "symbol": "JPM",
+        "headline": "JPMorganChase to Present at the BancAnalysts Association of Boston Conference",
+        "published_utc": "2026-10-09T20:50:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=0973413301dd378d7d86a93f4ab0cbf8c0a421786e2a12a026401b2ec3b83ab8",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "f212436ad7c86c967b32cd863ad1599f",
+        "symbol": "JPM",
+        "headline": "Dow Jones Futures: S&P 500, Nasdaq Near Highs; ASML, Nvidia's Chipmaker Taiwan Semi To Kick Off AI Earnings",
+        "published_utc": "2026-10-09T20:44:20Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=1d72605c0992870fb58e326702fcc43d866e4c10a8462e08d3bcecd7536e0013",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "3a3ff13f09945bbbfb8abc048d6b4d78",
+        "symbol": "JPM",
+        "headline": "Top Research Reports for JPMorgan, ASML & Chevron",
+        "published_utc": "2026-10-09T19:39:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=181708a4069b6b1d934b21ddf54a53c5069c5b84640b68e4f23345e8d83044b8",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "b93c0a457f2963694fb0f6d78739bb28",
+        "symbol": "JPM",
+        "headline": "Technoprobe (BIT:TPRO) Stock Gets Fair Value Bump After Positive Analyst Calls",
+        "published_utc": "2026-10-09T19:14:09Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=adad364b9f05e7a4169d24160c4524f741a9c2eb3ff5ff7aecbe55495a47759d",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "1d56f8e9fdaba150ccbead8479fe80b6",
+        "symbol": "JPM",
+        "headline": "Stock Market Today: Dow Pops 500 Points As Big Bank Earnings Loom; JPMorgan Chase In A Base (Live Coverage)",
+        "published_utc": "2026-10-09T18:57:48Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=8df387dc5becb03b94ef0f8c61c8b9d02a89c480c1329752e1e7b3d92c7fb395",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "27a9ee9694b0ee446ec9bdcb9d3fb3c3",
+        "symbol": "JPM",
+        "headline": "Retirees Who Picked VIG Over VYM in 2022 Are Still $10,000 Behind on Every $100,000",
+        "published_utc": "2026-10-09T17:24:31Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=1b848e55def758de63b87e20c7b25878a553925e53b6518355c042797853a540",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "0646c14d3ae12caa4221783f4dc47063",
+        "symbol": "JPM",
+        "headline": "JPMorgan estimates crypto inflows of $50B in 2026",
+        "published_utc": "2026-10-09T16:00:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=0da5530866a81402204ce7e17668b34deb47fc70c82848ff56f082f5944356a1",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "2d42de153aea8fb7046560b6dfb28f54",
+        "symbol": "JPM",
+        "headline": "As borrowing costs spike, Jamie Dimon asks corporate America: 'Are you prepared?' You should ask yourself the same thing",
+        "published_utc": "2026-10-09T16:00:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=e4f964f61b4a047b2e386c79ef264ee5fd929b32c59b4d7eebd5052298027acb",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "cb00f24dbf0f6e366588ca518d8abd74",
+        "symbol": "JPM",
+        "headline": "Goldman Stock Before Q3 Earnings: Buy Now or Wait for Results?",
+        "published_utc": "2026-10-09T15:57:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=2354b4a6289dca8775039831e3ef51c3ba716ebbf4daea640eb3b4ed5acf5a4b",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "f25839db99e5a5e28e6caf0943ff9a4f",
+        "symbol": "JPM",
+        "headline": "Grenergy obtains $457m in financing for Chile solar and storage projects",
+        "published_utc": "2026-10-09T15:36:08Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=b04584895f66633d2fd8aa63cd8c9284bb7c903830c20635d4efbaa85e25d2a2",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "05b4bce4e0f8a2279b955a1f588fadec",
+        "symbol": "JPM",
+        "headline": "Treasury Yields Reach 24-Year Highs, Telecom Stocks Sell Off: This Week On Wall Street",
+        "published_utc": "2026-10-09T15:05:08Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Benzinga",
+        "source_url": "https://finnhub.io/api/news?id=a01fdbbf381abfc66fb7f10807b0c331aa0c31963ff054fd711cdf9b15ff2219",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "95e9c3b2b78b9083363c3725b91b149a",
+        "symbol": "JPM",
+        "headline": "Big Banks’ Earnings Will Have to Convince ‘Glass Half Empty’ Investors",
+        "published_utc": "2026-10-09T14:33:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=a0d2fb67d507111e46b75ea3268f185aa97713ed42e4b6174fd8762d126f7106",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "449c7e29b3a3ab1393446c93e9aad9c1",
+        "symbol": "JPM",
+        "headline": "Volta launches $5B leveraged loan package to support data center lease, GPU capital expenditures",
+        "published_utc": "2026-10-09T14:29:10Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=81b348a205feb10d83554addceb75845d8003460ce9009259066e06cde5dad81",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "10cd06df842e9018e42cb9a9392e3116",
+        "symbol": "JPM",
+        "headline": "Morgan Stanley Stock Ahead of Q3 Earnings: Buy, Hold or Sell?",
+        "published_utc": "2026-10-09T14:17:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=6021dac68782e2ce4b57895b889f187884cab67c92978a8aafc254f24b8cfa40",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "14041e72e798e862316ef49ee0bfddab",
+        "symbol": "JPM",
+        "headline": "Should BAC Shares Be Added to Your Portfolio Ahead of Q3 Earnings?",
+        "published_utc": "2026-10-09T14:08:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=0ef9429b49c3aef23c2d1ad7c8552066ac0d1709320e04ae848662734c6c1fef",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "6b42b23cf709add373f10b2f168ec2ed",
+        "symbol": "JPM",
+        "headline": "The Biggest Change to Stock Trading in Decades Is Coming to Wall Street",
+        "published_utc": "2026-10-09T13:56:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=a50c92ef7c319b294a211c09dcbdd47e8ce4043ec6e202edf39e9dfce5745b86",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "a8d706c2b7c6c8761271d538e1691f82",
+        "symbol": "JPM",
+        "headline": "JPMorgan Chase Is Bullish On Crypto Heading Into Year’s End",
+        "published_utc": "2026-10-09T13:34:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=c27e3ce8b7639718277130833c2f465a474acfac605f64724846080b409c0f27",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "54730bc39714719f5a8fbfc688c9b95a",
+        "symbol": "JPM",
+        "headline": "Pre-Markets Back Up as Oil & Bond Levels Moderate",
+        "published_utc": "2026-10-09T13:27:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=6cb24c41285b2d59db4a3333327438f84ca847f439f09ab5842798a6525390f1",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "3a91b92b406b82bcb297dafea6403d23",
+        "symbol": "JPM",
+        "headline": "JPMorgan Chase (JPM) Is Building A Reserve Hub For Future US Stablecoins",
+        "published_utc": "2026-10-09T13:08:20Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=2754d875a795d13ba97cf9f54f618a2d2ed6f155d27268456704c840dc9364c5",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "4ca932ce9ec416b625b04ecc5428742f",
+        "symbol": "JPM",
+        "headline": "JPM vs. C: Which Bank Dividend Actually Survives the Next Crisis?",
+        "published_utc": "2026-10-09T13:00:52Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=994782ff1b18cf996e800464dfd6100bf5711e7406526c99e0306986cdb524a2",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "b6fe143999464c4ddeb00950a84fdd3b",
+        "symbol": "JPM",
+        "headline": "Earnings Calendar Full Of Banks, But Watch These Three Reports",
+        "published_utc": "2026-10-09T13:00:26Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=dafd51bf416d5079721b819ede9870957a05a33c1c97713a23fdde9632a4ce34",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "4a46cf03fe804b248f1e3c775723ce7f",
+        "symbol": "JPM",
+        "headline": "J.P. Morgan names best positioned European telcos as agentic AI threat emerges",
+        "published_utc": "2026-10-09T12:57:01Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=9cfdb144e1adeb2fe49f5a6f30b929604c31fd8176f3774b24ecdd0d7d7149e0",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "61c6c92e4553fa846b6cfd23c1143a27",
+        "symbol": "JPM",
+        "headline": "Here's What $10,000 Invested in JPMorgan Chase When Jamie Dimon Became CEO Is Worth Now",
+        "published_utc": "2026-10-09T12:23:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=9c3abed8db4051aa5026222bd23f7bbb9567a8a8f6c1ce3e6001352417fff17f",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "48dc79af3e04f02512ccd4ab009aa789",
+        "symbol": "JPM",
+        "headline": "America’s Biggest Retailer Is About to Pass America’s Biggest Bank",
+        "published_utc": "2026-10-09T11:45:27Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=c1c3e74d24c4d113e33fecfba91d7ced065e2c17118a1e876f0d38cb24ae5edf",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "db64dc7f746802ed46ad0f1965410e01",
+        "symbol": "JPM",
+        "headline": "JPMorgan, Citigroup, And Bank Of America Earnings Previews: Eventually A Return To More Normal Growth",
+        "published_utc": "2026-10-09T11:05:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "SeekingAlpha",
+        "source_url": "https://finnhub.io/api/news?id=f29a320bad10d712fb028f64981764078ac9aec07927edcd87f839e828c39a06",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "b3cde831ac003ca83173092f9ad30a61",
+        "symbol": "JPM",
+        "headline": "‘I Prepaid It With the $395 Annual Fee’: Clark Howard on the Catch Behind Your Free Airport Lounge Lunch",
+        "published_utc": "2026-10-09T09:32:47Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=0b129674ef07a5c79180b1436077a4bb34e0de2ebb2b207fbab2b6a6fa677e17",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "9f8473bd372512bc07a36a2b7aaec1f4",
+        "symbol": "JPM",
+        "headline": "Is JPMorgan Diversified Return Emerging Markets Equity ETF (JPEM) a Strong ETF Right Now?",
+        "published_utc": "2026-10-09T09:20:02Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=e57244551ac67970548ea2a4548b936351e3cf9a8696b9967760cd165fd6a798",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "b5467740aa179d66e3012692538b39d5",
+        "symbol": "JPM",
+        "headline": "Why JPMorgan Is the Most AI-Advanced Bank",
+        "published_utc": "2026-10-09T08:42:11Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=48601985116e0e285997d78522cb28835a0b81cfcd0c724c555945a331cb83b4",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "a4c3bf4109c239f41d3647b9268120fd",
+        "symbol": "JPM",
+        "headline": "JPMorgan: Earnings Tell Half The Story",
+        "published_utc": "2026-10-09T07:30:03Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "SeekingAlpha",
+        "source_url": "https://finnhub.io/api/news?id=33312ac14a16340e233deba67b7e4c27b4408a5823abc5f6367577e5f2890240",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "7db4aba32b6674c64a53665a0dbdde4e",
+        "symbol": "JPM",
+        "headline": "Wall Street Is Headed to the Blockchain. Inside the Token Revolution.",
+        "published_utc": "2026-10-09T05:00:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=264c90519181cca9ed034716f8c83ac253beec8cfea5f9678d2f5b035da34790",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "4ff3b5c42e20ebba6ceb02f21d0eae9b",
+        "symbol": "JPM",
+        "headline": "The Age of Tokenized Trading Is Dawning. How Companies and Customers Could Win.",
+        "published_utc": "2026-10-09T05:00:00Z",
+        "first_observed_utc": "2026-10-11T17:54:50.592017Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=3b5de6494aff26235be8dbb44dbe06b365e9969b5fd291c462935379d6af24bc",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      }
+    ]
+  },
+  "source_status": {
+    "sec_filings": "OK",
+    "sec_companyfacts": "OK",
+    "finnhub": "OK_47"
+  }
+}

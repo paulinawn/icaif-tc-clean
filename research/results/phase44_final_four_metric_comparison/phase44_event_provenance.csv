@@ -1,0 +1,3 @@
+symbol,accession,true_sec_acceptance_et,hypothetical_available_et,first_eligible_round,counted_in_primary,reason,retrospective_actual_inference_utc,analyst_expectations_known,source_hash
+GS,0000886982-26-000294,2026-07-14T07:30:40-04:00,2026-07-14T08:30:40-04:00,1,1,FIRST_DISCLOSURE_CANDIDATE,2026-10-11T18:25:45.347741Z,False,82d9a43d393da89ee48a5aa71b7c346ff600f7f65d78e4f756a970d7b51ea47c
+JPM,0001628280-26-048086,2026-07-14T09:52:21-04:00,2026-07-14T10:52:21-04:00,3,0,REPEATED_PRESENTATION_AFTER_EARLIER_06:30_ET_EARNINGS_RELEASE,2026-10-11T18:25:45.347741Z,False,0a7eda29d0e4c400adf14c96333bdac1a07dbd188d7134c72f5409a4dc30be57

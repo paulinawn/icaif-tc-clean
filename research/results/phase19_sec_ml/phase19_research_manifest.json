@@ -1,0 +1,52 @@
+{
+  "mode": "RESEARCH_ONLY_NO_TRADING",
+  "sec_asof_lag_days": 2,
+  "signal_type": "5day_stock_return",
+  "fee_rate": 0.001,
+  "test_years": [
+    2023,
+    2024,
+    2025
+  ],
+  "fresh_holdout_tested": false,
+  "fundamental_source": "SEC companyfacts historical filed-date events as currently retrieved",
+  "not_live_ready": [
+    "Historical CompanyFacts point-in-time reconstruction needs audit",
+    "No historical Finnhub news labels or verified contemporaneous news feed",
+    "Hourly bar execution prices are proxies, not competition prices",
+    "No integrated Official watch scheduling and current-price inference yet",
+    "2025 already viewed in earlier research and not independent"
+  ],
+  "sec_coverage_days": {
+    "AAPL": 1240,
+    "MSFT": 1240,
+    "NVDA": 1240,
+    "INTC": 1240,
+    "CRM": 1240,
+    "JPM": 1240,
+    "BAC": 1240,
+    "GS": 0,
+    "V": 1240,
+    "PYPL": 1240,
+    "LLY": 1240,
+    "JNJ": 1240,
+    "UNH": 1240,
+    "PFE": 1240,
+    "TMO": 1240,
+    "AMZN": 1240,
+    "TSLA": 1240,
+    "WMT": 1240,
+    "NKE": 1240,
+    "KO": 1240,
+    "CAT": 1240,
+    "GE": 1240,
+    "BA": 1240,
+    "XOM": 0,
+    "CVX": 1240,
+    "GOOGL": 1240,
+    "META": 1240,
+    "DIS": 1240,
+    "T": 1240,
+    "NEE": 0
+  }
+}

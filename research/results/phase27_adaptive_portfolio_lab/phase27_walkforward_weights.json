@@ -1,0 +1,125 @@
+{
+  "2023": {
+    "test_year": 2023,
+    "last_possible_matured_label_index": 490,
+    "last_training_day": "2022-12-30",
+    "raw_train_IC": {
+      "mom20": 0.025856193769667225,
+      "mom60": 0.010923169191356342,
+      "mom120": 0.02482846361469851,
+      "rev5": -0.007156436078674607,
+      "lowvol60": 0.028636821384798984
+    },
+    "signal_weights": {
+      "mom20": 0.2605585488757726,
+      "mom60": 0.14472766647939495,
+      "mom120": 0.2525867619084965,
+      "rev5": 0.06,
+      "lowvol60": 0.28212702273633583
+    },
+    "counts": {
+      "mom20": {
+        "one_day": 366,
+        "five_day": 74
+      },
+      "mom60": {
+        "one_day": 366,
+        "five_day": 74
+      },
+      "mom120": {
+        "one_day": 366,
+        "five_day": 74
+      },
+      "rev5": {
+        "one_day": 366,
+        "five_day": 74
+      },
+      "lowvol60": {
+        "one_day": 366,
+        "five_day": 74
+      }
+    }
+  },
+  "2024": {
+    "test_year": 2024,
+    "last_possible_matured_label_index": 738,
+    "last_training_day": "2023-12-29",
+    "raw_train_IC": {
+      "mom20": 0.022470776404687365,
+      "mom60": 0.011267440394937812,
+      "mom120": 0.026684165343081066,
+      "rev5": -0.014953003606108944,
+      "lowvol60": -0.019785609327852022
+    },
+    "signal_weights": {
+      "mom20": 0.3203264374140521,
+      "mom60": 0.19053454691389646,
+      "mom120": 0.36913901567205143,
+      "rev5": 0.06,
+      "lowvol60": 0.06
+    },
+    "counts": {
+      "mom20": {
+        "one_day": 614,
+        "five_day": 123
+      },
+      "mom60": {
+        "one_day": 614,
+        "five_day": 123
+      },
+      "mom120": {
+        "one_day": 614,
+        "five_day": 123
+      },
+      "rev5": {
+        "one_day": 614,
+        "five_day": 123
+      },
+      "lowvol60": {
+        "one_day": 614,
+        "five_day": 123
+      }
+    }
+  },
+  "2025": {
+    "test_year": 2025,
+    "last_possible_matured_label_index": 987,
+    "last_training_day": "2024-12-31",
+    "raw_train_IC": {
+      "mom20": 0.01846002765480183,
+      "mom60": 0.01851524898414337,
+      "mom120": 0.024843815168765195,
+      "rev5": -0.007715553440595846,
+      "lowvol60": -0.014266707964053906
+    },
+    "signal_weights": {
+      "mom20": 0.2690295890880361,
+      "mom60": 0.2696548802304442,
+      "mom120": 0.34131553068151965,
+      "rev5": 0.06,
+      "lowvol60": 0.06
+    },
+    "counts": {
+      "mom20": {
+        "one_day": 863,
+        "five_day": 173
+      },
+      "mom60": {
+        "one_day": 863,
+        "five_day": 173
+      },
+      "mom120": {
+        "one_day": 863,
+        "five_day": 173
+      },
+      "rev5": {
+        "one_day": 863,
+        "five_day": 173
+      },
+      "lowvol60": {
+        "one_day": 863,
+        "five_day": 173
+      }
+    }
+  }
+}

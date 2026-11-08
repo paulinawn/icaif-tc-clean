@@ -26,3 +26,6 @@ native_checkpoint.json
 # Licensed market data: Alpaca does not allow redistribution
 ICAIF2026_ALPACA_DATA_RESTRICTED_PRIVATE.zip
 alpaca_iex_raw_15m.csv
+
+# Research history: not needed to run the tests
+research/

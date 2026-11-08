@@ -1,0 +1,116 @@
+{
+  "model": "gemini-2.5-flash",
+  "actual_inferred_at_utc": "2026-10-11T18:09:41.056547Z",
+  "RESEARCH_ONLY_RETROSPECTIVE_NOT_A_REAL_HISTORICAL_MODEL_CALL": true,
+  "provider_usage": {
+    "prompt_tokens": 2541,
+    "completion_tokens": 396,
+    "total_tokens": 2937,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "text_tokens": 2541,
+      "audio_tokens": 0,
+      "image_tokens": 0
+    },
+    "completion_tokens_details": {
+      "text_tokens": 396,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "source_packet_sha256": "4ac03b6631f5f38f559591727ce0f73984670c6a07152de7253d883569c0cfa3",
+  "events": [
+    {
+      "event_id": "8db81acc7e809f80128a57d2",
+      "symbol": "JPM",
+      "published_utc": "2026-07-14T18:52:21Z",
+      "modeled_available_utc": "2026-07-14T18:52:21Z",
+      "headline": "JPM SEC 8-K accepted 2026-07-14",
+      "summary": "jpm-20260714 false 0000019617 0000019617 2026-07-14 2026-07-14 0000019617 us-gaap:CommonStockMember 2026-07-14 2026-07-14 0000019617 jpm:DepositarySharesOneFourHundredthInterestinaShareof5.75NonCumulativePreferredStockSeriesDDMember 2026-07-14 2026-07-14 0000019617 jpm:DepositarySharesOneFourHundredthInterestinaShareof6.00NonCumulativePreferredStockSeriesEEMember 2026-07-14 2026-07-14 0000019617 jpm:DepositarySharesOneFourHundredthInterestinaShareof4.75NonCumulativePreferredStockSeriesGGMember 2026-07-14 2026-07-14 0000019617 jpm:DepositarySharesOneFourHundredthInterestInAShareOf455NonCumulativePreferredStockSeriesJJMember 2026-07-14 2026-07-14 0000019617 jpm:DepositarySharesOneFourHundredthInterestInAShareOf4625NonCumulativePreferredStockSeriesLLMember 2026-07-14 2026-07-14 0000019617 jpm:DepositarySharesOneFourHundredthInterestInAShareOf420NonCumulativePreferredStockSeriesMMMember 2026-07-14 2026-07-14 0000019617 jpm:GuaranteeOfCallableFixedRateNotesDueJune102032OfJPMorganChaseFinancialCompanyLLCMember 2026-07-14 2026-07-14 0000019617 jpm:GuaranteeOfAlerianMLPIndexETNsDueJanuary282044OfJPMorganChaseFinancialCompanyLLCDomain 2026-07-14 2026-07-14 0000019617 jpm:GuaranteeOfInverseV",
+      "publisher": "SEC EDGAR",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026048086/jpm-20260714.htm",
+      "evidence_text": "JPM SEC 8-K accepted 2026-07-14\njpm-20260714 false 0000019617 0000019617 2026-07-14 2026-07-14 0000019617 us-gaap:CommonStockMember 2026-07-14 2026-07-14 0000019617 jpm:DepositarySharesOneFourHundredthInterestinaShareof5.75NonCumulativePreferredStockSeriesDDMember 2026-07-14 2026-07-14 0000019617 jpm:DepositarySharesOneFourHundredthInterestinaShareof6.00NonCumulativePreferredStockSeriesEEMember 2026-07-14 2026-07-14 0000019617 jpm:DepositarySharesOneFourHundredthInterestinaShareof4.75NonCumulativePreferredStockSeriesGGMember 2026-07-14 2026-07-14 0000019617 jpm:DepositarySharesOneFourHundredthInterestInAShareOf455NonCumulativePreferredStockSeriesJJMember 2026-07-14 2026-07-14 0000019617 jpm:DepositarySharesOneFourHundredthInterestInAShareOf4625NonCumulativePreferredStockSeriesLLMember 2026-07-14 2026-07-14 0000019617 jpm:DepositarySharesOneFourHundredthInterestInAShareOf420NonCumulativePreferredStockSeriesMMMember 2026-07-14 2026-07-14 0000019617 jpm:GuaranteeOfCallableFixedRateNotesDueJune102032OfJPMorganChaseFinancialCompanyLLCMember 2026-07-14 2026-07-14 0000019617 jpm:GuaranteeOfAlerianMLPIndexETNsDueJanuary282044OfJPMorganChaseFinancialCompanyLLCDomain 2026-07-14 2026-07-14 0000019617 jpm:GuaranteeOfInverseVIXShortTermFuturesETNsDueMarch222045OfJPMorganChaseFinancialCompanyLLCMember 2026-07-14 2026-07-14 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM 8-K CURRENT REPORT Pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934 Date of Report (date of earliest event reported): July 14, 2026 JPMorgan Chase & Co . (Exact name of r",
+      "source_quality": "SEC_ORIGINAL_ACCESSION_DOCUMENT",
+      "source_observed_now_utc": "2026-10-11T18:08:59.000400Z",
+      "issuer_verified": true,
+      "sec_context_asof": {
+        "prior_filings": [
+          {
+            "form": "8-K",
+            "filed": "2026-07-14",
+            "acceptance_raw": "2026-07-14T17:52:21.000Z",
+            "available_utc_conservative": "2026-07-14T18:52:21Z",
+            "accession": "0001628280-26-048086",
+            "primary_document": "jpm-20260714.htm"
+          },
+          {
+            "form": "8-K",
+            "filed": "2026-07-14",
+            "acceptance_raw": "2026-07-14T14:30:38.000Z",
+            "available_utc_conservative": "2026-07-14T15:30:38Z",
+            "accession": "0001628280-26-048078",
+            "primary_document": "jpm-20260714.htm"
+          }
+        ],
+        "prior_asof_companyfacts": []
+      },
+      "classification": {
+        "event_id": "8db81acc7e809f80128a57d2",
+        "material_new_fact": false,
+        "issuer_specific": true,
+        "direction": "unknown",
+        "strength": "weak",
+        "event_type": "other",
+        "source_quote": "JPM SEC 8-K accepted 2026-07-14",
+        "mechanism": "Routine SEC Form 8-K filing submission containing standard metadata and share/preferred stock classifications without performance metrics.",
+        "counterargument": "The filing is purely administrative and contains no financial results, operational updates, or substantive new disclosures.",
+        "expectation_known": false
+      }
+    },
+    {
+      "event_id": "e8590411b9bafb2704863679",
+      "symbol": "GS",
+      "published_utc": "2026-07-14T16:30:40Z",
+      "modeled_available_utc": "2026-07-14T16:30:40Z",
+      "headline": "GS SEC 8-K accepted 2026-07-14",
+      "summary": "gs-20260714 FALSE 0000886982 0000886982 2026-07-14 2026-07-14 0000886982 us-gaap:CommonStockMember 2026-07-14 2026-07-14 0000886982 gs:SeriesAFloatingRatePreferredStockMember 2026-07-14 2026-07-14 0000886982 gs:SeriesCFloatingRatePreferredStockMember 2026-07-14 2026-07-14 0000886982 gs:SeriesDFloatingRatePreferredStockMember 2026-07-14 2026-07-14 0000886982 gs:FivePointSevenNineThreePercentageFixedToFloatingRateNormalApexMember 2026-07-14 2026-07-14 0000886982 gs:FloatingRateNormalAutomaticPreferredEnhancedCapitalSecuritiesOfGoldmanSachsCapitalIiiMember 2026-07-14 2026-07-14 0000886982 gs:SeriesFMediumTermNotesCallableFixedAndFloatingRateNotesDueMarch2031OfGSFinanceCorpMember 2026-07-14 2026-07-14 0000886982 gs:SeriesFMediumTermNotesCallableFixedAndFloatingRateNotesDueMay2031OfGSFinanceCorpMember 2026-07-14 2026-07-14 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form 8-K CURRENT REPORT PURSUANT TO SECTION 13 or 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 Date of Report (Date of earliest event reported): July 14, 2026 The Goldman Sachs Group, Inc. (Exact name of registrant as specified in its charter) Commission File Number: 001-14965 Delaware 13-4019460 ",
+      "publisher": "SEC EDGAR",
+      "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000294/gs-20260714.htm",
+      "evidence_text": "GS SEC 8-K accepted 2026-07-14\ngs-20260714 FALSE 0000886982 0000886982 2026-07-14 2026-07-14 0000886982 us-gaap:CommonStockMember 2026-07-14 2026-07-14 0000886982 gs:SeriesAFloatingRatePreferredStockMember 2026-07-14 2026-07-14 0000886982 gs:SeriesCFloatingRatePreferredStockMember 2026-07-14 2026-07-14 0000886982 gs:SeriesDFloatingRatePreferredStockMember 2026-07-14 2026-07-14 0000886982 gs:FivePointSevenNineThreePercentageFixedToFloatingRateNormalApexMember 2026-07-14 2026-07-14 0000886982 gs:FloatingRateNormalAutomaticPreferredEnhancedCapitalSecuritiesOfGoldmanSachsCapitalIiiMember 2026-07-14 2026-07-14 0000886982 gs:SeriesFMediumTermNotesCallableFixedAndFloatingRateNotesDueMarch2031OfGSFinanceCorpMember 2026-07-14 2026-07-14 0000886982 gs:SeriesFMediumTermNotesCallableFixedAndFloatingRateNotesDueMay2031OfGSFinanceCorpMember 2026-07-14 2026-07-14 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form 8-K CURRENT REPORT PURSUANT TO SECTION 13 or 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 Date of Report (Date of earliest event reported): July 14, 2026 The Goldman Sachs Group, Inc. (Exact name of registrant as specified in its charter) Commission File Number: 001-14965 Delaware 13-4019460 (State or other jurisdiction of incorporation) (IRS Employer Identification No.) 200 West Street , New York , NY 10282 (Address of principal executive offices) (Zip Code) (212) 902-1000 (Registrant’s telephone number, including area code) Check the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registra",
+      "source_quality": "SEC_ORIGINAL_ACCESSION_DOCUMENT",
+      "source_observed_now_utc": "2026-10-11T18:08:59.000400Z",
+      "issuer_verified": true,
+      "sec_context_asof": {
+        "prior_filings": [
+          {
+            "form": "8-K",
+            "filed": "2026-07-14",
+            "acceptance_raw": "2026-07-14T15:30:40.000Z",
+            "available_utc_conservative": "2026-07-14T16:30:40Z",
+            "accession": "0000886982-26-000294",
+            "primary_document": "gs-20260714.htm"
+          }
+        ],
+        "prior_asof_companyfacts": []
+      },
+      "classification": {
+        "event_id": "e8590411b9bafb2704863679",
+        "material_new_fact": false,
+        "issuer_specific": true,
+        "direction": "unknown",
+        "strength": "weak",
+        "event_type": "other",
+        "source_quote": "GS SEC 8-K accepted 2026-07-14",
+        "mechanism": "Routine SEC Form 8-K filing submission detailing standard header information and preferred stock/notes categories.",
+        "counterargument": "The filing is administrative in nature, providing no new financial statements, guidance, or operational developments.",
+        "expectation_known": false
+      }
+    }
+  ]
+}

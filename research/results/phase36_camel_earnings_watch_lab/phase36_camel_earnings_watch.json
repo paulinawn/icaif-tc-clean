@@ -1,0 +1,63 @@
+{
+  "research_only": true,
+  "publication_and_capture_utc": {
+    "published": "2026-10-11T11:53:40Z",
+    "first_observed": "2026-10-11T13:00:33.778957Z"
+  },
+  "model_name": "gemini-2.5-flash",
+  "source_url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-sp-500-nasdaq-asml-nvidia-chipmaker-taiwan-semi-earnings/",
+  "event_sha256": "d24065ee393334bfaa2f11cc9668e1660aa775895085d9a3223089496f8597ae",
+  "analyzed_at_utc": "2026-10-11T13:48:26.423459Z",
+  "extracted_watchlist": {
+    "article_kind": "preview",
+    "nvda_direct_new_fact": false,
+    "items": [
+      {
+        "ticker": "NVDA",
+        "catalyst": "Nvidia could be indirectly affected by foundry/supply-chain updates",
+        "relationship": "indirect_supply_chain",
+        "event_status": "upcoming",
+        "evidence": "Nvidia could be indirectly affected by foundry/supply-chain updates"
+      },
+      {
+        "ticker": "JPM",
+        "catalyst": "Upcoming earnings",
+        "relationship": "direct_reporting",
+        "event_status": "upcoming",
+        "evidence": "JPMorgan Chase and Goldman Sachs also have upcoming earnings"
+      },
+      {
+        "ticker": "GS",
+        "catalyst": "Upcoming earnings",
+        "relationship": "direct_reporting",
+        "event_status": "upcoming",
+        "evidence": "JPMorgan Chase and Goldman Sachs also have upcoming earnings"
+      },
+      {
+        "ticker": "BAC",
+        "catalyst": "Reporting during the week",
+        "relationship": "direct_reporting",
+        "event_status": "upcoming",
+        "evidence": "with Bank of America and UnitedHealth among companies reporting during the week"
+      },
+      {
+        "ticker": "UNH",
+        "catalyst": "Reporting during the week",
+        "relationship": "direct_reporting",
+        "event_status": "upcoming",
+        "evidence": "with Bank of America and UnitedHealth among companies reporting during the week"
+      }
+    ],
+    "limitations": [
+      "Specific dates and times are not established in the text.",
+      "No actual results or earnings surprises are provided."
+    ]
+  },
+  "human_verified": false,
+  "new_nvda_fundamental_surprise": false,
+  "laya_called": false,
+  "trade_allowed": false,
+  "return_prediction": null,
+  "no_historical_backfill": true,
+  "llm_cost_usd": "unknown"
+}

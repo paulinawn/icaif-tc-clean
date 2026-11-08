@@ -1,0 +1,17 @@
+{
+  "tested_at_utc": "2026-10-07T11:00:02.001008+00:00",
+  "source": "alpaca",
+  "feed": "iex",
+  "universe_size": 30,
+  "secrets_in_diagnostic": false,
+  "market_data_test_ok": true,
+  "latest_bars_http_ok": true,
+  "snapshots_http_ok": true,
+  "symbols_requested": 30,
+  "symbols_returned": 30,
+  "missing_symbols": [],
+  "snapshot_symbols_returned": 30,
+  "snapshot_missing_symbols": [],
+  "oldest_latest_bar_timestamp": "2026-10-06T19:59:00Z",
+  "newest_latest_bar_timestamp": "2026-10-06T20:56:00Z"
+}

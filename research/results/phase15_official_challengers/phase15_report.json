@@ -1,0 +1,73 @@
+{
+  "mode": "offline_no_submission",
+  "test_year": 2025,
+  "development_years": [
+    2023,
+    2024
+  ],
+  "fee_rate": 0.001,
+  "dates_start": "2021-01-04",
+  "dates_end": "2025-12-31",
+  "horizon_days": 5,
+  "model_hyperparameters": {
+    "max_iter": 85,
+    "max_depth": 3,
+    "learning_rate": 0.035,
+    "min_samples_leaf": 200,
+    "l2_regularization": 25.0,
+    "random_state": 2609
+  },
+  "strategies": [
+    "equal30_80_hold",
+    "equal30_100_hold",
+    "top3sectors_80_hold",
+    "sector_mom_80_t08_hold",
+    "lowvol_80_mix50_hold",
+    "hgb_80_t08_hold",
+    "hgb_sector_80_t08_hold"
+  ],
+  "decisions": [
+    {
+      "name": "equal30_100_hold",
+      "development_pass": false,
+      "holdout_pass": false,
+      "candidate_for_review": false
+    },
+    {
+      "name": "top3sectors_80_hold",
+      "development_pass": false,
+      "holdout_pass": false,
+      "candidate_for_review": false
+    },
+    {
+      "name": "sector_mom_80_t08_hold",
+      "development_pass": true,
+      "holdout_pass": false,
+      "candidate_for_review": false
+    },
+    {
+      "name": "lowvol_80_mix50_hold",
+      "development_pass": false,
+      "holdout_pass": false,
+      "candidate_for_review": false
+    },
+    {
+      "name": "hgb_80_t08_hold",
+      "development_pass": false,
+      "holdout_pass": false,
+      "candidate_for_review": false
+    },
+    {
+      "name": "hgb_sector_80_t08_hold",
+      "development_pass": false,
+      "holdout_pass": false,
+      "candidate_for_review": false
+    }
+  ],
+  "important_limitations": [
+    "15d windows overlap; values are proxies, not expected live returns",
+    "possible corporate-action/adjusted-close alignment risks need stress testing",
+    "2025 holdout must not be tuned after viewing results",
+    "news/filings/macro unavailable as historical point-in-time features in this experiment"
+  ]
+}

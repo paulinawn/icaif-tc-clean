@@ -53,7 +53,7 @@ def expected_previous_day(day):
         previous -= timedelta(days=1)
     return previous.isoformat()
 
-
+# Same as standardize(values) function in icaif_official_market_support_v2.py
 def zscore(values):
     """Z-score an array and clip to [-3, 3] with a variance floor.
 
@@ -71,7 +71,7 @@ def zscore(values):
         raise ValueError('Non-finite signal')
     return np.clip((arr - arr.mean()) / max(float(arr.std()), 1e-8), -3., 3.)
 
-
+# Calculate reversal candidates and blend with blended weights (diversified and momentum-based weights)
 def sleeve_target_from_daily(daily_closes):
     """Compute the exact Phase44 sleeve target weights from daily closes.
 
@@ -90,25 +90,35 @@ def sleeve_target_from_daily(daily_closes):
         ValueError: if the close matrix is not 121x30, non-finite, or
             contains non-positive prices.
     """
+
+    # Validate input
     arr = np.asarray(daily_closes[-121:], dtype=float)
     if arr.shape != (121, 30) or not np.isfinite(arr).all() or np.any(arr <= 0):
         raise ValueError('Require 121 completed 30-stock daily close vectors')
+
+    # Import blended weights, log prices, calculate returns
     core_weights = base.blend_weights(arr.tolist())
     log_prices = np.log(arr)
     return_1d = log_prices[-1] - log_prices[-2]
     return_5d = log_prices[-1] - log_prices[-6]
+
+    # Calculate reversal signal and select top 5
     reversal = zscore(-.75 * zscore(return_5d) - .25 * zscore(return_1d))
-    chosen_indices = np.argsort(-reversal, kind='stable')[:5]
+    chosen_indices = np.argsort(-reversal, kind='stable')[:5] # argsort returns positions in order smallest to largest, -reversal flips order
+    
+    # Create concentrated weights for top 5 (16% each = 2.4% on top in final weight)
     concentrated = np.zeros(30, dtype=float)
     concentrated[chosen_indices] = .8 / 5.
+    
+    # Calculate and validate final target weights
     blend = np.array([core_weights[s] for s in SYMBOLS])
     final = .85 * blend + .15 * concentrated
     target_weights = {sym: float(final[i]) for i, sym in enumerate(SYMBOLS)}
     validate(target_weights, expect_equity=.8)
-    return target_weights, [SYMBOLS[i] for i in chosen_indices], core_weights
+    return target_weights, [SYMBOLS[i] for i in chosen_indices], core_weights # Target, 5 candidates, blended weights
 
-
-def validate(weights, expect_equity=None):
+# Validation of target weights and their sum
+def validate(weights, expect_equity=None): # Input is dictionary of stock name and weight, and expected equity (optional)
     """Validate a long-only weight dict covering exactly the 30 SYMBOLS.
 
     Args:
@@ -122,12 +132,20 @@ def validate(weights, expect_equity=None):
         ValueError: on wrong symbol set, non-finite/out-of-range values,
             leverage above 1, or an equity-total mismatch.
     """
+
+    # Check if weights is a dictionary and if it contains exactly the 30 official stocks
     if not isinstance(weights, dict) or set(weights) != set(SYMBOLS):
         raise ValueError('Must include exactly the 30 official stocks')
+    
+    # Check if all weights are valid (finite, non-negative, and not greater than 30%)
     if any(type(weights[s]) not in (float, int) or not math.isfinite(weights[s])
            or weights[s] < 0 or weights[s] > .30 for s in SYMBOLS):
         raise ValueError('Invalid numeric long-only weights')
+    
+    # Calculate total weight
     total = sum(float(weights[s]) for s in SYMBOLS)
+    
+    # Check if total weight is greater than 1 (leverage prohibited)
     if total > 1 + 1e-10:
         raise ValueError('Portfolio leverage prohibited')
     if expect_equity is not None and abs(total - expect_equity) > 1e-9:
@@ -302,17 +320,29 @@ def trim_target(current, target, initial=False, band=.03, max_l1=.10):
     Raises:
         ValueError: via validate() on malformed weight dicts.
     """
+
+    # Validate input
     validate(current)
     validate(target, expect_equity=.8)
+
+    # No trimming if initial portfolio investment
     if initial:
         return target
+
+    # Calculate distance between current and target weights
     old = np.array([float(current[s]) for s in SYMBOLS])
     new = np.array([float(target[s]) for s in SYMBOLS])
-    distance = float(np.abs(new - old).sum())
+    distance = float(np.abs(new - old).sum()) # Distance: sum of all 30 absolute % changes
+    
+    # Below 3pp threshold, no trimming
     if distance < band:
         return None
+
+    # Above 10pp threshold, trimming to distance = 10pp, every stock moves same fraction towards target
     if distance > max_l1:
         new = old + (new - old) * (max_l1 / distance)
+
+    # Dictionary for new weights per stock
     result = {s: float(new[j]) for j, s in enumerate(SYMBOLS)}
     validate(result)
     return result
