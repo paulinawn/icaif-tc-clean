@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Offline tests for strict MISSING/HELD synthetic-entry normalization."""
 import copy
-import icaif_v37_production_candidate as bridge
-import icaif_v33_state_machine as machine
+import round_gatekeeper as bridge
+import state_machine as machine
 
 R1 = 'official-2026-10-12-r1'
 R2 = 'official-2026-10-12-r2'

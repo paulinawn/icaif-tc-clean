@@ -188,7 +188,7 @@ def load_engine(path):
     if not Path(path).is_dir():
         raise ReadOnlyGate('V23_DIRECTORY_NOT_FOUND')
     sys.path.insert(0,str(Path(path).resolve()))
-    return importlib.import_module('icaif_official_sleeve_engine_v23')
+    return importlib.import_module('sleeve_engine')
 
 
 def offline_tests(engine, kit_dir):

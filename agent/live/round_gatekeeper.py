@@ -147,16 +147,16 @@ def live_evidence(session, machine, schedule, history, ledger, portfolio, row, n
     base={'source':'AUTHENTICATED_ORGANIZER_GET',
           'round_id':row['id'], 'checked_utc':now.isoformat()}
     if state['mode']=='PRE_ENTRY' and day=='2026-10-12':
-        import icaif_v29_bridge_unarmed as bridge
-        from icaif_official_sleeve_engine_v23 import SYMBOLS
+        import organizer_bridge as bridge
+        from sleeve_engine import SYMBOLS
         bridge.cash_only_portfolio(portfolio,SYMBOLS)
         return {'preentry_reconciliation':dict(base,earlier_rounds_finalized=True,
             earlier_rounds_no_executed_trade=True,current_round_no_attributable_attempt=True,
             verified_cash_portfolio=True)}
     if state['mode']=='PRIMARY' and day in ('2026-10-19','2026-10-26'):
         require(state['first_execution_confirmed'] is True, 'NO_CONFIRMED_PRIMARY_HOLDINGS')
-        import icaif_v29_bridge_unarmed as bridge
-        from icaif_official_sleeve_engine_v23 import SYMBOLS
+        import organizer_bridge as bridge
+        from sleeve_engine import SYMBOLS
         bridge.normalize_portfolio(portfolio,SYMBOLS,state)
         require(bool(state.get('last_executed_round_id')) and
                 not state['last_executed_round_id'].startswith(f'official-{day}-r'),
@@ -334,11 +334,11 @@ def decision_payload(session, weights, row, engine):
 def run_readonly(*, force_now=None):
     import httpx
     sys.path[:0]=[str(APP),str(V23),str(V28)]
-    import icaif_v29_bridge_unarmed as bridge
-    import icaif_v30_remote_get_only as prior
-    import icaif_v33_state_machine as machine
-    import icaif_official_sleeve_engine_v23 as engine
-    import icaif_v28_clean_alpaca_bootstrap as refresh
+    import organizer_bridge as bridge
+    import readonly_rehearsal as prior
+    import state_machine as machine
+    import sleeve_engine as engine
+    import market_data_fetcher as refresh
     from kit.config import load_environment
     from kit.original_client import OriginalSession,load_profile
 
@@ -417,9 +417,9 @@ def main():
 
 def self_test():
     import importlib.util
-    for name in ('icaif_v29_bridge_unarmed','icaif_v33_state_machine'):
+    for name in ('organizer_bridge','state_machine'):
         require(importlib.util.find_spec(name) is not None,'MISSING_DEPENDENCY_'+name)
-    import icaif_v33_state_machine as m
+    import state_machine as m
     v=m.blank_journal({'schema':2,'mode':'PRE_ENTRY','first_execution_confirmed':False,
         'first_execution_day':None,'recovery_execution_confirmed':False,
         'last_executed_round_id':None,'last_health_day':None,'consecutive_primary_fail_days':0})

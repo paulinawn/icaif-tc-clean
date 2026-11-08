@@ -26,7 +26,7 @@ from zoneinfo import ZoneInfo
 
 import numpy as np
 
-import icaif_official_market_support_v2 as base
+import market_support as base
 
 ET = ZoneInfo('America/New_York')
 UTC = timezone.utc
@@ -54,7 +54,7 @@ def expected_previous_day(day):
         previous -= timedelta(days=1)
     return previous.isoformat()
 
-# Same as standardize(values) function in icaif_official_market_support_v2.py
+# Same as standardize(values) in market_support.py
 def zscore(values):
     """Z-score an array and clip to [-3, 3] with a variance floor.
 

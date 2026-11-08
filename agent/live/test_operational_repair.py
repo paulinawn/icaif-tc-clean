@@ -5,8 +5,8 @@ import hashlib
 import re
 import sys
 sys.path.insert(0,str(Path(__file__).resolve().parent))
-import icaif_v29_bridge_unarmed as bridge
-import icaif_v37_production_candidate as adapter
+import organizer_bridge as bridge
+import round_gatekeeper as adapter
 
 for n in ('0.'+'0'*40+'1','999999.1234567890123456789012345678901234',
           '0.12345678901234567890123456789012345678901'):
@@ -48,7 +48,7 @@ print('V393_SYNTHETIC_OWN_ROUND_ONLY_REAL_UPLOAD_STILL_FAILS_CLOSED_PASS',flush=
 old=Path('/opt/icaif2026/official_clean_bootstrap_v28_unarmed/data')
 assert adapter.DATA==old
 assert adapter.V28==Path('/opt/icaif2026/official_v3932_release/code')
-source=(Path(__file__).resolve().parent/'code'/'icaif_v28_clean_alpaca_bootstrap.py').read_text()
+source=(Path(__file__).resolve().parent/'market_data_fetcher.py').read_text()
 assert 'Unarmed synthetic decision does not match market snapshot' not in source
 assert 'engine.snapshot_from_bars(rows,now' in source
 assert 'engine.validate(snap[' in source
@@ -59,7 +59,7 @@ print('V393_OFFLINE_TEST_NO_HTTP_NO_POST_NO_PRIVATE_STATE_CHANGE',flush=True)
 
 # V3.9.3.1: the finalized R1 may be MISSING/None/None rather than MISSING/UNKNOWN/HELD.
 # Only a COMPLETED schedule row with no receipt or upload artifact is omitted.
-import icaif_v33_state_machine as machine
+import state_machine as machine
 completed={R1}
 assert adapter.organizer_held_placeholder(synthetic, completed)
 assert not adapter.organizer_held_placeholder(dict(synthetic,status='VALID'),completed)
@@ -76,7 +76,7 @@ filtered=adapter.read_pages(SyntheticSession(),machine,{'rounds':[{'id':'officia
 assert len(filtered['decisions'])==1
 print('V3931_COMPLETED_MISSING_NONE_NONE_HISTORY_FILTER_PASS',flush=True)
 
-from v393_preflight_get_only import verify_pre_r3_window
+from catchup_preflight import verify_pre_r3_window
 from datetime import datetime,timezone
 r1={'id':R1,'phase':'official','day':'2026-10-19','number':1,'status':'COMPLETED'}
 r2={'id':'official-2026-10-19-r2','phase':'official','day':'2026-10-19','number':2,'status':'COMPLETED'}
@@ -131,10 +131,10 @@ print('V3932_R3_TIME_WINDOW_AND_PREVIOUS_ROUNDS_PASS',flush=True)
 # On server, the engine lives under official_staging_v23_unarmed/code;
 # the regression uses an isolated import via the normal installed source when present.
 import types
-_engine=types.ModuleType('icaif_official_sleeve_engine_v23')
+_engine=types.ModuleType('sleeve_engine')
 _engine.SYMBOLS=tuple('AAPL AMZN BA BAC CAT CRM CVX DIS GE GOOGL GS INTC JNJ JPM KO LLY META MSFT NEE NKE NVDA PFE PYPL T TMO TSLA UNH V WMT XOM'.split())
 assert len(_engine.SYMBOLS)==30 and len(set(_engine.SYMBOLS))==30
-sys.modules['icaif_official_sleeve_engine_v23']=_engine
+sys.modules['sleeve_engine']=_engine
 class FakeRoundSession:
     def __init__(self,objects):self.objects=objects
     def round(self,rid):return self.objects[rid]

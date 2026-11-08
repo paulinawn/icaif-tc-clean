@@ -24,7 +24,7 @@ import tempfile
 from datetime import datetime, timezone, timedelta
 from decimal import Decimal
 
-import icaif_v37_production_candidate as bridge37
+import round_gatekeeper as bridge37
 
 APP=bridge37.APP
 PRIVATE=APP/'.icaif'/'official_v39'
@@ -74,7 +74,7 @@ class Exclusive:
 def initial_only(journal,history,ledger,portfolio,engine,machine):
     if journal is not None:return journal
     must(history['decisions']==[] and ledger.get('rounds')==[],'NO_JOURNAL_BUT_HISTORY_EXISTS')
-    import icaif_v29_bridge_unarmed as original
+    import organizer_bridge as original
     original.cash_only_portfolio(portfolio,engine.SYMBOLS)
     return machine.blank_journal(engine.sample_state())
 
@@ -323,11 +323,11 @@ def cycle(session,journal,*, live,engine,machine,original,prior,refresh,save=Non
 def run(*,live=False):
     import httpx
     sys.path[:0]=[str(APP),str(bridge37.V23),str(bridge37.V28)]
-    import icaif_v33_state_machine as machine
-    import icaif_v29_bridge_unarmed as original
-    import icaif_v30_remote_get_only as prior
-    import icaif_official_sleeve_engine_v23 as engine
-    import icaif_v28_clean_alpaca_bootstrap as refresh
+    import state_machine as machine
+    import organizer_bridge as original
+    import readonly_rehearsal as prior
+    import sleeve_engine as engine
+    import market_data_fetcher as refresh
     from kit.config import load_environment
     from kit.original_client import OriginalSession,load_profile
     if live:
