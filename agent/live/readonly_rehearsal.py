@@ -69,7 +69,7 @@ def validate_snapshot_meta(snapshot, manifest, csvpath):
         raise ValueError('ALPACA_CACHE_MISSING')
     # Import the same canonical hash function and parser as V28, then check
     # the complete stored data. Does not fetch or modify files.
-    import icaif_official_market_support_v2 as market
+    import market_support as market
     from collections import defaultdict
     canonical={}
     for r in market.load_csv(csvpath):
@@ -104,7 +104,7 @@ class GetOnlyTransport:
 
 def main():
     # Local package modules injected by the Windows launcher entirely in memory.
-    import icaif_v29_bridge_unarmed as bridge
+    import organizer_bridge as bridge
     sys.path.insert(0,str(APP))
     sys.path.insert(0,str(V23))
     import httpx
@@ -121,7 +121,7 @@ def main():
     p=Path(profile)
     if not p.is_absolute():p=APP/p
     prof=load_profile(p)
-    import icaif_official_sleeve_engine_v23 as engine
+    import sleeve_engine as engine
     snap=json.loads((DATA/'latest_readonly_snapshot.json').read_text(encoding='utf-8'))
     manifest=json.loads((DATA/'cache_provenance.json').read_text(encoding='utf-8'))
     n=validate_snapshot_meta(snap,manifest,DATA/'alpaca_iex_raw_15m.csv')
@@ -183,7 +183,7 @@ def main():
 
 
 def self_test():
-    import icaif_v29_bridge_unarmed as bridge
+    import organizer_bridge as bridge
     from decimal import Decimal
     assert bridge.as_decimal('1000000.00') == Decimal('1000000.00')
     assert bridge.as_decimal('0') == Decimal('0')

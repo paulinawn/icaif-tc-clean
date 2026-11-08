@@ -6,7 +6,7 @@ See [POC_REPORT.md](POC_REPORT.md) for scope, results and lessons learned.
 
 ## What's in here
 
-- `agent/frozen_strategy/`: the strategy (momentum, reversal, L1 turnover rule)
+- `agent/strategy/`: the strategy (momentum, reversal, L1 turnover rule)
 - `tools/generate_policy.py`: runs the strategy offline on example data
 - `examples/`: synthetic price data (121 trading days × 30 stocks)
 - `tests/`: golden-output test, trade-rule unit tests, engine self-test
@@ -56,14 +56,16 @@ The agent ran live during the ACM ICAIF 2026 Official phase (Oct 12–30, 2026) 
 | Role | File(s) | What it does |
 | --- | --- | --- |
 | Scheduler | `deployment/systemd/` | Starts each run before a round deadline; sandboxed, never retried |
-| Orchestrator (single writer) | `agent/production_v3933/icaif_v39_live_writer.py` | Runs one decision cycle; the only component allowed to submit |
-| Gatekeeper | `agent/production_v3933/icaif_v37_production_candidate.py` | Decides whether the round may act; asks the strategy what to do |
-| Strategy | `agent/frozen_strategy/` | Computes target weights; tracks the strategy's mode |
-| Journal | `agent/production_v3933/icaif_v33_state_machine.py` | Records intent before sending; confirms execution afterwards |
-| Translator | `agent/production_v3933/icaif_v29_bridge_unarmed.py` | Turns organizer data into exact values for the strategy |
-| Data fetcher | `agent/production_v3933/code/icaif_v28_clean_alpaca_bootstrap.py` | Downloads and checks market data; builds the 121-day history |
-| Rehearsal and audit tools | `icaif_v30_*`, `icaif_v32_*`, `v393_preflight_*` | Read-only checks, outside the live loop |
+| Orchestrator (single writer) | `agent/live/orchestrator.py` | Runs one decision cycle; the only component allowed to submit |
+| Gatekeeper | `agent/live/round_gatekeeper.py` | Decides whether the round may act; asks the strategy what to do |
+| Strategy | `agent/strategy/` | Computes target weights; tracks the strategy's mode |
+| Journal | `agent/live/state_machine.py` | Records intent before sending; confirms execution afterwards |
+| Translator | `agent/live/organizer_bridge.py` | Turns organizer data into exact values for the strategy |
+| Data fetcher | `agent/live/market_data_fetcher.py` | Downloads and checks market data; builds the 121-day history |
+| Rehearsal and audit tools | `readonly_rehearsal.py`, `account_audit.py`, `catchup_preflight.py` | Read-only checks, outside the live loop |
 | Organizer kit | `agent/kit/` | Official API client, submission checks and scoring formulas |
+
+Module names were changed from release versions (v28–v39) to role-based names after the competition. The exact code as deployed is preserved under the Git tag `competition-baseline`; the systemd files in `deployment/` describe that original server layout.
 
 **One cycle:** collect organizer state → reconcile earlier submissions → safety gates (pending? round open? scheduled review?) → refresh market data → re-collect and check nothing changed → decide → validate → write intent to the journal → submit once. Every step can end in HOLD; only the last one changes anything.
 

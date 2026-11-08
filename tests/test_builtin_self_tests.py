@@ -7,20 +7,20 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-STRATEGY = ROOT / "agent" / "frozen_strategy"
-LIVE = ROOT / "agent" / "production_v3933"
+STRATEGY = ROOT / "agent" / "strategy"
+LIVE = ROOT / "agent" / "live"
 KIT = ROOT / "agent" / "kit"
 
 # (test id, script, arguments that start its self-test)
 SELF_TESTS = [
-    ("data_fetcher", LIVE / "code" / "icaif_v28_clean_alpaca_bootstrap.py", ["self-test"]),
-    ("organizer_bridge", LIVE / "icaif_v29_bridge_unarmed.py",
+    ("data_fetcher", LIVE / "market_data_fetcher.py", ["self-test"]),
+    ("organizer_bridge", LIVE / "organizer_bridge.py",
      ["--self-test", "--v23-dir", str(STRATEGY), "--kit-dir", str(KIT)]),
-    ("readonly_rehearsal", LIVE / "icaif_v30_remote_get_only.py", ["--self-test"]),
-    ("account_audit", LIVE / "icaif_v32_official_account_snapshot_get_only.py", ["--self-test"]),
-    ("round_gatekeeper", LIVE / "icaif_v37_production_candidate.py", ["--self-test"]),
-    ("history_refresher", STRATEGY / "icaif_official_sleeve_refresher_v23.py", ["self-test"]),
-    ("strategy_engine", STRATEGY / "icaif_official_sleeve_engine_v23.py", ["self-test"]),
+    ("readonly_rehearsal", LIVE / "readonly_rehearsal.py", ["--self-test"]),
+    ("account_audit", LIVE / "account_audit.py", ["--self-test"]),
+    ("round_gatekeeper", LIVE / "round_gatekeeper.py", ["--self-test"]),
+    ("history_refresher", STRATEGY / "history_refresher.py", ["self-test"]),
+    ("strategy_engine", STRATEGY / "sleeve_engine.py", ["self-test"]),
 ]
 
 

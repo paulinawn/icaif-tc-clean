@@ -6,7 +6,7 @@ from datetime import datetime,timezone
 from pathlib import Path
 import os,sys,tempfile
 APP=Path('/opt/icaif2026');RELEASE=Path(__file__).resolve().parent
-sys.path[:0]=[str(APP),str(RELEASE),str(APP/'official_staging_v23_unarmed'/'code'),str(RELEASE/'code')]
+sys.path[:0]=[str(APP),str(RELEASE),str(APP/'official_staging_v23_unarmed'/'code')]
 
 def verify_pre_r3_window(schedule):
     """Accept only the window after October 19 R2 completed, before R3 timer.
@@ -43,13 +43,13 @@ def verify_pre_r3_window(schedule):
 
 def check():
  import httpx
- import icaif_v29_bridge_unarmed as bridge
- import icaif_v37_production_candidate as adapter
- import icaif_v33_state_machine as machine
- import icaif_official_sleeve_engine_v23 as engine
- import icaif_v28_clean_alpaca_bootstrap as refresh
- assert Path(refresh.__file__).resolve()==(RELEASE/'code'/'icaif_v28_clean_alpaca_bootstrap.py').resolve(), 'WRONG_REFRESH_MODULE_LOADED'
- from icaif_v30_remote_get_only import GetOnlyTransport
+ import organizer_bridge as bridge
+ import round_gatekeeper as adapter
+ import state_machine as machine
+ import sleeve_engine as engine
+ import market_data_fetcher as refresh
+ assert Path(refresh.__file__).resolve()==(RELEASE/'market_data_fetcher.py').resolve(), 'WRONG_REFRESH_MODULE_LOADED'
+ from readonly_rehearsal import GetOnlyTransport
  from kit.config import load_environment
  from kit.original_client import OriginalSession,load_profile
  private=APP/'.icaif'/'official_v39'

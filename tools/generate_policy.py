@@ -8,8 +8,8 @@ from pathlib import Path
 import sys
 
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'agent'/'frozen_strategy'))
-import icaif_official_sleeve_engine_v23 as engine
+sys.path.insert(0,str(ROOT/'agent'/'strategy'))
+import sleeve_engine as engine
 
 def main():
 

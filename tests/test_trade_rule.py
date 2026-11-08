@@ -5,8 +5,8 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "agent" / "frozen_strategy"))
-import icaif_official_sleeve_engine_v23 as engine  # noqa: E402
+sys.path.insert(0, str(ROOT / "agent" / "strategy"))
+import sleeve_engine as engine  # noqa: E402
 
 SYMBOLS = engine.SYMBOLS
 
