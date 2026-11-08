@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Role: AUDIT TOOL - read-only, one-shot printout of the official schedule, cash and holdings.
 """One-shot authenticated GET-only ICAIF Official schedule/cash/holdings audit.
 
 Execution: run in memory as Unix user 'icaif' on the existing Hetzner VPS.

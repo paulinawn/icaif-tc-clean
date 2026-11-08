@@ -1,3 +1,4 @@
+# Role: ORGANIZER CLIENT (organizer starter kit) - authenticated API access and the single submission call.
 """Original ICAIF participant automation. Business rules remain in the original kit.
 
 Only the native Codabench submission API creates uploads. Backend queries are GET.

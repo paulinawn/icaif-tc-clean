@@ -1,3 +1,4 @@
+# Role: SETTINGS HELPER (organizer starter kit) - loads environment, config, symbols and schedule.
 """Local configuration and environment values, with no shell evaluation."""
 
 import json

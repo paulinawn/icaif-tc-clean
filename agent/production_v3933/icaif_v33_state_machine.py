@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Role: JOURNAL - records each submission intent before sending and confirms execution afterwards (exactly-once).
 """ICAIF V33 offline execution-reconciliation state machine.
 
 No organizer network code, no submission code, no timer actions.

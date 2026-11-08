@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Role: STRATEGY BASE - price-data validation, standardization and the 80% core allocation.
 """ICAIF 2026 release V2 support library; read-only market data and pure blending math.
 
 Subcommands:
@@ -155,6 +156,7 @@ def validate_targets(weights):
         raise ValueError('Accidental all-zero liquidation blocked')
 
 
+# Read Alpaca's raw records and group them 
 def parse_bars(rows, until_utc):
     """Collect fully completed regular-session IEX 15-minute bars.
 
@@ -169,24 +171,37 @@ def parse_bars(rows, until_utc):
     Raises:
         ValueError: on invalid prices, duplicate bars, or bad timestamps.
     """
+
     bars_by_date = defaultdict(dict)
     for record in rows:
         symbol = record.get('symbol')
+        
+        # Ignore stocks outside 30-stock universe
         if symbol not in SYMBOLS:
             continue
+        
+        # Convert time
         bar_start_utc = utc_stamp(record['timestamp'])
         local_time = bar_start_utc.astimezone(ET)
+
+        # Keep only stock market hour bars: 9.30 - 16.00 -> 26 bars per day
         minute_of_day = local_time.hour * 60 + local_time.minute
         if minute_of_day < 9 * 60 + 30 or minute_of_day > 15 * 60 + 45 or minute_of_day % 15:
             continue
-        if bar_start_utc + timedelta(minutes=15) > until_utc:
+        if bar_start_utc + timedelta(minutes=15) > until_utc: # Only finished bars
             continue
+        
+        # Create bar key with date, time, stock
         bar_key = (local_time.date().isoformat(), local_time.strftime('%H:%M'), symbol)
         close_price = float(record['close'])
+
+        # Validate prices
         if not math.isfinite(close_price) or close_price <= 0:
             raise ValueError('Invalid price')
         if bar_key in bars_by_date[local_time.date().isoformat()]:
             raise ValueError('Duplicate date-time symbol bar')
+        
+        # Add price to dictionary
         bars_by_date[local_time.date().isoformat()][bar_key] = close_price
     return bars_by_date
 
@@ -205,17 +220,23 @@ def history_closes(rows, until_utc):
             15:45 ET bar, and incomplete_dates lists sessions missing any
             expected bar.
     """
+
+    # Group bars by date, create 3 lists to collect results
     bars_by_date = parse_bars(rows, until_utc)
     complete_dates = []
     daily_closes = []
     incomplete_dates = []
+
+    # Keep only 15-minute bars during stock market hours (9:30-16:00)
     session_times = [f'{hour:02d}:{minute:02d}'
                      for hour in range(9, 16) for minute in (0, 15, 30, 45)
                      if (hour > 9 or minute >= 30)]
-    # Expected intraday grid: 09:30/09:45, all four quarter-hours for
-    # 10:00-14:45, and 15:00-15:45 -> 26 bars per session.
+    
+    # Check grid size
     if len(session_times) != 26:
         raise AssertionError('Incorrect 15-minute session grid')
+
+    # Sort by date, keep only complete sessions, keep closing price
     for date in sorted(bars_by_date):
         day_bars = bars_by_date[date]
         if any((date, hm, symbol) not in day_bars

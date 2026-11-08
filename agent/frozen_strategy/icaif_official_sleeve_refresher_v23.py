@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Role: DATA UPDATER - read-only Alpaca history updater and snapshot builder, used by the data fetcher.
 """Read-only Alpaca IEX history updater and v2 candidate snapshot builder.
 
 No order API, organizer API, LLM, SSH, timers, services, or remote writes.
