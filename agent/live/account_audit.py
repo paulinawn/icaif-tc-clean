@@ -24,21 +24,50 @@ VALID_STATUS = re.compile(r'^[A-Z][A-Z0-9_]{0,35}$')
 
 
 class GetOnlyTransport:
+    """HTTP transport that records methods and rejects every non-GET request."""
     def __init__(self, inner):
+        """Wrap a real HTTP transport delegate.
+
+        Args:
+            inner: underlying transport performing the actual requests.
+        """
         self.inner = inner
         self.methods = []
 
     def handle_request(self, request):
+        """Record the method and forward GET requests only.
+
+        Args:
+            request: httpx request object.
+
+        Returns:
+            The delegate's response for GET requests.
+
+        Raises:
+            RuntimeError: 'V32_NON_GET_BLOCKED' for any non-GET method.
+        """
         self.methods.append(request.method)
         if request.method != 'GET':
             raise RuntimeError('V32_NON_GET_BLOCKED')
         return self.inner.handle_request(request)
 
     def close(self):
+        """Close the underlying delegate transport."""
         self.inner.close()
 
 
 def iso(value):
+    """Parse an ISO-8601 timestamp string into a UTC-aware datetime.
+
+    Args:
+        value: timestamp string, optionally ending in 'Z'.
+
+    Returns:
+        datetime normalized to ``timezone.utc``.
+
+    Raises:
+        ValueError: 'TIMESTAMP_NOT_STRING' or 'TIMESTAMP_NO_TIMEZONE'.
+    """
     if not isinstance(value, str):
         raise ValueError('TIMESTAMP_NOT_STRING')
     dt = datetime.fromisoformat(value.replace('Z', '+00:00'))
@@ -48,6 +77,18 @@ def iso(value):
 
 
 def money(value):
+    """Validate and convert a monetary value to a non-negative Decimal.
+
+    Args:
+        value: str, int, float or Decimal (bool rejected).
+
+    Returns:
+        Decimal, finite and >= 0.
+
+    Raises:
+        ValueError: 'MONEY_WRONG_TYPE', 'MONEY_BAD_DECIMAL_STRING',
+            'MONEY_BAD_DECIMAL' or 'MONEY_OUT_OF_RANGE'.
+    """
     if isinstance(value, bool) or not isinstance(value, (str, int, float, Decimal)):
         raise ValueError('MONEY_WRONG_TYPE')
     if isinstance(value, str) and not re.fullmatch(r'\d+(?:\.\d{1,12})?', value):
@@ -62,6 +103,15 @@ def money(value):
 
 
 def status(value):
+    """Normalize a free-form status string to an uppercase code.
+
+    Args:
+        value: arbitrary status value from the server.
+
+    Returns:
+        The uppercase status if it matches VALID_STATUS, 'UNKNOWN' for
+        non-strings, 'OTHER' for strings that do not match.
+    """
     if not isinstance(value, str):
         return 'UNKNOWN'
     s = value.strip().upper()
@@ -69,6 +119,18 @@ def status(value):
 
 
 def safe_history(client):
+    """Collect the full official decision history via paginated GETs.
+
+    Args:
+        client: organizer session exposing ``decisions(phase, offset=, limit=)``.
+
+    Returns:
+        list of decision record dicts in server order.
+
+    Raises:
+        ValueError: on invalid pagination schema, bad rows, stuck
+            pagination, or more than 20 pages.
+    """
     collected = []
     offset = 0
     for _ in range(20):
@@ -90,6 +152,17 @@ def safe_history(client):
 
 
 def one_round(row):
+    """Validate one schedule round row and extract its key fields.
+
+    Args:
+        row: schedule entry dict.
+
+    Returns:
+        tuple ``(round_id, deadline_utc, status_code)``.
+
+    Raises:
+        ValueError: 'ROUND_NOT_DICT', 'ROUND_UNEXPECTED_ID', or from ``iso``.
+    """
     if not isinstance(row, dict):
         raise ValueError('ROUND_NOT_DICT')
     rid = row.get('id')
@@ -100,6 +173,21 @@ def one_round(row):
 
 
 def print_summary(schedule, portfolio, history, ledger, own=None):
+    """Validate fetched account data and print the V32_* audit report.
+
+    Args:
+        schedule: organizer schedule payload.
+        portfolio: official portfolio payload.
+        history: list of official decision records.
+        ledger: official ledger payload.
+        own: current-round detail payload, or None.
+
+    Returns:
+        None; prints status lines only.
+
+    Raises:
+        ValueError: on any structural or consistency verification failure.
+    """
     if not isinstance(schedule, dict) or schedule.get('universe_confirmed') is not True:
         raise ValueError('SCHEDULE_UNVERIFIED')
     if not isinstance(portfolio, dict) or portfolio.get('phase') != 'official':
@@ -168,7 +256,7 @@ def print_summary(schedule, portfolio, history, ledger, own=None):
     if len(official) != 105:
         print('V32_OFFICIAL_SCHEDULE_ROUND_COUNT', len(official), flush=True)
         raise ValueError('OFFICIAL_SCHEDULE_ROUNDS_NOT_105')
-    official.sort(key=lambda item:item[1])
+    official.sort(key=lambda item: item[1])
     today = server_now.astimezone(ET).date()
     print('V32_SCHEDULE_OFFICIAL_TOTAL', len(official), flush=True)
     same_day = [r for r in official if r[1].astimezone(ET).date() == today]
@@ -185,16 +273,29 @@ def print_summary(schedule, portfolio, history, ledger, own=None):
 
     if history:
         latest = history[-1]
-        for label, field in (('VALIDATION','status'),('SELECTION','selection_status'),('EXECUTION','execution_status')):
-            print('V32_LATEST_DECISION_'+label, status(latest.get(field)), flush=True)
+        for label, field in (('VALIDATION', 'status'), ('SELECTION', 'selection_status'), ('EXECUTION', 'execution_status')):
+            print('V32_LATEST_DECISION_' + label, status(latest.get(field)), flush=True)
     print('V32_OFFICIAL_ACCOUNT_GET_ONLY_PASS', flush=True)
 
 
 def run():
+    """Fetch official account data via GET-only session and print the audit.
+
+    Loads private credentials from the environment, opens a disposable
+    checkpoint, verifies the transport saw only GET methods, then delegates
+    to ``print_summary``.
+
+    Returns:
+        None.
+
+    Raises:
+        ValueError: on missing private config, bad round id, or transport
+            audit failure; propagated from ``print_summary`` otherwise.
+    """
     import httpx
     from kit.config import load_environment
     from kit.original_client import OriginalSession, load_profile
-    load_environment(APP/'.env')
+    load_environment(APP / '.env')
     token = os.environ.get('CODABENCH_TOKEN')
     prof = os.environ.get('ICAIF_PROFILE')
     if not token or not prof:
@@ -206,8 +307,8 @@ def run():
     with tempfile.TemporaryDirectory(prefix='icaif_v32_getonly_') as tmp:
         gate = GetOnlyTransport(httpx.HTTPTransport())
         with OriginalSession(profile=cfg, token=token,
-                             checkpoint=Path(tmp)/'checkpoint.json',
-                             credentials=APP/'.icaif'/'credentials.json',
+                             checkpoint=Path(tmp) / 'checkpoint.json',
+                             credentials=APP / '.icaif' / 'credentials.json',
                              transport=gate, timeout=18, result_timeout=10) as client:
             schedule = client.schedule()
             portfolio = client.portfolio('official')
@@ -253,11 +354,19 @@ def self_test():
 
 
 def main():
+    """CLI entry point: run the self-test or the live audit.
+
+    Args:
+        None; parses ``--self-test`` or ``--run`` (mutually exclusive, required).
+
+    Returns:
+        int: 0 on success, 2 on fail-closed audit error.
+    """
     p = argparse.ArgumentParser(description=__doc__)
-    choices=p.add_mutually_exclusive_group(required=True)
-    choices.add_argument('--self-test',action='store_true')
-    choices.add_argument('--run',action='store_true')
-    a=p.parse_args()
+    choices = p.add_mutually_exclusive_group(required=True)
+    choices.add_argument('--self-test', action='store_true')
+    choices.add_argument('--run', action='store_true')
+    a = p.parse_args()
     if a.self_test:
         self_test()
         return 0
@@ -265,9 +374,9 @@ def main():
         run()
         return 0
     except Exception as exc:
-        print('V32_FAIL_CLOSED',type(exc).__name__,flush=True)
+        print('V32_FAIL_CLOSED', type(exc).__name__, flush=True)
         return 2
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     raise SystemExit(main())
