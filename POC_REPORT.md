@@ -1,73 +1,90 @@
-# POC Report: Agent-Assisted Refactor of ICAIF Strategy Code
+# POC Report: Agent-Assisted Refactor of the ICAIF Trading Agent
 
 ## 1. Summary
 
-An AI coding agent (Devin's local agent in the Windsurf/Devin IDE) refactored the two core strategy files of my ICAIF 2026 trading agent for readability. Behavior stayed identical, verified by a test harness and CI. The agent saved substantial time but needed close human review: it bent two naming rules and made one confident factual error. Recommendation: continue, with tighter instructions and broader test coverage.
+An AI coding agent (Devin's local agent in the Devin/Windsurf IDE) refactored the full codebase of my ICAIF 2026 trading agent for readability: first the two strategy files, then the complete live decision and execution layer that traded during the competition. Behavior stayed identical, verified by a test harness that grew from 6 to 16 tests, CI and static analysis. The agent saved substantial time, but review caught several issues that tests alone would not have: a reordered safety check, a lowered naming standard, and inaccurate summaries. Recommendation: continue, with stricter prompts for safety-critical code and the follow-ups listed in section 7.
 
 ## 2. Scope and success criteria
 
-**In scope:** two files in `agent/strategy/`
-- `market_support.py` (~190 lines)
-- `sleeve_engine.py` (~470 lines)
+| Phase | Scope | Size |
+| --- | --- | --- |
+| 1 (Nov 6) | Strategy: `market_support.py`, `sleeve_engine.py` | ~660 lines |
+| 2 (Nov 8) | Live layer and tools: `state_machine.py`, `organizer_bridge.py`, `market_data_fetcher.py`, `history_refresher.py`, `round_gatekeeper.py`, `orchestrator.py`, `readonly_rehearsal.py`, `account_audit.py`, `catchup_preflight.py`, `tools/generate_policy.py` | ~2,600 lines |
 
-**Off-limits:** all other files, especially `tests/` and the golden output.
+**Off-limits:** the organizer's starter kit (`agent/kit/`), the deployed systemd files, the tests and golden outputs, and each module's built-in self-test.
 
 **Success meant:**
-- Code is clearly more readable (one statement per line, descriptive names, docstrings)
-- Behavior is unchanged: all tests pass, locally and in CI
-- No changes outside the two files
+- Clearly more readable code (one statement per line, descriptive names, docstrings)
+- No behavior change: all tests pass, locally, in Docker and in CI
+- Reason codes, log messages, signatures and statement order preserved
+- Each change confined to its declared files
 
 ## 3. Approach
 
-1. **Harness first.** Before the agent touched anything, I built:
-   - a golden-output test (end-to-end): the full strategy must reproduce the saved target weights
-   - unit tests for the L1 trade/no-trade rule (hold, trade, cap, initial entry)
-   - CI with GitHub Actions running all tests on every PR
-2. **Extend the harness before the riskier file.** The engine already had a built-in self-test. I added it to the test suite unchanged, merged it as its own PR, and told the agent not to touch it.
-3. **Scoped agent tasks.** Each prompt defined goal, scope, rules, constraints and a definition of done (`python -m pytest -v` green). For the engine, the agent worked in steps and ran the tests after each one.
-4. **Human review.** For each PR: ran the tests myself, checked the diff for scope, read logic-heavy parts, and fact-checked the agent's summary.
+1. **Harness first, then extend it before riskier code.** Phase 1 started with a golden-output test and trade-rule unit tests. Before phase 2, the harness was extended with every module's built-in self-test, the live layer's original offline tests, and a second golden test for review-day mode: 6 → 16 tests, all in CI.
+2. **Preserve the original.** The deployed code was tagged `competition-baseline` before any change.
+3. **Structure before readability.** Files were moved to role-based names in a separate PR (`git mv`, then the agent updated imports), so renames and code edits were never mixed.
+4. **One scoped prompt per file group,** from lower to higher risk, each with protected zones (self-tests, command-line interfaces, server paths), explicit must-not-change rules, and a definition of done. Prompts were refined after every review.
+5. **Review beyond green tests:** scope check, an automated comparison of all reason codes before and after, byte-for-byte comparison of protected functions, a call-order fingerprint of the orchestrator's cycle, and a line-by-line read of safety-critical functions.
 
 ## 4. Results
 
+**Outcome:** 12 files refactored across 9 pull requests; 16/16 tests green locally, in Docker and in CI; no reason code, log message, signature or protected function changed; the orchestrator's exactly-once call order verified mechanically.
+
 **What the agent did well**
-- Much more readable code: descriptive names, docstrings, one statement per line
-- Stayed within the allowed file each time
-- Searched the repo itself to find names other files depend on
-- Worked in verified steps on the engine (5 steps, tests green after each)
-- Flagged real issues in the original code without "fixing" them:
-  - inconsistent volatility calculation (`ddof=1` vs. `ddof=0`)
-  - dead constants (`GROUPS`, `EXPOSURE`) and a stale module docstring
+- Readable code with docstrings that state inputs, outputs and the errors raised
+- Respected protected zones (self-tests, interfaces) in every PR
+- Found names other files depend on by searching the repo itself
+- Restored exact source text when a test checked it, instead of changing the test
+- Flagged its own risky change (a reordered check) and pre-existing issues without "fixing" them
+- Correctly kept a submission call whose result was unused, rather than deleting it as dead code
 
-**What it got wrong or needed checking**
-| Finding | Impact |
+**What review caught**
+
+| Finding | Impact | Resolution |
+| --- | --- | --- |
+| Reordered a short-circuit check in `authenticated_round`, claiming identical behavior | Could raise a different error on edge-case inputs; tests did not catch it | Sent back; original evaluation order restored |
+| Kept short variable names "to minimize churn" despite the prompt | Readability goal quietly lowered | Sent back; names fixed |
+| Summaries that contradicted themselves or were inaccurate (e.g. "no source-text tests exist", checking the wrong folder) | Misplaced trust if read alone | Verified every claim against the diff |
+| Ran tests without the project's virtual environment and asked to install packages globally | Environment drift outside the repo | Environment line added to all later prompts |
+| Stopped mid-task on long runs | Incomplete work | Resumed with smaller steps and targeted test runs |
+| Phase 1: renamed names it was told to keep; a confident domain error (US markets have no midday break) | Safe here, but rule deviations | Caught in review |
+
+**Issues found in the original code** (documented; behavior-changing fixes deliberately kept out of readability PRs)
+
+| Finding | Status |
 | --- | --- |
-| Claimed US markets have a midday break (they don't) | Code correct, explanation wrong: a confident domain error |
-| Renamed module-level function `z` → `zscore` despite instructions | Safe here (no other file uses it), but a rule deviation |
-| Renamed parameter `r` in two functions while its summary claimed signatures were kept | Safe here (called positionally), but the summary was inaccurate |
-| Restructured variables in `evaluate`, beyond pure renaming | Covered by the self-test; needed manual review |
-| Wrote files with LF line endings on Windows | Inflated the diff; harmless |
-
-**Outcome:** both refactors merged, 6/6 tests green locally and in CI, zero behavior change detected.
+| A self-test outdated by a later live fix (V3.9.3 decimal handling), never run automatically | Fixed in the harness PR; now runs in CI |
+| Two production tests that check source text rather than behavior (brittle) | Kept; candidates for replacement |
+| `assert` used for input validation (skipped under `python -O`) | Documented |
+| A temporary file can be left behind if a CSV write fails | Documented |
+| Module-name collisions when pytest imported the production test scripts | Fixed: tests limited to `tests/`, scripts run in separate processes |
+| Unused imports and values | 15 removed, verified by search and pyflakes; three unused assignments kept on purpose (one validates input, one is the submission call) |
+| Computed-but-unused signals in the strategy that also act as input validation | Kept |
+| Hard-coded server paths and a folder-name guard tied to the old server layout | Deferred to a configuration change |
 
 ## 5. Effort
 
-| | Agent-assisted | Manual estimate |
-| --- | --- | --- |
-| Per file (prompt to merged PR) | ~30 min | 1–2 h for an experienced developer; several hours for me |
+| | Agent-assisted (actual) |
+| --- | --- |
+| Phase 1: 2 strategy files | ~30 min per file |
+| Phase 2: harness, restructure, research reorganization, 6 refactor PRs, cleanup | ~4.5 h in one afternoon |
 
-Cost: used the agent's free local tier; no paid plan.
+Cost: the agent's free local tier. Most human time went into review, not typing.
 
 ## 6. Limitations
 
-- **Coverage gaps:** functions that fetch Alpaca data (`fetch_iex`, `load_alpaca_headers`) and the refresher file have no tests. Changes there are unverified.
-- **Partial codebase:** only the offline strategy was extracted. The live-trading and submission code was out of scope.
-- **Small sample:** two files, ~660 lines. Results may differ on a large enterprise codebase.
+- **No live run is possible:** the competition platform and credentials no longer exist, so the live layer is verified offline only.
+- **Coverage gaps:** some live code paths (e.g. the live-arming check, which is Linux-only) are not exercised by any test; for those, removed imports were verified by static analysis instead.
+- **The refactored layout is not yet deployable** as is: server paths still describe the competition server (see `deployment/example/`).
 - **Same person as customer and reviewer:** no independent review.
 
 ## 7. Recommendation and next steps
 
-Continue, with these changes:
-- Write tests for the uncovered data functions before refactoring further
-- Make naming rules even more explicit: "do not rename any function or parameter, only local variables"
-- Always verify the agent's summary against the diff instead of trusting it
-- Next candidates: refactor the engine's self-test in its own PR, then the refresher file
+Continue. For safety-critical code, keep the rules that worked: protected zones, explicit evaluation-order and reason-code rules, environment instructions, and mechanical before/after comparisons. Next:
+1. Move server paths into configuration, so the refactored layout can be deployed
+2. Replace the source-text assertions with behavioral tests
+3. Run pyflakes as a CI gate
+4. Refactor the engine's self-test in its own PR, verified with mutation testing
+5. Separate strategy math from operational state in the engine
+6. Fix the `assert` and temp-file findings in small behavior-changing PRs, each with a new test
