@@ -1,0 +1,101 @@
+{
+  "research_only": true,
+  "provider": "camel",
+  "model": "gemini-2.5-flash",
+  "observed_at_utc": "2026-10-11T09:01:28.863693Z",
+  "source_snapshot_sha256": "a48b57a461daf089208d7af88975791035e193239cad604b43400e3c03540b3b",
+  "inputs": [
+    {
+      "event_id": "d948b99df385a817ffc67c50c1c2d5a6",
+      "symbol": "NVDA",
+      "headline": "OpenAI’s Revenue Is Reportedly $20 Billion Lower Than Thought. Nvidia Just Lost $170 Billion",
+      "published_utc": "2026-10-09T11:15:34+00:00",
+      "observed_at_utc": "2026-10-09T13:11:33.804998+00:00",
+      "company_relevance_verified": false
+    },
+    {
+      "event_id": "6412e49d080faf6de2ef20f2468e4681",
+      "symbol": "JNJ",
+      "headline": "New Johnson & Johnson ICOTYDE® (icotrokinra) long-term data demonstrate robust 2-year results in the treatment of adults and adolescents with plaque psoriasis",
+      "published_utc": "2026-10-09T11:00:00+00:00",
+      "observed_at_utc": "2026-10-09T13:12:19.823776+00:00",
+      "company_relevance_verified": false
+    },
+    {
+      "event_id": "5adfd4b631da19fa2c16345b8d645eb6",
+      "symbol": "TSLA",
+      "headline": "Tesla’s China-Made EV Sales Rise 5% in September as European Demand Recovers",
+      "published_utc": "2026-10-09T10:56:38+00:00",
+      "observed_at_utc": "2026-10-09T13:12:42.533621+00:00",
+      "company_relevance_verified": false
+    }
+  ],
+  "results": [
+    {
+      "event_id": "d948b99df385a817ffc67c50c1c2d5a6",
+      "symbol": "NVDA",
+      "event_type": "revenue",
+      "direction": "negative",
+      "materiality": "high",
+      "impact_horizon": "uncertain",
+      "is_company_specific": true,
+      "needs_full_text": true,
+      "rationale": "Nvidia lost $170 billion following reports of lower OpenAI revenue.",
+      "price_reaction_observed": false,
+      "forecast_calibrated": false
+    },
+    {
+      "event_id": "6412e49d080faf6de2ef20f2468e4681",
+      "symbol": "JNJ",
+      "event_type": "product",
+      "direction": "positive",
+      "materiality": "medium",
+      "impact_horizon": "uncertain",
+      "is_company_specific": true,
+      "needs_full_text": true,
+      "rationale": "J&J announced robust 2-year data for ICOTYDE in plaque psoriasis.",
+      "price_reaction_observed": false,
+      "forecast_calibrated": false
+    },
+    {
+      "event_id": "5adfd4b631da19fa2c16345b8d645eb6",
+      "symbol": "TSLA",
+      "event_type": "revenue",
+      "direction": "positive",
+      "materiality": "medium",
+      "impact_horizon": "uncertain",
+      "is_company_specific": true,
+      "needs_full_text": true,
+      "rationale": "Tesla's China-made EV sales rose 5% in September with recovering European demand.",
+      "price_reaction_observed": false,
+      "forecast_calibrated": false
+    }
+  ],
+  "historical_backtest_eligible": false,
+  "model_return_alpha_validated": false,
+  "LLM_can_determine_price_already_moved": false,
+  "possible_provider_usage": {
+    "prompt_tokens": 722,
+    "completion_tokens": 424,
+    "total_tokens": 1146,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "text_tokens": 722,
+      "audio_tokens": 0,
+      "image_tokens": 0
+    },
+    "completion_tokens_details": {
+      "text_tokens": 424,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "image_tokens": 0
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "input_tokens_details": null,
+    "claude_cache_creation_5_m_tokens": 0,
+    "claude_cache_creation_1_h_tokens": 0
+  },
+  "official_model_permission_verified": false,
+  "output_is_order_or_trading_signal": false
+}

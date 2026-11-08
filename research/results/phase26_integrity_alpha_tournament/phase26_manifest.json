@@ -1,0 +1,25 @@
+{
+  "status": "RESEARCH_ONLY_NO_DEPLOYMENT",
+  "source_sha256": "51f702a7ba1af3837894b9e7252437c9fedf6715b77cd7fe8f83c675b40993c9",
+  "parquet_sha256": "d2d60204836769b7d9472965dbcbde5c5d068ddd4a52b2f3111fded8e17b6f2a",
+  "price_basis": "adjusted close with adjusted opening price/within-bar factor",
+  "window": "15 sessions independently reset to $1m",
+  "fees": "0.1% buy+sell notional",
+  "timing": "features prior completed close; simulated next 09:30 open",
+  "history_evaluated": [
+    "2023",
+    "2024",
+    "2025 EXPOSED"
+  ],
+  "untouched": [
+    "2026"
+  ],
+  "limitations": [
+    "hourly marks not exact official 105-period valuation",
+    "no official execution-price tape",
+    "no public-news historical event availability archive",
+    "paired bootstrap exploratory not independent market regime evidence",
+    "price-series adjustment may not equal official fill accounting",
+    "peer scenarios hypothetical, not actual competitors"
+  ]
+}

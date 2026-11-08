@@ -1,0 +1,35 @@
+{
+  "research_only": true,
+  "official_deployment": false,
+  "episodes": 6,
+  "episode_stride": 15,
+  "policies": [
+    "equal80_hold",
+    "blend80_hold",
+    "dynamic_5d_reversal",
+    "blend80_reversal_sleeve",
+    "blend80_camel_GS_illustrative",
+    "blend80_camel_GS_JPM_repeat_sensitivity",
+    "blend80_reversal_sleeve_camel_GS"
+  ],
+  "total_decisions": 4410,
+  "total_model_calls": 0,
+  "market_input": "C:\\Users\\pauli\\Documents\\ICAIF2026\\2026ICAIF_Trading_Agent_Competition\\starter-kit\\artifacts\\phase29_alpaca_refresh\\alpaca_iex_15m_through_2026-10-09.csv",
+  "market_sha256": "c3e02d68c8af0b5f26f28b11e82901ce1e72192295304710ae919d7661cfa259",
+  "event_input": "C:\\Users\\pauli\\Documents\\ICAIF2026\\2026ICAIF_Trading_Agent_Competition\\starter-kit\\artifacts\\phase43_camel_research_batch_v3\\retrospective_predictions.json",
+  "event_sha256": "6ee37519581fb10e7ff4914056c2eb71121440818c97880e6cc3d295581e3ca9",
+  "original_SEC_times_verified_from_organizer_agnostic_SEC_archives": true,
+  "retrospective_LLM_training_memory_uncontrolled": true,
+  "source_observed_in_October_not_July": true,
+  "important_limitations": [
+    "six previously examined episodes; NOT out of sample",
+    "historical CaMeL model output generated in Oct; not actual July execution",
+    "60-minute source processing delay is hypothetical",
+    "no verified July analyst consensus surprise or genuine novelty check for GS",
+    "JPM later presentation is excluded from primary signal",
+    "IEX 15-minute open and close prices are not organizer execution prices",
+    "missing sessions filtered by Phase30/39; full market holiday calendar not verified",
+    "market simulations ignore wider market impact and liquidity constraints",
+    "returns are not rankings against entrants"
+  ]
+}

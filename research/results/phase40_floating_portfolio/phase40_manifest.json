@@ -1,0 +1,33 @@
+{
+  "research_only": true,
+  "no_llm_provider_calls": true,
+  "no_organizer_api_calls": true,
+  "no_official_deployment": true,
+  "source_sha256": "c3e02d68c8af0b5f26f28b11e82901ce1e72192295304710ae919d7661cfa259",
+  "data_end": "2026-10-09",
+  "episodes": 6,
+  "trading_sessions_per_episode": 15,
+  "decision_rounds_per_episode": 105,
+  "policies": 12,
+  "stride": 15,
+  "fixed_target_holding_counts": false,
+  "emergent_holding_count_from_individual_stock_gates": true,
+  "dynamic_exposure_band": [
+    0.7,
+    0.9
+  ],
+  "name_cap": 0.1,
+  "sector_cap": 0.3,
+  "min_exposure_not_forced_when_no_eligible_stocks": true,
+  "known_limitations": [
+    "Alpaca IEX open/close price execution proxy and unadjusted corporate actions",
+    "15-day Sharpe annualization is noisy",
+    "No untouched 2026 holdout after extensive hypothesis testing",
+    "No expected-return calibration, so heuristics are hypotheses only",
+    "Incomplete US trading sessions skipped by Phase30 loader",
+    "CaMeL outcomes cannot be backdated; zero historical event trades is normal",
+    "Exposure may drift outside planning band between decisions due to price movements",
+    "Sector taxonomy is manual and needs formal auditing",
+    "Cross-sectional IC is exploratory, not independently validated"
+  ]
+}

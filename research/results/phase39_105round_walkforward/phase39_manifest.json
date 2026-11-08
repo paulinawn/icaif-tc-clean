@@ -1,0 +1,43 @@
+{
+  "stage": 39,
+  "research_only": true,
+  "official_trades": 0,
+  "llm_calls": 0,
+  "algo": "immediate / fixed7 / trend-accelerated / contrarian-accelerated",
+  "first_day_start_exposure": 0.3,
+  "final_target_exposure": 0.8,
+  "trigger_log_return_threshold": 0.003,
+  "acceleration": 0.15,
+  "delay": 0.1,
+  "code_sha256": "9fb227e796acbd3662f7f8d0cf7c4224dd01106b4f4641109def7175d0cd1c96",
+  "dependency_sha256": {
+    "icaif_phase30_2026_walkforward_agent_lab_v2.py": "47cb883557a7c2aa2b728cab01a623c46e8b3d3140974a5ce8bf98b7efc945b1",
+    "icaif_phase37_risk_regime_tournament.py": "e40d18d9fadb0b1d4f86b6fbefd49326056ddfb18ce63bbf92af0cf7fe20ee51",
+    "icaif_phase38_105slot_camel_staging.py": "0c114f76505404e81908adb6016b28d4da004f12d010d492335114e306c993a4"
+  },
+  "input_sha256": "c3e02d68c8af0b5f26f28b11e82901ce1e72192295304710ae919d7661cfa259",
+  "last_complete_data_date": "2026-10-09",
+  "incomplete_sessions": 36,
+  "minimum_feature_history_days": 121,
+  "episode_days": 15,
+  "rounds_per_episode": 105,
+  "stride": 15,
+  "overlap": false,
+  "episodes": 6,
+  "policy_count": 25,
+  "unpaired_reference_count": 13,
+  "rank_scope": "internal candidate-relative per 15-session episode, not actual competition rank",
+  "eligible_historical_camel_events": 0,
+  "executed_camel_paper_trades": 0,
+  "forward_only_rule": "No signal enters before source publication, observation, CaMeL completed time and human review.",
+  "limitations": [
+    "Already viewed Jul-Oct 2026 cannot be a pristine holdout",
+    "Earlier 2026 is retrospective, not prospective proof",
+    "Incomplete market sessions and half-days are not imputed",
+    "IEX 15-minute prices are unadjusted and execution is a proxy",
+    "Round Sharpe annualized from only 15 sessions and is noisy",
+    "There is no historical LLM alpha absent contemporaneous model calls",
+    "Sector buckets in legacy lowvol are not true GICS",
+    "First-day buy-only staging can finish slightly off 80% due to intraday drift"
+  ]
+}

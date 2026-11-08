@@ -1,0 +1,13 @@
+{
+  "event_id": "296acab06a07f5ec1b75299fc8a0471b",
+  "symbol": "NVDA",
+  "headline": "Dow Jones Futures Loom; ASML, Nvidia Chipmaker Taiwan Semi To Kick Off AI Earnings",
+  "published_utc": "2026-10-11T11:53:40Z",
+  "first_observed_utc": "2026-10-11T13:00:33.778957Z",
+  "source": "FINNHUB",
+  "publisher": "Yahoo",
+  "source_url": "https://finnhub.io/api/news?id=76138a8289e5b88d1550f8a97dd7b0848e3fa561e822d860ab4dbbabfa6fa8b4",
+  "company_relevance_verified": false,
+  "historical_backtest_eligible": false,
+  "source_verification": "FINNHUB_HEADER_AUTH_READ_ONLY_NO_ISSUER_FACT_CHECK"
+}

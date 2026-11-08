@@ -1,0 +1,119 @@
+{
+  "research_only": true,
+  "candidate_policies": [
+    {
+      "name": "equal80_hold",
+      "kind": "baseline",
+      "exposure": 0.8,
+      "ml_fraction": 0,
+      "risk": false,
+      "cadence": 0,
+      "gate": 0,
+      "max_trade": 0.12
+    },
+    {
+      "name": "equal90_hold",
+      "kind": "baseline",
+      "exposure": 0.9,
+      "ml_fraction": 0,
+      "risk": false,
+      "cadence": 0,
+      "gate": 0,
+      "max_trade": 0.12
+    },
+    {
+      "name": "equal100_hold",
+      "kind": "baseline",
+      "exposure": 1.0,
+      "ml_fraction": 0,
+      "risk": false,
+      "cadence": 0,
+      "gate": 0,
+      "max_trade": 0.12
+    },
+    {
+      "name": "industry90_hold",
+      "kind": "industry",
+      "exposure": 0.9,
+      "ml_fraction": 0,
+      "risk": false,
+      "cadence": 0,
+      "gate": 0,
+      "max_trade": 0.12
+    },
+    {
+      "name": "industry_risk90_hold",
+      "kind": "industry",
+      "exposure": 0.9,
+      "ml_fraction": 0,
+      "risk": true,
+      "cadence": 0,
+      "gate": 0,
+      "max_trade": 0.12
+    },
+    {
+      "name": "industry_ml90_t15_hold",
+      "kind": "ml",
+      "exposure": 0.9,
+      "ml_fraction": 0.15,
+      "risk": false,
+      "cadence": 0,
+      "gate": 0,
+      "max_trade": 0.12
+    },
+    {
+      "name": "industry_ml90_t30_hold",
+      "kind": "ml",
+      "exposure": 0.9,
+      "ml_fraction": 0.3,
+      "risk": false,
+      "cadence": 0,
+      "gate": 0,
+      "max_trade": 0.12
+    },
+    {
+      "name": "industry_ml_risk90_t15_hold",
+      "kind": "ml",
+      "exposure": 0.9,
+      "ml_fraction": 0.15,
+      "risk": true,
+      "cadence": 0,
+      "gate": 0,
+      "max_trade": 0.12
+    },
+    {
+      "name": "industry_ml_risk90_t30_hold",
+      "kind": "ml",
+      "exposure": 0.9,
+      "ml_fraction": 0.3,
+      "risk": true,
+      "cadence": 0,
+      "gate": 0,
+      "max_trade": 0.12
+    },
+    {
+      "name": "industry_ml_risk90_t30_weekly",
+      "kind": "ml",
+      "exposure": 0.9,
+      "ml_fraction": 0.3,
+      "risk": true,
+      "cadence": 5,
+      "gate": 0.06,
+      "max_trade": 0.12
+    }
+  ],
+  "training": "expanding years with 1d/5d label purge",
+  "years": "2023-24 development, 2025 previously exposed, 2026 reserved",
+  "model": "Phase20 HGB 1d-price,5d-price,5d-SEC; within-six-group tilts",
+  "historical_sec_qualifier": "filing date + 2 days research approximation",
+  "price_basis_verified": false,
+  "risk_optimization_fallback_count": 0,
+  "not_exact_round_execution": true,
+  "source_sha256": "590c4a3d342370d3dcfa15b17542467163421672d4017ecb4351d6f28ed78b78",
+  "keep_gate": "paired four-metric scores and ablation vs industry90, risk90 and equal90",
+  "official_model_approved": false,
+  "turnover_guard_semantics": "80% buffered prior-close estimate, not guaranteed fill cap",
+  "realized_cap_overshoot_total": 0,
+  "large_open_gap_count": 0,
+  "overshoot_examples": []
+}

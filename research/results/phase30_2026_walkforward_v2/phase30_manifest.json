@@ -1,0 +1,27 @@
+{
+  "source": "Alpaca IEX 15-minute CSV, historical price proxy, not organizer fill tape",
+  "no_organizer_apis": true,
+  "fee_one_way": 0.001,
+  "bar_availability": "bar start 10:00 means completes 10:15; 10:25 decision sees 10:00 but not 10:15",
+  "validation": "2026-07-01 to 2026-08-31",
+  "diagnostic": "2026-09-01 to latest available complete trading day; results exploratory",
+  "model": "monthly expanding ridge 1d/5d daily cross-sectional excess return + independently trained hourly forecasts",
+  "score": "paired four-metric rank across tested strategies; NOT expected actual competition rank",
+  "limitations": [
+    "IEX feed is not SIP",
+    "No SEC/news or LLM features",
+    "RAW prices not total-return adjusted",
+    "Missing sessions dropped",
+    "Bar opens are execution proxies, not guaranteed fills",
+    "Monthly refit with h-day labels matured before start month",
+    "Fixed test candidates, not hyperparameter optimized",
+    "Portfolio resets at validation/diagnostic split, continuous within each split"
+  ],
+  "input_path": "C:\\Users\\pauli\\Documents\\ICAIF2026\\2026ICAIF_Trading_Agent_Competition\\starter-kit\\artifacts\\phase29_alpaca_refresh\\alpaca_iex_15m_through_2026-10-09.csv",
+  "data_asof": "2026-10-09",
+  "oct07_09_included": true,
+  "all_complete_days": 243,
+  "removed_incomplete_days": 36,
+  "first_data_date": "2025-09-10",
+  "last_data_date": "2026-10-09"
+}

@@ -1,0 +1,230 @@
+{
+  "stage": "RESEARCH_ONLY_NOT_ELIGIBLE_FOR_LIVE_TRADING",
+  "fee_rate": 0.001,
+  "seed": 20261009,
+  "training": "expanding years 2023/2024/2025; outcome label maturities purged",
+  "models": "HGB 1-day price, HGB 5-day price, HGB 5-day price+SEC",
+  "execution": "once daily open proxies; subsequent round prices are hourly proxies only",
+  "validation": "2023/2024 development, 2025 exposed diagnostic, 2026 NOT tested",
+  "news_training": "NOT INCLUDED: latest Finnhub snapshots have no certified historical availability",
+  "macro_training": "NOT INCLUDED: requires verified vintage availability by round",
+  "sec_timing": "filed date + 2 calendar days (research proxy; not acceptance-hour exact)",
+  "sec_fallback_tags": [
+    "Revenues",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "SalesRevenueNet",
+    "SalesAndOtherOperatingRevenue",
+    "OperatingRevenues",
+    "RevenuesNetOfInterestExpense",
+    "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "SalesRevenueGoodsNet",
+    "UtilityRevenues",
+    "ElectricUtilityRevenue",
+    "ElectricUtilityRevenues",
+    "RegulatedAndUnregulatedOperatingRevenue",
+    "SalesRevenueServicesNet"
+  ],
+  "SEC_missing_revenue": [
+    "XOM"
+  ],
+  "model_training_counts": {
+    "2023": {
+      "price_1d": {
+        "train": 10950,
+        "test": 7440,
+        "train_last_day_index": 494,
+        "test_first_day_index": 496,
+        "label_horizon_days": 1
+      },
+      "price_5d": {
+        "train": 10830,
+        "test": 7440,
+        "train_last_day_index": 490,
+        "test_first_day_index": 496,
+        "label_horizon_days": 5
+      },
+      "sec_5d": {
+        "train": 10830,
+        "test": 7440,
+        "train_last_day_index": 490,
+        "test_first_day_index": 496,
+        "label_horizon_days": 5
+      }
+    },
+    "2024": {
+      "price_1d": {
+        "train": 18390,
+        "test": 7470,
+        "train_last_day_index": 742,
+        "test_first_day_index": 744,
+        "label_horizon_days": 1
+      },
+      "price_5d": {
+        "train": 18270,
+        "test": 7470,
+        "train_last_day_index": 738,
+        "test_first_day_index": 744,
+        "label_horizon_days": 5
+      },
+      "sec_5d": {
+        "train": 18270,
+        "test": 7470,
+        "train_last_day_index": 738,
+        "test_first_day_index": 744,
+        "label_horizon_days": 5
+      }
+    },
+    "2025": {
+      "price_1d": {
+        "train": 25860,
+        "test": 7410,
+        "train_last_day_index": 991,
+        "test_first_day_index": 993,
+        "label_horizon_days": 1
+      },
+      "price_5d": {
+        "train": 25740,
+        "test": 7410,
+        "train_last_day_index": 987,
+        "test_first_day_index": 993,
+        "label_horizon_days": 5
+      },
+      "sec_5d": {
+        "train": 25740,
+        "test": 7410,
+        "train_last_day_index": 987,
+        "test_first_day_index": 993,
+        "label_horizon_days": 5
+      }
+    }
+  },
+  "candidate_policies": [
+    {
+      "name": "equal80_hold",
+      "method": "equal",
+      "equity": 0.8,
+      "cadence": 0,
+      "gate": 0.0,
+      "max_trade": 1.0,
+      "regime": false,
+      "alpha_mix": 0.0
+    },
+    {
+      "name": "equal100_hold",
+      "method": "equal",
+      "equity": 1.0,
+      "cadence": 0,
+      "gate": 0.0,
+      "max_trade": 1.0,
+      "regime": false,
+      "alpha_mix": 0.0
+    },
+    {
+      "name": "equal80_daily_gate08",
+      "method": "equal",
+      "equity": 0.8,
+      "cadence": 1,
+      "gate": 0.08,
+      "max_trade": 0.12,
+      "regime": false,
+      "alpha_mix": 0.0
+    },
+    {
+      "name": "price80_hold_t15",
+      "method": "price",
+      "equity": 0.8,
+      "cadence": 0,
+      "gate": 0.0,
+      "max_trade": 1.0,
+      "regime": false,
+      "alpha_mix": 0.15
+    },
+    {
+      "name": "sec80_hold_t15",
+      "method": "sec",
+      "equity": 0.8,
+      "cadence": 0,
+      "gate": 0.0,
+      "max_trade": 1.0,
+      "regime": false,
+      "alpha_mix": 0.15
+    },
+    {
+      "name": "blend80_hold_t15",
+      "method": "blend",
+      "equity": 0.8,
+      "cadence": 0,
+      "gate": 0.0,
+      "max_trade": 1.0,
+      "regime": false,
+      "alpha_mix": 0.15
+    },
+    {
+      "name": "blend80_weekly_gate06",
+      "method": "blend",
+      "equity": 0.8,
+      "cadence": 5,
+      "gate": 0.06,
+      "max_trade": 0.12,
+      "regime": false,
+      "alpha_mix": 0.15
+    },
+    {
+      "name": "blend80_daily_gate06",
+      "method": "blend",
+      "equity": 0.8,
+      "cadence": 1,
+      "gate": 0.06,
+      "max_trade": 0.1,
+      "regime": false,
+      "alpha_mix": 0.15
+    },
+    {
+      "name": "blend80_daily_gate12",
+      "method": "blend",
+      "equity": 0.8,
+      "cadence": 1,
+      "gate": 0.12,
+      "max_trade": 0.12,
+      "regime": false,
+      "alpha_mix": 0.15
+    },
+    {
+      "name": "blend80_regime_weekly",
+      "method": "blend",
+      "equity": 0.8,
+      "cadence": 5,
+      "gate": 0.06,
+      "max_trade": 0.16,
+      "regime": true,
+      "alpha_mix": 0.15
+    },
+    {
+      "name": "blend100_weekly_gate08",
+      "method": "blend",
+      "equity": 1.0,
+      "cadence": 5,
+      "gate": 0.08,
+      "max_trade": 0.12,
+      "regime": false,
+      "alpha_mix": 0.15
+    },
+    {
+      "name": "blend80_weekly_t30",
+      "method": "blend",
+      "equity": 0.8,
+      "cadence": 5,
+      "gate": 0.06,
+      "max_trade": 0.15,
+      "regime": false,
+      "alpha_mix": 0.3
+    }
+  ],
+  "deployment_requirements": [
+    "Actual round-aligned 15min bars for intraday changes",
+    "Exact SEC EDGAR acceptance timestamps and historical filing audit",
+    "Separate real-time inference checkpoint and one-writer submission tests",
+    "Fresh independent evaluation and fee/risk rank calibration",
+    "Only pre-frozen policy and model versions may run Official"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "selection_rule": "2023-24 mean and worst year four-metric ranks",
+  "max_candidates": 180,
+  "step": 15,
+  "shortlist": [
+    "equal_g080_k30_hold_nt020_fixed",
+    "mom120_g060_k10_hold_nt050_regime",
+    "mom60_g060_k20_hold_nt020_fixed",
+    "mom120_g060_k30_hold_nt050_regime",
+    "mom120_g060_k20_hold_nt050_regime",
+    "mom120_g060_k30_stage3_nt020_fixed",
+    "mom120_g060_k30_stage3_nt050_fixed",
+    "mom120_g060_k30_stage3_nt020_regime",
+    "mom120_g060_k30_hold_nt020_fixed",
+    "mom120_g060_k10_hold_nt050_fixed"
+  ],
+  "test_year_unseen": 2026,
+  "limitation": "hourly proxy; 15m replay mandatory before deployment"
+}

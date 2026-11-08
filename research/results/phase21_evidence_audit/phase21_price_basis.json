@@ -1,0 +1,20 @@
+{
+  "parquet_columns": [
+    "timestamp_et",
+    "trading_date",
+    "ticker",
+    "open",
+    "high",
+    "low",
+    "close",
+    "adj_close",
+    "volume",
+    "sector_group"
+  ],
+  "rows_checked": 210330,
+  "raw_close_available": true,
+  "adjusted_open_available": false,
+  "basis_status": "NO_LARGE_CLOSE_ADJUSTMENT_DETECTED",
+  "suspect_symbols": [],
+  "examples": []
+}

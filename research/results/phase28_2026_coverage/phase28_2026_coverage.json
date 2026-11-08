@@ -1,0 +1,446 @@
+{
+  "asof_cutoff_et": "2026-10-09",
+  "files": [
+    {
+      "bytes": 16783902,
+      "columns": [
+        "symbol",
+        "timestamp",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "trade_count",
+        "vwap"
+      ],
+      "days_2026_with_at_least_30_csv_rows_preofficial": 191,
+      "duplicate_symbol_timestamp_records_2026": 0,
+      "filename": "alpaca_iex_15m_400d.csv",
+      "first_date_2026_et": "2026-01-02",
+      "first_date_et": "2025-09-02",
+      "first_ten_2026_dates": [
+        "2026-01-02",
+        "2026-01-05",
+        "2026-01-06",
+        "2026-01-07",
+        "2026-01-08",
+        "2026-01-09",
+        "2026-01-12",
+        "2026-01-13",
+        "2026-01-14",
+        "2026-01-15"
+      ],
+      "invalid_timestamp_row_numbers": [],
+      "invalid_timestamps": 0,
+      "last_date_2026_et": "2026-10-06",
+      "last_date_et": "2026-10-06",
+      "last_ten_2026_dates": [
+        "2026-09-23",
+        "2026-09-24",
+        "2026-09-25",
+        "2026-09-28",
+        "2026-09-29",
+        "2026-09-30",
+        "2026-10-01",
+        "2026-10-02",
+        "2026-10-05",
+        "2026-10-06"
+      ],
+      "missing_universe_symbols_2026": [],
+      "most_common_bar_times_et_2026": [
+        [
+          "09:30",
+          5730
+        ],
+        [
+          "09:45",
+          5730
+        ],
+        [
+          "10:00",
+          5730
+        ],
+        [
+          "10:15",
+          5730
+        ],
+        [
+          "10:30",
+          5730
+        ],
+        [
+          "10:45",
+          5730
+        ],
+        [
+          "11:00",
+          5730
+        ],
+        [
+          "11:30",
+          5730
+        ],
+        [
+          "11:45",
+          5730
+        ],
+        [
+          "12:00",
+          5730
+        ],
+        [
+          "12:15",
+          5730
+        ],
+        [
+          "12:30",
+          5730
+        ],
+        [
+          "12:45",
+          5730
+        ],
+        [
+          "13:15",
+          5730
+        ],
+        [
+          "13:30",
+          5730
+        ],
+        [
+          "13:45",
+          5730
+        ]
+      ],
+      "preofficial_2026_distinct_days_per_symbol": {
+        "AAPL": 191,
+        "AMZN": 191,
+        "BA": 191,
+        "BAC": 191,
+        "CAT": 191,
+        "CRM": 191,
+        "CVX": 191,
+        "DIS": 191,
+        "GE": 191,
+        "GOOGL": 191,
+        "GS": 191,
+        "INTC": 191,
+        "JNJ": 191,
+        "JPM": 191,
+        "KO": 191,
+        "LLY": 191,
+        "META": 191,
+        "MSFT": 191,
+        "NEE": 191,
+        "NKE": 191,
+        "NVDA": 191,
+        "PFE": 191,
+        "PYPL": 191,
+        "T": 191,
+        "TMO": 191,
+        "TSLA": 191,
+        "UNH": 191,
+        "V": 191,
+        "WMT": 191,
+        "XOM": 191
+      },
+      "records_2026": 148976,
+      "records_2026_per_symbol": {
+        "AAPL": 4966,
+        "AMZN": 4966,
+        "BA": 4966,
+        "BAC": 4966,
+        "CAT": 4966,
+        "CRM": 4966,
+        "CVX": 4966,
+        "DIS": 4966,
+        "GE": 4966,
+        "GOOGL": 4966,
+        "GS": 4962,
+        "INTC": 4966,
+        "JNJ": 4966,
+        "JPM": 4966,
+        "KO": 4966,
+        "LLY": 4966,
+        "META": 4966,
+        "MSFT": 4966,
+        "NEE": 4966,
+        "NKE": 4966,
+        "NVDA": 4966,
+        "PFE": 4966,
+        "PYPL": 4966,
+        "T": 4966,
+        "TMO": 4966,
+        "TSLA": 4966,
+        "UNH": 4966,
+        "V": 4966,
+        "WMT": 4966,
+        "XOM": 4966
+      },
+      "rows": 214457,
+      "rows_after_preofficial_cutoff_oct09": 0,
+      "sha256": "77e70af43c515db342cf13ecfde213078a4fd4e7dcd77a41857e421e6ea5fcf6",
+      "status": "AUDITED",
+      "symbol_column": "symbol",
+      "symbols_2026": [
+        "AAPL",
+        "AMZN",
+        "BA",
+        "BAC",
+        "CAT",
+        "CRM",
+        "CVX",
+        "DIS",
+        "GE",
+        "GOOGL",
+        "GS",
+        "INTC",
+        "JNJ",
+        "JPM",
+        "KO",
+        "LLY",
+        "META",
+        "MSFT",
+        "NEE",
+        "NKE",
+        "NVDA",
+        "PFE",
+        "PYPL",
+        "T",
+        "TMO",
+        "TSLA",
+        "UNH",
+        "V",
+        "WMT",
+        "XOM"
+      ],
+      "timestamp_column": "timestamp",
+      "timestamp_interpretations": {
+        "tz_aware": 214457
+      }
+    },
+    {
+      "bytes": 3876803,
+      "columns": [
+        "symbol",
+        "timestamp",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "trade_count",
+        "vwap"
+      ],
+      "days_2026_with_at_least_30_csv_rows_preofficial": 63,
+      "duplicate_symbol_timestamp_records_2026": 0,
+      "filename": "alpaca_iex_15min_recent.csv",
+      "first_date_2026_et": "2026-07-09",
+      "first_date_et": "2026-07-09",
+      "first_ten_2026_dates": [
+        "2026-07-09",
+        "2026-07-10",
+        "2026-07-13",
+        "2026-07-14",
+        "2026-07-15",
+        "2026-07-16",
+        "2026-07-17",
+        "2026-07-20",
+        "2026-07-21",
+        "2026-07-22"
+      ],
+      "invalid_timestamp_row_numbers": [],
+      "invalid_timestamps": 0,
+      "last_date_2026_et": "2026-10-06",
+      "last_date_et": "2026-10-06",
+      "last_ten_2026_dates": [
+        "2026-09-23",
+        "2026-09-24",
+        "2026-09-25",
+        "2026-09-28",
+        "2026-09-29",
+        "2026-09-30",
+        "2026-10-01",
+        "2026-10-02",
+        "2026-10-05",
+        "2026-10-06"
+      ],
+      "missing_universe_symbols_2026": [],
+      "most_common_bar_times_et_2026": [
+        [
+          "09:30",
+          1890
+        ],
+        [
+          "09:45",
+          1890
+        ],
+        [
+          "10:00",
+          1890
+        ],
+        [
+          "10:15",
+          1890
+        ],
+        [
+          "10:30",
+          1890
+        ],
+        [
+          "10:45",
+          1890
+        ],
+        [
+          "11:00",
+          1890
+        ],
+        [
+          "11:15",
+          1890
+        ],
+        [
+          "11:30",
+          1890
+        ],
+        [
+          "11:45",
+          1890
+        ],
+        [
+          "12:00",
+          1890
+        ],
+        [
+          "12:15",
+          1890
+        ],
+        [
+          "12:30",
+          1890
+        ],
+        [
+          "12:45",
+          1890
+        ],
+        [
+          "13:15",
+          1890
+        ],
+        [
+          "13:30",
+          1890
+        ]
+      ],
+      "preofficial_2026_distinct_days_per_symbol": {
+        "AAPL": 63,
+        "AMZN": 63,
+        "BA": 63,
+        "BAC": 63,
+        "CAT": 63,
+        "CRM": 63,
+        "CVX": 63,
+        "DIS": 63,
+        "GE": 63,
+        "GOOGL": 63,
+        "GS": 63,
+        "INTC": 63,
+        "JNJ": 63,
+        "JPM": 63,
+        "KO": 63,
+        "LLY": 63,
+        "META": 63,
+        "MSFT": 63,
+        "NEE": 63,
+        "NKE": 63,
+        "NVDA": 63,
+        "PFE": 63,
+        "PYPL": 63,
+        "T": 63,
+        "TMO": 63,
+        "TSLA": 63,
+        "UNH": 63,
+        "V": 63,
+        "WMT": 63,
+        "XOM": 63
+      },
+      "records_2026": 49139,
+      "records_2026_per_symbol": {
+        "AAPL": 1638,
+        "AMZN": 1638,
+        "BA": 1638,
+        "BAC": 1638,
+        "CAT": 1638,
+        "CRM": 1638,
+        "CVX": 1638,
+        "DIS": 1638,
+        "GE": 1638,
+        "GOOGL": 1638,
+        "GS": 1637,
+        "INTC": 1638,
+        "JNJ": 1638,
+        "JPM": 1638,
+        "KO": 1638,
+        "LLY": 1638,
+        "META": 1638,
+        "MSFT": 1638,
+        "NEE": 1638,
+        "NKE": 1638,
+        "NVDA": 1638,
+        "PFE": 1638,
+        "PYPL": 1638,
+        "T": 1638,
+        "TMO": 1638,
+        "TSLA": 1638,
+        "UNH": 1638,
+        "V": 1638,
+        "WMT": 1638,
+        "XOM": 1638
+      },
+      "rows": 49139,
+      "rows_after_preofficial_cutoff_oct09": 0,
+      "sha256": "63f3d83530f1100ddb7abffd0548149974aa960d51883beb4ada3aef1b9e4559",
+      "status": "AUDITED",
+      "symbol_column": "symbol",
+      "symbols_2026": [
+        "AAPL",
+        "AMZN",
+        "BA",
+        "BAC",
+        "CAT",
+        "CRM",
+        "CVX",
+        "DIS",
+        "GE",
+        "GOOGL",
+        "GS",
+        "INTC",
+        "JNJ",
+        "JPM",
+        "KO",
+        "LLY",
+        "META",
+        "MSFT",
+        "NEE",
+        "NKE",
+        "NVDA",
+        "PFE",
+        "PYPL",
+        "T",
+        "TMO",
+        "TSLA",
+        "UNH",
+        "V",
+        "WMT",
+        "XOM"
+      ],
+      "timestamp_column": "timestamp",
+      "timestamp_interpretations": {
+        "tz_aware": 49139
+      }
+    }
+  ],
+  "note": "Coverage audit only. Not evidence of adjustment, feed provenance, price accuracy, or future label maturity."
+}

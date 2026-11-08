@@ -1,0 +1,9 @@
+{
+  "event_sha256": "d24065ee393334bfaa2f11cc9668e1660aa775895085d9a3223089496f8597ae",
+  "reserved_at_utc": "2026-10-11T13:48:24.891797Z",
+  "max_camel_calls": 1,
+  "laya_calls": 0,
+  "request_byte_proxy": 2097,
+  "provider_actual_cost": "UNKNOWN",
+  "status": "reserved_even_if_timeout"
+}

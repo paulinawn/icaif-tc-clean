@@ -1,0 +1,72 @@
+{
+  "research_only": true,
+  "network_calls": 0,
+  "llm_calls": 0,
+  "organizer_calls": 0,
+  "official_deployment": false,
+  "data_end": "2026-10-09",
+  "data_sha256": "c3e02d68c8af0b5f26f28b11e82901ce1e72192295304710ae919d7661cfa259",
+  "source_file": "C:\\Users\\pauli\\Documents\\ICAIF2026\\2026ICAIF_Trading_Agent_Competition\\starter-kit\\artifacts\\phase29_alpaca_refresh\\alpaca_iex_15m_through_2026-10-09.csv",
+  "skipped_incomplete_dates": 36,
+  "episode_sessions": 15,
+  "decision_rounds": 105,
+  "rolling_stride": 5,
+  "overlapping_windows_not_independent": true,
+  "period_segments": [
+    "development",
+    "exposed_diagnostic"
+  ],
+  "policy_count": 29,
+  "research_reference_policy_count": 17,
+  "verified_event_records": 0,
+  "event_decision_rows": 0,
+  "camel_backtest_note": "No model inference before decision => no CaMeL alpha attributed; identical +/- variants expected.",
+  "models": [
+    "static 60/80",
+    "price/industry blend",
+    "20-day GICS-like sector lowvol",
+    "5+20day relative momentum",
+    "15min intraday reversal",
+    "staged execution",
+    "causal CaMeL events"
+  ],
+  "source_limitations": [
+    "Unadjusted IEX market prices / incomplete sessions skipped",
+    "Legacy six-by-five groups remain only for Phase37 baseline control; GICS-like map is manual",
+    "Fees modeled 0.1% buys plus sells, no impact/slippage beyond IEX open proxy",
+    "All September/October market results already viewed; no untouched test",
+    "Overlap windows correlate strongly, no independent error bars",
+    "Stage R1 30pct means cash drag, not extra alpha",
+    "Daily and intraday tilts are heuristics with no separately validated expected-return model",
+    "CaMeL calls not made; hypothetical overlay requires real timestamped source AND inference"
+  ],
+  "stage_equity_targets_round_1_to_7": [
+    0.3,
+    0.38333333,
+    0.46666667,
+    0.55,
+    0.63333333,
+    0.71666667,
+    0.8
+  ],
+  "schedule_et": {
+    "deadlines": [
+      "09:10",
+      "10:25",
+      "11:25",
+      "12:25",
+      "13:25",
+      "14:25",
+      "15:25"
+    ],
+    "executions": [
+      "09:30",
+      "10:30",
+      "11:30",
+      "12:30",
+      "13:30",
+      "14:30",
+      "15:30"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "phase": "research_only",
+  "algorithm": "tabular Q-learning narrow controller",
+  "Q_frozen_before_test": true,
+  "training_episodes": 23,
+  "training_passes": 3,
+  "2025": "previously_exposed_diagnostic",
+  "2026": "not_evaluated",
+  "reward": "fee-adjusted one-session log growth, additional turnover and drawdown penalties",
+  "limitations": [
+    "one realized market trajectory",
+    "15d reset windows",
+    "hourly prices not exact competition execution",
+    "price basis partly unverified"
+  ],
+  "source_sha256": "785e830a794bc637055ee83b4ca81dfb2665670d9b592c689f58949d9a26d729",
+  "official_rl_approved": false
+}

@@ -1,0 +1,153 @@
+{
+  "status": "RESEARCH_ONLY_NOT_PRODUCTION",
+  "strategy_count": 12,
+  "strategies": [
+    {
+      "name": "equal80_hold",
+      "exposure": 0.8,
+      "industry": false,
+      "risk": false,
+      "cadence": 0,
+      "gate": 0.0,
+      "cap": 0.12,
+      "regime": false
+    },
+    {
+      "name": "equal90_hold",
+      "exposure": 0.9,
+      "industry": false,
+      "risk": false,
+      "cadence": 0,
+      "gate": 0.0,
+      "cap": 0.12,
+      "regime": false
+    },
+    {
+      "name": "equal100_hold",
+      "exposure": 1.0,
+      "industry": false,
+      "risk": false,
+      "cadence": 0,
+      "gate": 0.0,
+      "cap": 0.12,
+      "regime": false
+    },
+    {
+      "name": "industry80_hold",
+      "exposure": 0.8,
+      "industry": true,
+      "risk": false,
+      "cadence": 0,
+      "gate": 0.0,
+      "cap": 0.12,
+      "regime": false
+    },
+    {
+      "name": "industry90_hold",
+      "exposure": 0.9,
+      "industry": true,
+      "risk": false,
+      "cadence": 0,
+      "gate": 0.0,
+      "cap": 0.12,
+      "regime": false
+    },
+    {
+      "name": "industry100_hold",
+      "exposure": 1.0,
+      "industry": true,
+      "risk": false,
+      "cadence": 0,
+      "gate": 0.0,
+      "cap": 0.12,
+      "regime": false
+    },
+    {
+      "name": "risk90_hold",
+      "exposure": 0.9,
+      "industry": false,
+      "risk": true,
+      "cadence": 0,
+      "gate": 0.0,
+      "cap": 0.12,
+      "regime": false
+    },
+    {
+      "name": "industry_risk90_hold",
+      "exposure": 0.9,
+      "industry": true,
+      "risk": true,
+      "cadence": 0,
+      "gate": 0.0,
+      "cap": 0.12,
+      "regime": false
+    },
+    {
+      "name": "industry90_weekly_gate06",
+      "exposure": 0.9,
+      "industry": true,
+      "risk": false,
+      "cadence": 5,
+      "gate": 0.06,
+      "cap": 0.12,
+      "regime": false
+    },
+    {
+      "name": "industry_risk90_weekly_gate06",
+      "exposure": 0.9,
+      "industry": true,
+      "risk": true,
+      "cadence": 5,
+      "gate": 0.06,
+      "cap": 0.12,
+      "regime": false
+    },
+    {
+      "name": "industry_risk90_weekly_gate10",
+      "exposure": 0.9,
+      "industry": true,
+      "risk": true,
+      "cadence": 5,
+      "gate": 0.1,
+      "cap": 0.12,
+      "regime": false
+    },
+    {
+      "name": "industry_risk90_regime",
+      "exposure": 0.9,
+      "industry": true,
+      "risk": true,
+      "cadence": 5,
+      "gate": 0.06,
+      "cap": 0.12,
+      "regime": true
+    }
+  ],
+  "source": "official historical hourly parquet, with hourly execution proxies",
+  "signal_availability": "prior completed session only",
+  "window": "15 sessions independently reset; not continuous Official path",
+  "development": [
+    2023,
+    2024
+  ],
+  "diagnostic_exposed": [
+    2025
+  ],
+  "2026": "reserved_not_tested",
+  "cost": "0.1% fee each buy/sell notional; turnover separate competition metric",
+  "risk_estimation": "80-session historical covariance LedoitWolf, constrained SLSQP",
+  "risk_optimizer_fallback_count": 0,
+  "risk_optimizer_fallbacks": [],
+  "known_gaps": [
+    "price-basis not fully verified",
+    "hourly bar vs official fill mismatch",
+    "not seven round-aware decisions",
+    "previous years already inspected in prior projects"
+  ],
+  "source_sha256": "670fcfc88cd1ccf7531e5fe16068475fdd19e0561ff2caa9040ceaf0b8bae4c8",
+  "decision": "Compare four-metric ranks; review gap anomalies and realized turnover before promotion",
+  "turnover_guard_semantics": "80% buffered prior-close estimate, not guaranteed actual fill cap",
+  "realized_cap_overshoot_total": 0,
+  "large_open_gap_event_count": 0,
+  "overshoot_examples": []
+}

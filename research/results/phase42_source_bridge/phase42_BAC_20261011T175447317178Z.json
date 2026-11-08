@@ -1,0 +1,595 @@
+{
+  "symbol": "BAC",
+  "first_observed_utc": "2026-10-11T17:54:55.553866Z",
+  "read_only": true,
+  "point_in_time_historical_backfill_allowed": false,
+  "SEC": {
+    "cik": "0000070858",
+    "filings": [
+      {
+        "form": "10-Q",
+        "filingDate": "2026-07-31",
+        "acceptanceDateTime": "2026-08-01T00:44:20.000Z",
+        "primaryDocument": "bac-20260630.htm",
+        "accessionNumber": "0000070858-26-000394"
+      },
+      {
+        "form": "8-K",
+        "filingDate": "2026-07-24",
+        "acceptanceDateTime": "2026-07-24T15:07:02.000Z",
+        "primaryDocument": "bac-20260723.htm",
+        "accessionNumber": "0000070858-26-000364"
+      },
+      {
+        "form": "8-K",
+        "filingDate": "2026-07-14",
+        "acceptanceDateTime": "2026-07-14T14:45:08.000Z",
+        "primaryDocument": "bac-20260714.htm",
+        "accessionNumber": "0000070858-26-000353"
+      },
+      {
+        "form": "8-K",
+        "filingDate": "2026-05-06",
+        "acceptanceDateTime": "2026-05-07T00:34:21.000Z",
+        "primaryDocument": "bac-20260504.htm",
+        "accessionNumber": "0000070858-26-000273"
+      },
+      {
+        "form": "10-Q",
+        "filingDate": "2026-05-01",
+        "acceptanceDateTime": "2026-05-02T00:39:01.000Z",
+        "primaryDocument": "bac-20260331.htm",
+        "accessionNumber": "0000070858-26-000249"
+      },
+      {
+        "form": "8-K",
+        "filingDate": "2026-04-15",
+        "acceptanceDateTime": "2026-04-15T14:44:44.000Z",
+        "primaryDocument": "bac-20260415.htm",
+        "accessionNumber": "0000070858-26-000222"
+      }
+    ],
+    "companyfacts": [
+      {
+        "metric": "Revenues",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": "2026-01-01",
+            "end": "2026-06-30",
+            "filed": "2026-07-31",
+            "form": "10-Q",
+            "accn": "0000070858-26-000394",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": 61830000000
+          },
+          {
+            "start": "2026-04-01",
+            "end": "2026-06-30",
+            "filed": "2026-07-31",
+            "form": "10-Q",
+            "accn": "0000070858-26-000394",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2026Q2",
+            "val": 31558000000
+          },
+          {
+            "start": "2025-01-01",
+            "end": "2025-06-30",
+            "filed": "2026-07-31",
+            "form": "10-Q",
+            "accn": "0000070858-26-000394",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": 55690000000
+          }
+        ]
+      },
+      {
+        "metric": "NetIncomeLoss",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": "2026-01-01",
+            "end": "2026-06-30",
+            "filed": "2026-07-31",
+            "form": "10-Q",
+            "accn": "0000070858-26-000394",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": 17658000000
+          },
+          {
+            "start": "2026-04-01",
+            "end": "2026-06-30",
+            "filed": "2026-07-31",
+            "form": "10-Q",
+            "accn": "0000070858-26-000394",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2026Q2",
+            "val": 9074000000
+          },
+          {
+            "start": "2025-01-01",
+            "end": "2025-06-30",
+            "filed": "2026-07-31",
+            "form": "10-Q",
+            "accn": "0000070858-26-000394",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": 14530000000
+          }
+        ]
+      },
+      {
+        "metric": "NetCashProvidedByUsedInOperatingActivities",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": "2026-01-01",
+            "end": "2026-06-30",
+            "filed": "2026-07-31",
+            "form": "10-Q",
+            "accn": "0000070858-26-000394",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": 70813000000
+          },
+          {
+            "start": "2025-01-01",
+            "end": "2025-06-30",
+            "filed": "2026-07-31",
+            "form": "10-Q",
+            "accn": "0000070858-26-000394",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": null,
+            "val": -11316000000
+          },
+          {
+            "start": "2026-01-01",
+            "end": "2026-03-31",
+            "filed": "2026-05-01",
+            "form": "10-Q",
+            "accn": "0000070858-26-000249",
+            "fy": 2026,
+            "fp": "Q1",
+            "frame": "CY2026Q1",
+            "val": 41770000000
+          }
+        ]
+      },
+      {
+        "metric": "Assets",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": null,
+            "end": "2026-06-30",
+            "filed": "2026-07-31",
+            "form": "10-Q",
+            "accn": "0000070858-26-000394",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2026Q2I",
+            "val": 3499191000000
+          },
+          {
+            "start": null,
+            "end": "2025-12-31",
+            "filed": "2026-07-31",
+            "form": "10-Q",
+            "accn": "0000070858-26-000394",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2025Q4I",
+            "val": 3411738000000
+          },
+          {
+            "start": null,
+            "end": "2025-06-30",
+            "filed": "2026-07-31",
+            "form": "10-Q",
+            "accn": "0000070858-26-000394",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2025Q2I",
+            "val": 3440798000000
+          }
+        ]
+      },
+      {
+        "metric": "Liabilities",
+        "unit": "USD",
+        "recent_reported_facts": [
+          {
+            "start": null,
+            "end": "2026-06-30",
+            "filed": "2026-07-31",
+            "form": "10-Q",
+            "accn": "0000070858-26-000394",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2026Q2I",
+            "val": 3198097000000
+          },
+          {
+            "start": null,
+            "end": "2025-12-31",
+            "filed": "2026-07-31",
+            "form": "10-Q",
+            "accn": "0000070858-26-000394",
+            "fy": 2026,
+            "fp": "Q2",
+            "frame": "CY2025Q4I",
+            "val": 3108495000000
+          },
+          {
+            "start": null,
+            "end": "2026-03-31",
+            "filed": "2026-05-01",
+            "form": "10-Q",
+            "accn": "0000070858-26-000249",
+            "fy": 2026,
+            "fp": "Q1",
+            "frame": "CY2026Q1I",
+            "val": 3195518000000
+          }
+        ]
+      }
+    ]
+  },
+  "FINNHUB": {
+    "news": [
+      {
+        "event_id": "9179ed7677f769441fe1a8589d90ceb6",
+        "symbol": "BAC",
+        "headline": "3 Big Bank Stocks Facing A Q3 Test As Treasury Yields Rise",
+        "published_utc": "2026-10-11T15:10:46Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=e960c03e188affb24135bd385027dbcbe73132f1f96c5f44a06642b829ba188a",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "1ccad68399847afd83feb6fabd091736",
+        "symbol": "BAC",
+        "headline": "Bank of America Pays Out $0.32 Per Share Each Quarter. Here's How Many Shares You'd Need for $1,000 a Year in Dividends.",
+        "published_utc": "2026-10-11T09:50:00Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=defdfa3bba10d6fb2e7b3148e9a5e1e44ae96c3de434394ce7d5435990c41613",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "9eb0f05d9b1db0205a0d3ac4886c785e",
+        "symbol": "BAC",
+        "headline": "Wall Street Week Ahead",
+        "published_utc": "2026-10-11T06:57:52Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "SeekingAlpha",
+        "source_url": "https://finnhub.io/api/news?id=3d4fc2e376dab5b8cd33e165814050e7c200db7e30067e8f8149a1723ca39726",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "04c4f54b4cb7eca7b28fde92908acc1c",
+        "symbol": "BAC",
+        "headline": "Wall Street banks had a blockbuster first half. Higher rates will test the boom.",
+        "published_utc": "2026-10-10T18:02:20Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=7f379d1437632bbf01232bdb993c5311af61bc6be6071041e0b8d68c2265a6f1",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "599fd3c6c2a64a4d092959f4dac5cfe4",
+        "symbol": "BAC",
+        "headline": "Is AI-Powered CashPro, AskGPS and New Debt Issuance Altering The Investment Case For Bank of America (BAC)?",
+        "published_utc": "2026-10-10T16:11:03Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=d5cfd68b4fc6190e11171358a728986a5661f3f024a160494ed30792d95a566c",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "1ecf703a1a4b6e67aaf73ab844a94e36",
+        "symbol": "BAC",
+        "headline": "Four Analysts Raised Their Pfizer Targets in One Week Without an Upgrade. Here’s Where the Stock Could Go By 2030",
+        "published_utc": "2026-10-10T16:06:40Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=e2c044a3edad802302c5463361bfdb5979a012f165f167acec0090fcb6fc51bf",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "16ccbd71cbac0557158d4f8856ece57a",
+        "symbol": "BAC",
+        "headline": "Bank of America: A Mix Of Common And Preferred Stock Makes Sense Now",
+        "published_utc": "2026-10-10T11:40:00Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "SeekingAlpha",
+        "source_url": "https://finnhub.io/api/news?id=714d6efed9d950b0ca4125d62fa744b8e1338e5d3664400f071e53a3f7d82cee",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "04e191b4b98aa52d6ee26d373d7a9775",
+        "symbol": "BAC",
+        "headline": "Banking Bellwethers Kick Off Earnings, Fed Chair's Speech In Focus",
+        "published_utc": "2026-10-10T11:00:00Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "SeekingAlpha",
+        "source_url": "https://finnhub.io/api/news?id=11a786498782afaccf0262d5570d06ee18a18ddd114c981cf9f7594cc7351290",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "732809e773eb0f3361193d4dfec4195c",
+        "symbol": "BAC",
+        "headline": "‘It’s Just Going From One Pocket to the Other’: Chicago Fed Scholar on Why the 30-Year Pays 5.63%",
+        "published_utc": "2026-10-10T09:34:35Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=f0ce6467c66d3709466a0050d685cae06ef8f87f3ab440ea4bb13852ab147cc5",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "da3625d3eaeda4ca94a2fe9423fc9f96",
+        "symbol": "BAC",
+        "headline": "Visible Alpha Breakdown Of U.S. Banks' Q3 2026 Earnings Expectations",
+        "published_utc": "2026-10-10T01:15:00Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "SeekingAlpha",
+        "source_url": "https://finnhub.io/api/news?id=e0a1bf7e6e65ee6abe78b73033df69d4da08fb13b65265f5f19838dc282f2505",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "6db5ee51b5290f169d644c73e4f7e180",
+        "symbol": "BAC",
+        "headline": "Why AI Loves Walmart",
+        "published_utc": "2026-10-09T23:11:00Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=99cba1dcb9eb4a24b5d0e209489618f82af3acecf8c859a718e491850ca5d541",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "4d9e3c1745f096460bbf2f643ed5a06c",
+        "symbol": "BAC",
+        "headline": "Penguin Solutions initiated with a Buy from Bank of America on AI memory demand",
+        "published_utc": "2026-10-09T15:30:00Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=859a8c3e8122ebe148667064b2a75a9fca82242feee9f3d59fdb7c60f61f89ec",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "90465a0abadfeae06a68db4fe1a834c1",
+        "symbol": "BAC",
+        "headline": "Wells Fargo Q3 Earnings on the Deck: What's in Store for the Stock?",
+        "published_utc": "2026-10-09T15:18:00Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=6d7de26d5e7dd570e5a917132f78db4ec12496ab0e88ba07d3e256c60ee410d9",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "ee89625fa575a384ee653c989e634327",
+        "symbol": "BAC",
+        "headline": "Treasury Yields Reach 24-Year Highs, Telecom Stocks Sell Off: This Week On Wall Street",
+        "published_utc": "2026-10-09T15:05:08Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Benzinga",
+        "source_url": "https://finnhub.io/api/news?id=a01fdbbf381abfc66fb7f10807b0c331aa0c31963ff054fd711cdf9b15ff2219",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "8d01c5e7b3fbbee6ed1d3f1279e34c30",
+        "symbol": "BAC",
+        "headline": "Big Banks’ Earnings Will Have to Convince ‘Glass Half Empty’ Investors",
+        "published_utc": "2026-10-09T14:33:00Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=a0d2fb67d507111e46b75ea3268f185aa97713ed42e4b6174fd8762d126f7106",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "077fe23e3718a9585337b3957a2438a6",
+        "symbol": "BAC",
+        "headline": "Should BAC Shares Be Added to Your Portfolio Ahead of Q3 Earnings?",
+        "published_utc": "2026-10-09T14:08:00Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=0ef9429b49c3aef23c2d1ad7c8552066ac0d1709320e04ae848662734c6c1fef",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "11d29dffad1c525a0ab0290ac850da7b",
+        "symbol": "BAC",
+        "headline": "Bank of America Names Jeff Crabtree President of Sarasota/Manatee",
+        "published_utc": "2026-10-09T14:00:00Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=989d5408eb335f76aa7ce8c0b3309f905a5c9291d6efa2e57bc7fad3882e5739",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "619628e74e22c32fc767221915427b9d",
+        "symbol": "BAC",
+        "headline": "JPM vs. C: Which Bank Dividend Actually Survives the Next Crisis?",
+        "published_utc": "2026-10-09T13:00:52Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=994782ff1b18cf996e800464dfd6100bf5711e7406526c99e0306986cdb524a2",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "2ddd5026d7d3b7072a6983f29d6ec762",
+        "symbol": "BAC",
+        "headline": "Curious about Bank of America (BAC) Q3 Performance? Explore Wall Street Estimates for Key Metrics",
+        "published_utc": "2026-10-09T12:15:02Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=b40beaf5d4b95bc75d4c186c03c59fceddabcb936b7809bee590ea5d8966894d",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "d1eace16a6433b5c147c451e46939e70",
+        "symbol": "BAC",
+        "headline": "Money Market Funds Just Drew $166 Billion: What Spooked Investors?",
+        "published_utc": "2026-10-09T12:05:13Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=b6e79df97a8f2e301a0a7cfb706f691d891cfd756f0ddfc58cb2b0d5347bd01a",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "7ccf6b0fee3b7decb36b5d4a0f11b18f",
+        "symbol": "BAC",
+        "headline": "DraftKings (DKNG) Stock May Be Below Fair Value As Prediction Market Hopes Grow",
+        "published_utc": "2026-10-09T11:15:04Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=66fdfeb62cbe5fe0d2d3429135b23e43fc37e9f359b45911a69c7b3e4f5fbb9b",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "3b5ade0630a2f03ee30941dd1fae5476",
+        "symbol": "BAC",
+        "headline": "JPMorgan, Citigroup, And Bank Of America Earnings Previews: Eventually A Return To More Normal Growth",
+        "published_utc": "2026-10-09T11:05:00Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "SeekingAlpha",
+        "source_url": "https://finnhub.io/api/news?id=f29a320bad10d712fb028f64981764078ac9aec07927edcd87f839e828c39a06",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "9d1e81c17ee4b779a566e97e67ee2f0c",
+        "symbol": "BAC",
+        "headline": "Investors need sustained Fed cuts to move cash off sidelines: BofA’s Hartnett",
+        "published_utc": "2026-10-09T10:36:15Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=02b8d29654f34affc7fca31fb663f854c04b1db16382dc4b3a1bf36ca7f839d6",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "44df3523fbcfcdcd6ae918b86ae256ab",
+        "symbol": "BAC",
+        "headline": "Soitec climbs 7% as BofA turns bullish on silicon photonics demand",
+        "published_utc": "2026-10-09T09:55:49Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=5277a9f4b9d23a8163ff6359a435793b1c19a5008e9e4cb5bf28ad517303b7aa",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "1ad1d9313f6393359629862daef80a05",
+        "symbol": "BAC",
+        "headline": "Investors Pour Into Cash and Set to Stay, BofA’s Hartnett Says",
+        "published_utc": "2026-10-09T08:45:43Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=58115046ba91e64b6adeb019b192dec4acf25a2a2bbd0d5d87dcc7f835d73c2b",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "acb6e7a3cd6d763c54283ed790e4ab2e",
+        "symbol": "BAC",
+        "headline": "Consumer spending in September was the third strongest in over 4 years: BofA’s Liz Everett Krisberg",
+        "published_utc": "2026-10-09T07:45:04Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "CNBC",
+        "source_url": "https://finnhub.io/api/news?id=37ea0b13b9f125c289cf6ee3911fa3b0528132665d6aca3b8ddce29c774e3a47",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "c283a5f2b89945bc0605244408b134d0",
+        "symbol": "BAC",
+        "headline": "Why Bank of America (BAC) Is Back In The Spotlight",
+        "published_utc": "2026-10-09T04:30:38Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=3adf78555682dd616576268aabc4f16760f15be2bebec2997757c2e161cb69fc",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      },
+      {
+        "event_id": "ce65d4b5bf7ce142b56662cdf3730b65",
+        "symbol": "BAC",
+        "headline": "Nike made Jordans too easy to buy, and Bank of America noticed",
+        "published_utc": "2026-10-09T03:07:00Z",
+        "first_observed_utc": "2026-10-11T17:54:58.319167Z",
+        "source": "FINNHUB",
+        "publisher": "Yahoo",
+        "source_url": "https://finnhub.io/api/news?id=f8fe90ce3df7904d3f9cb007a9e8462c955fcdc8a7f687d2c0e917d215c89082",
+        "company_relevance_verified": false,
+        "historical_backtest_eligible": false
+      }
+    ]
+  },
+  "source_status": {
+    "sec_filings": "OK",
+    "sec_companyfacts": "OK",
+    "finnhub": "OK_28"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "collected_utc": "2026-10-11T17:54:59.336218Z",
+  "symbols": [
+    "JPM",
+    "GS",
+    "BAC"
+  ],
+  "reports": [
+    {
+      "symbol": "JPM",
+      "snapshot": "C:\\Users\\pauli\\Documents\\ICAIF2026\\2026ICAIF_Trading_Agent_Competition\\starter-kit\\artifacts\\phase42_source_bridge\\phase42_JPM_20261011T175447317178Z.json",
+      "status": {
+        "sec_filings": "OK",
+        "sec_companyfacts": "OK",
+        "finnhub": "OK_47"
+      }
+    },
+    {
+      "symbol": "GS",
+      "snapshot": "C:\\Users\\pauli\\Documents\\ICAIF2026\\2026ICAIF_Trading_Agent_Competition\\starter-kit\\artifacts\\phase42_source_bridge\\phase42_GS_20261011T175447317178Z.json",
+      "status": {
+        "sec_filings": "OK",
+        "sec_companyfacts": "OK",
+        "finnhub": "OK_36"
+      }
+    },
+    {
+      "symbol": "BAC",
+      "snapshot": "C:\\Users\\pauli\\Documents\\ICAIF2026\\2026ICAIF_Trading_Agent_Competition\\starter-kit\\artifacts\\phase42_source_bridge\\phase42_BAC_20261011T175447317178Z.json",
+      "status": {
+        "sec_filings": "OK",
+        "sec_companyfacts": "OK",
+        "finnhub": "OK_28"
+      }
+    }
+  ],
+  "credits_spent": "ZERO_LLM_CALLS",
+  "research_only": true
+}

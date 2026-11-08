@@ -1,0 +1,192 @@
+{
+  "mode": "SHADOW_ONLY",
+  "source": "FINNHUB_PHASE18_SNAPSHOT",
+  "historical_training_eligible": false,
+  "trading_signal_eligible": false,
+  "relevance_verified": false,
+  "lexical_classifier_calibrated": false,
+  "events_accepted": 2144,
+  "events_rejected": 0,
+  "per_symbol": {
+    "AAPL": {
+      "sampled_headlines": 100,
+      "lexical_positive": 1,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 100
+    },
+    "MSFT": {
+      "sampled_headlines": 100,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 100
+    },
+    "NVDA": {
+      "sampled_headlines": 100,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 100
+    },
+    "INTC": {
+      "sampled_headlines": 100,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 100
+    },
+    "CRM": {
+      "sampled_headlines": 50,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 50
+    },
+    "JPM": {
+      "sampled_headlines": 79,
+      "lexical_positive": 1,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 79
+    },
+    "BAC": {
+      "sampled_headlines": 58,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 58
+    },
+    "GS": {
+      "sampled_headlines": 89,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 89
+    },
+    "V": {
+      "sampled_headlines": 60,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 60
+    },
+    "PYPL": {
+      "sampled_headlines": 25,
+      "lexical_positive": 1,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 25
+    },
+    "LLY": {
+      "sampled_headlines": 91,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 91
+    },
+    "JNJ": {
+      "sampled_headlines": 60,
+      "lexical_positive": 1,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 60
+    },
+    "UNH": {
+      "sampled_headlines": 43,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 43
+    },
+    "PFE": {
+      "sampled_headlines": 69,
+      "lexical_positive": 4,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 69
+    },
+    "TMO": {
+      "sampled_headlines": 24,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 24
+    },
+    "AMZN": {
+      "sampled_headlines": 100,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 100
+    },
+    "TSLA": {
+      "sampled_headlines": 100,
+      "lexical_positive": 1,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 100
+    },
+    "WMT": {
+      "sampled_headlines": 82,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 82
+    },
+    "NKE": {
+      "sampled_headlines": 100,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 100
+    },
+    "KO": {
+      "sampled_headlines": 60,
+      "lexical_positive": 1,
+      "lexical_negative": 1,
+      "unverified_company_relevance": 60
+    },
+    "CAT": {
+      "sampled_headlines": 69,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 69
+    },
+    "GE": {
+      "sampled_headlines": 18,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 18
+    },
+    "BA": {
+      "sampled_headlines": 52,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 52
+    },
+    "XOM": {
+      "sampled_headlines": 52,
+      "lexical_positive": 0,
+      "lexical_negative": 1,
+      "unverified_company_relevance": 52
+    },
+    "CVX": {
+      "sampled_headlines": 100,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 100
+    },
+    "GOOGL": {
+      "sampled_headlines": 100,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 100
+    },
+    "META": {
+      "sampled_headlines": 100,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 100
+    },
+    "DIS": {
+      "sampled_headlines": 52,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 52
+    },
+    "T": {
+      "sampled_headlines": 78,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 78
+    },
+    "NEE": {
+      "sampled_headlines": 33,
+      "lexical_positive": 0,
+      "lexical_negative": 0,
+      "unverified_company_relevance": 33
+    }
+  }
+}

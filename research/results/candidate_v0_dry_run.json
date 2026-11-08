@@ -1,0 +1,147 @@
+{
+  "artifact_type": "DRY_RUN_ONLY_NOT_A_COMPETITION_SUBMISSION",
+  "candidate_name": "candidate_v0_plumbing",
+  "generated_at_utc": "2026-10-07T12:12:41.459015+00:00",
+  "data": {
+    "source": "alpaca",
+    "feed": "iex",
+    "timeframe": "15Min",
+    "adjustment": "all",
+    "requested_start": "2026-07-09T11:52:41.459015+00:00",
+    "requested_end": "2026-10-07T11:52:41.459015+00:00",
+    "common_information_cutoff": "2026-10-06T19:45:00+00:00",
+    "cache_file": "C:\\Users\\pauli\\Documents\\ICAIF2026\\2026ICAIF_Trading_Agent_Competition\\starter-kit\\data\\cache\\alpaca_iex_15min_recent.csv"
+  },
+  "portfolio": {
+    "gross_exposure": 0.8,
+    "selected_symbols": [
+      "MSFT",
+      "NVDA",
+      "AMZN",
+      "TSLA",
+      "CAT",
+      "XOM",
+      "CVX",
+      "GOOGL"
+    ],
+    "weights": {
+      "AAPL": 0.0,
+      "MSFT": 0.1,
+      "NVDA": 0.1,
+      "INTC": 0.0,
+      "CRM": 0.0,
+      "JPM": 0.0,
+      "BAC": 0.0,
+      "GS": 0.0,
+      "V": 0.0,
+      "PYPL": 0.0,
+      "LLY": 0.0,
+      "JNJ": 0.0,
+      "UNH": 0.0,
+      "PFE": 0.0,
+      "TMO": 0.0,
+      "AMZN": 0.1,
+      "TSLA": 0.1,
+      "WMT": 0.0,
+      "NKE": 0.0,
+      "KO": 0.0,
+      "CAT": 0.1,
+      "GE": 0.0,
+      "BA": 0.0,
+      "XOM": 0.1,
+      "CVX": 0.1,
+      "GOOGL": 0.1,
+      "META": 0.0,
+      "DIS": 0.0,
+      "T": 0.0,
+      "NEE": 0.0
+    }
+  },
+  "top_features": [
+    {
+      "symbol": "NVDA",
+      "sector": "Technology",
+      "ret_1h": -0.0052818731934537455,
+      "ret_1d": 0.0008159678634196421,
+      "ret_5d": 0.052544722423922385,
+      "vol_1d": 0.0027413910682914447,
+      "sector_relative_5d": 0.037864642086905945,
+      "candidate_score": 0.8933333333333333
+    },
+    {
+      "symbol": "CAT",
+      "sector": "Industrial & Energy",
+      "ret_1h": -0.0027535487297307704,
+      "ret_1d": 0.01879493061739601,
+      "ret_5d": 0.04467665662832743,
+      "vol_1d": 0.005099937909741585,
+      "sector_relative_5d": 0.0316964166819927,
+      "candidate_score": 0.73
+    },
+    {
+      "symbol": "MSFT",
+      "sector": "Technology",
+      "ret_1h": -0.0025154507084715894,
+      "ret_1d": 0.008333174606197868,
+      "ret_5d": 0.04021260708952279,
+      "vol_1d": 0.002812634278842536,
+      "sector_relative_5d": 0.025532526752506345,
+      "candidate_score": 0.6633333333333333
+    },
+    {
+      "symbol": "TSLA",
+      "sector": "Consumer",
+      "ret_1h": 0.0010781812922397993,
+      "ret_1d": 0.005308051865740682,
+      "ret_5d": 0.07859692865642898,
+      "vol_1d": 0.001612601433575117,
+      "sector_relative_5d": 0.06272365965459632,
+      "candidate_score": 0.56
+    },
+    {
+      "symbol": "XOM",
+      "sector": "Industrial & Energy",
+      "ret_1h": -0.004690857367672496,
+      "ret_1d": 0.0026217913541857207,
+      "ret_5d": 0.018772071123226652,
+      "vol_1d": 0.001510220155076534,
+      "sector_relative_5d": 0.0057918311768919255,
+      "candidate_score": 0.5233333333333334
+    },
+    {
+      "symbol": "GOOGL",
+      "sector": "Communication & Utilities",
+      "ret_1h": -0.0017225539733577433,
+      "ret_1d": 0.003636783467066973,
+      "ret_5d": 0.019856283912597306,
+      "vol_1d": 0.0018741768627798894,
+      "sector_relative_5d": 0.013954026443173539,
+      "candidate_score": 0.45000000000000007
+    },
+    {
+      "symbol": "CVX",
+      "sector": "Industrial & Energy",
+      "ret_1h": -0.0036951722814089205,
+      "ret_1d": 0.005618793896827512,
+      "ret_5d": 0.015654811408443825,
+      "vol_1d": 0.002031473120910207,
+      "sector_relative_5d": 0.002674571462109098,
+      "candidate_score": 0.42
+    },
+    {
+      "symbol": "AMZN",
+      "sector": "Consumer",
+      "ret_1h": 0.0012696056409555734,
+      "ret_1d": 0.01999721431840351,
+      "ret_5d": 0.03933336036657065,
+      "vol_1d": 0.0019941739929980455,
+      "sector_relative_5d": 0.02346009136473799,
+      "candidate_score": 0.33666666666666667
+    }
+  ],
+  "notes": [
+    "Candidate coefficients are unvalidated hypotheses.",
+    "This artifact is intentionally not valid ICAIF decision.json format.",
+    "Do not submit this file to Codabench."
+  ]
+}

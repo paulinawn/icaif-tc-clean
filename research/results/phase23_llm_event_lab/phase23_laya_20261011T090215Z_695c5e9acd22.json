@@ -1,0 +1,38 @@
+{
+  "research_only": true,
+  "provider": "laya",
+  "model": "laya-hosted-english-unspecified-revision",
+  "observed_at_utc": "2026-10-11T09:02:15.599001Z",
+  "source_snapshot_sha256": "a48b57a461daf089208d7af88975791035e193239cad604b43400e3c03540b3b",
+  "inputs": [
+    {
+      "event_id": "d948b99df385a817ffc67c50c1c2d5a6",
+      "symbol": "NVDA",
+      "headline": "OpenAI’s Revenue Is Reportedly $20 Billion Lower Than Thought. Nvidia Just Lost $170 Billion",
+      "published_utc": "2026-10-09T11:15:34+00:00",
+      "observed_at_utc": "2026-10-09T13:11:33.804998+00:00",
+      "company_relevance_verified": false
+    }
+  ],
+  "results": [
+    {
+      "symbol": "NVDA",
+      "event_id": "d948b99df385a817ffc67c50c1c2d5a6",
+      "event_type": "earnings",
+      "direction": "negative",
+      "immediate_impact_rubric_score_not_calibrated": 1.5192,
+      "company_relevance_model_probability_not_calibrated": 0.7655,
+      "price_reaction_observed": false,
+      "forecast_calibrated": false
+    }
+  ],
+  "historical_backtest_eligible": false,
+  "model_return_alpha_validated": false,
+  "LLM_can_determine_price_already_moved": false,
+  "possible_provider_usage": {
+    "input_tokens": 353,
+    "output_tokens": 0
+  },
+  "official_model_permission_verified": false,
+  "output_is_order_or_trading_signal": false
+}

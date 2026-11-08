@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "reserved_calls": [
+    {
+      "prompt_sha256": "4ac03b6631f5f38f559591727ce0f73984670c6a07152de7253d883569c0cfa3",
+      "reserved_utc": "2026-10-11T18:09:37.823547Z",
+      "case_ids": [
+        "8db81acc7e809f80128a57d2",
+        "e8590411b9bafb2704863679"
+      ],
+      "model": "gemini-2.5-flash",
+      "input_bytes": 5130,
+      "provider_cost": "check provider bill"
+    }
+  ],
+  "limit": 2
+}

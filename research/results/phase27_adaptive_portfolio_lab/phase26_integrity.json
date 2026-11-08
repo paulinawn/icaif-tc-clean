@@ -1,0 +1,83 @@
+{
+  "parquet_path_name": "hourly_market_data_2021_2026.parquet",
+  "parquet_sha256": "d2d60204836769b7d9472965dbcbde5c5d068ddd4a52b2f3111fded8e17b6f2a",
+  "price_columns": [
+    "open",
+    "close",
+    "adj_close"
+  ],
+  "source_data_provenance": "UNKNOWN_UNLESS_USER_SUPPLIES_DATA_SOURCE",
+  "trading_days": 1240,
+  "first_day": "2021-01-04",
+  "last_day": "2025-12-31",
+  "sector_partitions": [
+    "Technology",
+    "Technology",
+    "Technology",
+    "Technology",
+    "Technology",
+    "Finance",
+    "Finance",
+    "Finance",
+    "Finance",
+    "Finance",
+    "Healthcare",
+    "Healthcare",
+    "Healthcare",
+    "Healthcare",
+    "Healthcare",
+    "Consumer",
+    "Consumer",
+    "Consumer",
+    "Consumer",
+    "Consumer",
+    "Industrial & Energy",
+    "Industrial & Energy",
+    "Industrial & Energy",
+    "Industrial & Energy",
+    "Industrial & Energy",
+    "Communication & Utilities",
+    "Communication & Utilities",
+    "Communication & Utilities",
+    "Communication & Utilities",
+    "Communication & Utilities"
+  ],
+  "original_mixed_gap": {
+    "max_abs_gap": 0.27601446364001614,
+    "num_abs_gap_ge10pct": 61,
+    "num_abs_gap_ge25pct": 2,
+    "num_abs_gap_ge35pct": 0
+  },
+  "reason": "CONSISTENT_ADJUSTED_PAIR_CONSTRUCTED",
+  "adjusted_replay_possible": true,
+  "raw_close_present": true,
+  "adjusted_open_present_in_source": false,
+  "factor_intraday_variation_max": 0.0,
+  "min_adjustment_factor": 1.0,
+  "max_adjustment_factor": 1.0,
+  "historical_bar_times": [
+    "09:30:00",
+    "10:00:00",
+    "11:00:00",
+    "12:00:00",
+    "13:00:00",
+    "14:00:00",
+    "15:00:00"
+  ],
+  "official_execution_times": "09:30,10:30,11:30,12:30,13:30,14:30,15:30 ET",
+  "note": "Absolute gap is not itself proof of corporate action; check identified rows and upstream provenance.",
+  "no_2026_strategy_evaluation": true,
+  "consistent_adjusted_gap": {
+    "max_abs_gap": 0.27601446364001614,
+    "num_abs_gap_ge10pct": 61,
+    "num_abs_gap_ge25pct": 2,
+    "num_abs_gap_ge35pct": 0
+  },
+  "consistent_raw_gap": {
+    "max_abs_gap": 0.27601446364001614,
+    "num_abs_gap_ge10pct": 61,
+    "num_abs_gap_ge25pct": 2,
+    "num_abs_gap_ge35pct": 0
+  },
+  "price_replay_gate": "PROVISIONAL_PASS_CONSISTENT_ADJUSTED_PAIR"
+}

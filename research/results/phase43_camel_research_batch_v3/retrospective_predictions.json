@@ -1,0 +1,156 @@
+{
+  "version": 3,
+  "retrospective_only": true,
+  "events": [
+    {
+      "case": {
+        "event_id": "e8590411b9bafb2704863679",
+        "symbol": "GS",
+        "published_utc": "2026-07-14T16:30:40Z",
+        "modeled_available_utc": "2026-07-14T16:30:40Z",
+        "headline": "GS SEC 8-K accepted 2026-07-14",
+        "summary": "rformance) and transaction based expenses $ in millions except per share amounts 2Q26 vs. 1Q26 vs. 2Q25 2Q26 YTD vs. 2Q25 YTD Global Banking & Markets $ 15,520 22% 53% $ 28,258 35% Asset & Wealth Management 4,597 13% 20% 8,675 15% Platform Solutions 221 (46)% (64)% 632 (49)% Net revenues 20,338 18% 39% 37,565 27% Provision for credit losses 102 (68)% (73)% 417 (38)% Operating expenses 11,673 12% 26% 22,099 20% Pre-tax earnings $ 8,563 32% 73% $ 15,049 42% Net earnings $ 6,628 18% 78% $ 12,258 45% Net earnings to common $ 6,399 18% 84% $ 11,802 46% Diluted EPS1 $ 20.98 20% 92% $ 38.51 54% ROE2 23.5% 3.7pp 10.7pp 21.7% 6.9pp ROTE2 25.5% 4.2pp 11.9pp 23.4% 7.6pp Efficiency Ratio4 57.4% (3.1)pp (6.0)pp 58.8% (3.2)pp Net Revenues by Segment ($ in millions) $221 $411 $619 3 114:151:197 255:255:255 0:0:0 Brand Colors A. 240:235:230 167:162:157 114:115:117 Brand Grays B. 220:220:224 187:187:191 Background Grays C. 253:243:173 184:208:245 242:203:231 153:224:217 245:208:206 198:233:189 Table Highlight D. E. 0:0:0 114:115:117 Table Borders F. Functional Data Colors 194:23:10 243:196:63G. 57:128:37 Primary Sequence 9:44:97 114:151:197 166:66:140 21:151:136 224:115:26 117:55:173 176:48:48 189:",
+        "publisher": "SEC EDGAR",
+        "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000294/a2q26gsearningsresultspr.htm",
+        "evidence_text": "GS SEC 8-K accepted 2026-07-14\nrformance) and transaction based expenses $ in millions except per share amounts 2Q26 vs. 1Q26 vs. 2Q25 2Q26 YTD vs. 2Q25 YTD Global Banking & Markets $ 15,520 22% 53% $ 28,258 35% Asset & Wealth Management 4,597 13% 20% 8,675 15% Platform Solutions 221 (46)% (64)% 632 (49)% Net revenues 20,338 18% 39% 37,565 27% Provision for credit losses 102 (68)% (73)% 417 (38)% Operating expenses 11,673 12% 26% 22,099 20% Pre-tax earnings $ 8,563 32% 73% $ 15,049 42% Net earnings $ 6,628 18% 78% $ 12,258 45% Net earnings to common $ 6,399 18% 84% $ 11,802 46% Diluted EPS1 $ 20.98 20% 92% $ 38.51 54% ROE2 23.5% 3.7pp 10.7pp 21.7% 6.9pp ROTE2 25.5% 4.2pp 11.9pp 23.4% 7.6pp Efficiency Ratio4 57.4% (3.1)pp (6.0)pp 58.8% (3.2)pp Net Revenues by Segment ($ in millions) $221 $411 $619 3 114:151:197 255:255:255 0:0:0 Brand Colors A. 240:235:230 167:162:157 114:115:117 Brand Grays B. 220:220:224 187:187:191 Background Grays C. 253:243:173 184:208:245 242:203:231 153:224:217 245:208:206 198:233:189 Table Highlight D. E. 0:0:0 114:115:117 Table Borders F. Functional Data Colors 194:23:10 243:196:63G. 57:128:37 Primary Sequence 9:44:97 114:151:197 166:66:140 21:151:136 224:115:26 117:55:173 176:48:48 189:140:0 105.55.14 97:122:39 9:107:96 59:124:222 64:37:56 145:87:196 9:74:171 143:106:4 107:20:20 199:97:172 55:71:19 59:26:89 1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 12. 13. 14. 15. 16. 17. 18. 19. 20. Theme Colors Primary Sequence Secondary Shade Global Banking & Markets Financial Results Global Banking & Markets Highlights ■ 2Q26 net revenues were a record and significant",
+        "source_quality": "SEC_ORIGINAL_ACCESSION_EXHIBIT",
+        "source_observed_now_utc": "2026-10-11T18:16:08.643832Z",
+        "issuer_verified": true,
+        "sec_accession": "0000886982-26-000294",
+        "sec_context_asof": {
+          "prior_filings": [],
+          "prior_asof_companyfacts": [
+            {
+              "tag": "NetIncomeLoss",
+              "USD": [
+                {
+                  "val": 5630000000,
+                  "start": "2026-01-01",
+                  "end": "2026-03-31",
+                  "filed": "2026-05-01",
+                  "form": "10-Q",
+                  "accn": "0000886982-26-000118"
+                },
+                {
+                  "val": 4738000000,
+                  "start": "2025-01-01",
+                  "end": "2025-03-31",
+                  "filed": "2026-05-01",
+                  "form": "10-Q",
+                  "accn": "0000886982-26-000118"
+                }
+              ]
+            }
+          ]
+        },
+        "evidence_sha256": "82d9a43d393da89ee48a5aa71b7c346ff600f7f65d78e4f756a970d7b51ea47c"
+      },
+      "classification": {
+        "event_id": "e8590411b9bafb2704863679",
+        "material_new_fact": true,
+        "issuer_specific": true,
+        "direction": "positive",
+        "strength": "strong",
+        "event_type": "earnings",
+        "source_quote": "Net revenues 20,338 18% 39% 37,565 27%",
+        "mechanism": "Higher net revenues and net earnings reported for 2Q26 compared to prior periods, driving strong diluted EPS growth.",
+        "counterargument": "Platform Solutions segment net revenues declined year-over-year.",
+        "expectation_known": false
+      },
+      "case_evidence_sha256": "82d9a43d393da89ee48a5aa71b7c346ff600f7f65d78e4f756a970d7b51ea47c",
+      "prompt_sha256": "01e183994223c331864d4e15419178fc8e8e99f6ba63db6db7dfa37a2c8c058f",
+      "inferred_at_utc": "2026-10-11T18:25:45.347741Z",
+      "retrospective_research_only": true
+    },
+    {
+      "case": {
+        "event_id": "8db81acc7e809f80128a57d2",
+        "symbol": "JPM",
+        "published_utc": "2026-07-14T18:52:21Z",
+        "modeled_available_utc": "2026-07-14T18:52:21Z",
+        "headline": "JPM SEC 8-K accepted 2026-07-14",
+        "summary": "EX-99 2 a2q26_earningsxpresentat.htm JPMORGAN CHASE & CO. EARNINGS PRESENTATION SLIDES - FINANCIAL RESULTS - 2Q26 a2q26_earningsxpresentat July 14, 2026 2Q26 Financial Results Exhibit 99 2Q26 Financial highlights ROTCE1 29% ROTCE ex. significant items223% CET1 capital ratios3 Std. 14.1% | Adv. 14.2% Total Loss-Absorbing Capacity3 $590B Std. RWA4 $2.1T Cash and marketable securities5 $1.5T Average loans $1.5T 1 See note 3 on slide 9 2 See note 5 on slide 9 3 Represents the estimated Basel III common equity Tier 1 (“CET1”) capital and ratio and Total Loss-Absorbing Capacity for the current period 4 Standardized risk-weighted assets (“RWA”). Estimated for the current period 5 Cash and marketable securities represent HQLA and unencumbered marketable securities. Estimated for the current period. See note 1 on slide 10 6 See note 1 on slide 9 7 Includes the net impact of employee issuances. Excludes excise tax and commissions 8 Last twelve months (“LTM”) 9 See note 2 on slide 10 10 Represented a measurement alternative markup on an equity investment and initial gains on transition from measurement alternative to recurring fair value on certain other equity investments ⚫ Common dividend o",
+        "publisher": "SEC EDGAR",
+        "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026048086/a2q26_earningsxpresentat.htm",
+        "evidence_text": "JPM SEC 8-K accepted 2026-07-14\nEX-99 2 a2q26_earningsxpresentat.htm JPMORGAN CHASE & CO. EARNINGS PRESENTATION SLIDES - FINANCIAL RESULTS - 2Q26 a2q26_earningsxpresentat July 14, 2026 2Q26 Financial Results Exhibit 99 2Q26 Financial highlights ROTCE1 29% ROTCE ex. significant items223% CET1 capital ratios3 Std. 14.1% | Adv. 14.2% Total Loss-Absorbing Capacity3 $590B Std. RWA4 $2.1T Cash and marketable securities5 $1.5T Average loans $1.5T 1 See note 3 on slide 9 2 See note 5 on slide 9 3 Represents the estimated Basel III common equity Tier 1 (“CET1”) capital and ratio and Total Loss-Absorbing Capacity for the current period 4 Standardized risk-weighted assets (“RWA”). Estimated for the current period 5 Cash and marketable securities represent HQLA and unencumbered marketable securities. Estimated for the current period. See note 1 on slide 10 6 See note 1 on slide 9 7 Includes the net impact of employee issuances. Excludes excise tax and commissions 8 Last twelve months (“LTM”) 9 See note 2 on slide 10 10 Represented a measurement alternative markup on an equity investment and initial gains on transition from measurement alternative to recurring fair value on certain other equity investments ⚫ Common dividend of $4.0B or $1.50 per share ⚫ $6.2B of common stock net repurchases7 ⚫ Net payout LTM of 73%7,8 ⚫ Loans: average loans of $1.5T up 10% YoY and 2% QoQ ⚫ Deposits: average deposits of $2.7T up 7% YoY and 3% QoQ ⚫ CET1 capital of $303B3 – Standardized CET1 capital ratio of 14.1%3; Advanced CET1 capital ratio of 14.2%3 ⚫ 2Q26 net income of $21.2B and EPS of $7.70 – Exclu",
+        "source_quality": "SEC_ORIGINAL_ACCESSION_EXHIBIT",
+        "source_observed_now_utc": "2026-10-11T18:16:08.643832Z",
+        "issuer_verified": true,
+        "sec_accession": "0001628280-26-048086",
+        "sec_context_asof": {
+          "prior_filings": [
+            {
+              "form": "8-K",
+              "filed": "2026-07-14",
+              "acceptance_raw": "2026-07-14T14:30:38.000Z",
+              "available_utc_conservative": "2026-07-14T15:30:38Z",
+              "accession": "0001628280-26-048078",
+              "primary_document": "jpm-20260714.htm"
+            }
+          ],
+          "prior_asof_companyfacts": [
+            {
+              "tag": "NetIncomeLoss",
+              "USD": [
+                {
+                  "val": 16494000000,
+                  "start": "2026-01-01",
+                  "end": "2026-03-31",
+                  "filed": "2026-05-01",
+                  "form": "10-Q",
+                  "accn": "0001628280-26-029344"
+                },
+                {
+                  "val": 14643000000,
+                  "start": "2025-01-01",
+                  "end": "2025-03-31",
+                  "filed": "2026-05-01",
+                  "form": "10-Q",
+                  "accn": "0001628280-26-029344"
+                }
+              ]
+            },
+            {
+              "tag": "Revenues",
+              "USD": [
+                {
+                  "val": 182447000000,
+                  "start": "2025-01-01",
+                  "end": "2025-12-31",
+                  "filed": "2026-02-13",
+                  "form": "10-K",
+                  "accn": "0001628280-26-008131"
+                },
+                {
+                  "val": 177556000000,
+                  "start": "2024-01-01",
+                  "end": "2024-12-31",
+                  "filed": "2026-02-13",
+                  "form": "10-K",
+                  "accn": "0001628280-26-008131"
+                }
+              ]
+            }
+          ]
+        },
+        "evidence_sha256": "0a7eda29d0e4c400adf14c96333bdac1a07dbd188d7134c72f5409a4dc30be57"
+      },
+      "classification": {
+        "event_id": "8db81acc7e809f80128a57d2",
+        "material_new_fact": true,
+        "issuer_specific": true,
+        "direction": "positive",
+        "strength": "medium",
+        "event_type": "earnings",
+        "source_quote": "2Q26 Financial highlights ROTCE1 29%",
+        "mechanism": "Reporting of 2Q26 financial results including ROTCE, capital ratios, share repurchases, and common dividends.",
+        "counterargument": "Metrics are presented as standalone highlights without explicit prior period comparisons in the excerpt.",
+        "expectation_known": false
+      },
+      "case_evidence_sha256": "0a7eda29d0e4c400adf14c96333bdac1a07dbd188d7134c72f5409a4dc30be57",
+      "prompt_sha256": "01e183994223c331864d4e15419178fc8e8e99f6ba63db6db7dfa37a2c8c058f",
+      "inferred_at_utc": "2026-10-11T18:25:45.347741Z",
+      "retrospective_research_only": true
+    }
+  ]
+}

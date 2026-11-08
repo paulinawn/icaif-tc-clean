@@ -1,0 +1,31 @@
+{
+  "research_only": true,
+  "no_organizer_api_calls": true,
+  "no_llm_provider_calls": true,
+  "no_finnhub_or_sec_calls": true,
+  "no_hetzner_changes": true,
+  "source_sha256": "c3e02d68c8af0b5f26f28b11e82901ce1e72192295304710ae919d7661cfa259",
+  "source_last_complete_date": "2026-10-09",
+  "episodes": 6,
+  "slots_per_episode": 105,
+  "policy_count": 12,
+  "predictor": "shrunk walkforward 5-session reversal with matured labels only",
+  "entry_rule": "positive empirical predicted 5-session return net of 0.2pct round-trip fee and uncertainty margin",
+  "training_days": 90,
+  "holding_horizons": [
+    3,
+    5
+  ],
+  "target_exposure": "fixed80 or floating70to90, unfillable shortage disclosed",
+  "source_kind": "Alpaca IEX raw 15m (unadjusted)",
+  "events_used": 0,
+  "data_limitations": [
+    "Missing sessions excluded",
+    "unadjusted corporate actions",
+    "IEX bar open is execution proxy, not organizer fill",
+    "Episodes already exposed through Stage40",
+    "Cashfirst and full executions may have different realized exposure and holdings",
+    "No calibrated LLM return forecast",
+    "Rolling 5d labels correlated, no untouched validation set"
+  ]
+}
