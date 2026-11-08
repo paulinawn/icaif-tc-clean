@@ -1,2 +1,2 @@
 -r requirements.txt #first install the main requirements
-pytest
+pytestpyflakes
