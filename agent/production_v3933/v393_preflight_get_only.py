@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Role: PREFLIGHT CHECK - read-only verification used before the round-3 catch-up repair.
 """Strict October 19 R2 readiness review: organizer/Alpaca GET only, no POST/write."""
 from __future__ import annotations
 from datetime import datetime,timezone

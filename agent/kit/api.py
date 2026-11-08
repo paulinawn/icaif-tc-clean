@@ -1,3 +1,4 @@
+# Role: HTTP HELPER (organizer starter kit) - read-only requests to the participant API.
 """Read-only HTTP client for the published participant API."""
 
 import json

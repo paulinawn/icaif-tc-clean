@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Role: GATEKEEPER - decides whether the current round may act, and asks the strategy what to do.
 """ICAIF V37: review-driven organizer adapter. UNARMED unless a separate approved deploy.
 
 No ``watch``. HOLD is a local no-upload action. Authoritative executed evidence

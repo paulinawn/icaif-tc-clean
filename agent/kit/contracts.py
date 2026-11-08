@@ -1,3 +1,4 @@
+# Role: SUBMISSION CHECKS (organizer starter kit) - validates a decision payload before upload.
 """Standalone submission checks; no service credentials or backend imports."""
 import json
 import math

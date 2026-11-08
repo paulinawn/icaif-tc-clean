@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Role: DATA FETCHER - downloads and checks Alpaca 15-minute bars and builds the 121-day price history.
 """ICAIF V28 unarmed, Alpaca-only IEX raw 15m history bootstrap and refresh.
 
 Only network calls: Alpaca market-data GET. Only writes: V28 staging data.

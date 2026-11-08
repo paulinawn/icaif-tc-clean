@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Role: STRATEGY ENGINE - final target weights (core + reversal), the trade/hold rule, and the strategy's mode.
 """ICAIF 2026 v2.3 CANDIDATE engine: OFFLINE/READ-ONLY; NO organizer writer.
 
 Exact Phase44 Blended80 + 15%-of-EQUITY five-day reversal sleeve:

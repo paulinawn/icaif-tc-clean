@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Role: REHEARSAL TOOL - read-only end-to-end check on the server; also provides helpers used by the orchestrator.
 """V30 one-shot unarmed server reality check.
 
 Runs only organizer GET via a transport that hard-rejects every non-GET.

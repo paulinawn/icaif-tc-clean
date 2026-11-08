@@ -1,3 +1,4 @@
+# Role: SCORING (organizer starter kit) - computes the competition metrics: return, Sharpe, drawdown, turnover.
 """Standalone decision-period metrics; no backend runtime dependency."""
 
 from datetime import datetime, timezone

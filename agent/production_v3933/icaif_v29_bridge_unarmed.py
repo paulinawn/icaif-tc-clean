@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Role: TRANSLATOR - converts organizer data (rounds, portfolio, timestamps) into exact values the strategy can use.
 """ICAIF V29: pure read-only integration bridge and adversarial offline tests.
 
 No credentials. No HTTP. No SSH. No filesystem writes except temporary self-test data.

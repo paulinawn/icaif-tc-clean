@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Role: ORCHESTRATOR (single writer) - runs one decision cycle per scheduled run; the only component allowed to submit.
 """ICAIF V39 hardened single-writer candidate.
 
 Dry-run is organizer GET-only with an Alpaca IEX GET refresh. Real submission is
