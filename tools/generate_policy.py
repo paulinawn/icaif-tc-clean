@@ -3,7 +3,6 @@
 import argparse
 import csv
 import json
-import math
 from pathlib import Path
 import sys
 
@@ -52,7 +51,7 @@ def main():
         raise ValueError('Expected exactly 121 strictly chronological complete sessions')
 
     # Calculate target weights
-    target, selected, core = engine.sleeve_target_from_daily(matrix)
+    target, selected, _ = engine.sleeve_target_from_daily(matrix)
     action = 'POLICY_TARGET'
 
     # Optional: Simulates review day
