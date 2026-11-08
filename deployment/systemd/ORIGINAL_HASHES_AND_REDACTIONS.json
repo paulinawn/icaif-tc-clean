@@ -1,0 +1,38 @@
+[
+  {
+    "name": "icaif-official-v391.service",
+    "original_sha256": "093a0132cdb85ea93168f090cbd21ebe225bdf9212225e0830f131b8a634ae0b",
+    "sanitized_sha256": "6a6295cf359a68be44d7246ff0b0456873ea482658e803681f0ceca5b78642da",
+    "redacted": true
+  },
+  {
+    "name": "icaif-official-v391.timer",
+    "original_sha256": "8bf6dc1ef0e48123d243317b2e7d497274ff8bd763f25ab5ec80f7f779cfc4c1",
+    "sanitized_sha256": "8bf6dc1ef0e48123d243317b2e7d497274ff8bd763f25ab5ec80f7f779cfc4c1",
+    "redacted": false
+  },
+  {
+    "name": "10-credentials-state.conf",
+    "original_sha256": "da96103e1b442541449276c5d827255c2702310d4b69bd7937ca838ebbaf7b45",
+    "sanitized_sha256": "da96103e1b442541449276c5d827255c2702310d4b69bd7937ca838ebbaf7b45",
+    "redacted": false
+  },
+  {
+    "name": "20-v3921-adapter.conf",
+    "original_sha256": "94b4e32d9e00124df15f5187d39f67bfe9e81a59f400f9bb78ec738f61e921db",
+    "sanitized_sha256": "94b4e32d9e00124df15f5187d39f67bfe9e81a59f400f9bb78ec738f61e921db",
+    "redacted": false
+  },
+  {
+    "name": "40-v3932-adapter.conf",
+    "original_sha256": "123c0f8a76beaed65ca05ec6df992fab3ab9908b0abe0a08cce31274be4b5b8c",
+    "sanitized_sha256": "123c0f8a76beaed65ca05ec6df992fab3ab9908b0abe0a08cce31274be4b5b8c",
+    "redacted": false
+  },
+  {
+    "name": "50-v3933-adapter.conf",
+    "original_sha256": "18f9b8b943885c38e81092e90885535f0ab54d661467c3b9474298e74b6dc49f",
+    "sanitized_sha256": "18f9b8b943885c38e81092e90885535f0ab54d661467c3b9474298e74b6dc49f",
+    "redacted": false
+  }
+]

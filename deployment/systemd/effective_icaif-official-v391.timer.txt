@@ -1,0 +1,12 @@
+Id=icaif-official-v391.timer
+LoadState=loaded
+FragmentPath=/etc/systemd/system/icaif-official-v391.timer
+DropInPaths=
+UnitFileState=enabled
+TimersCalendar={ OnCalendar=Mon..Fri 2026-10-12..30 15:05:00 America/New_York ; next_elapse=Fri 2026-10-30 19:05:00 UTC }
+TimersCalendar={ OnCalendar=Mon..Fri 2026-10-12..30 14:05:00 America/New_York ; next_elapse=Fri 2026-10-30 18:05:00 UTC }
+TimersCalendar={ OnCalendar=Mon..Fri 2026-10-12..30 13:05:00 America/New_York ; next_elapse=Fri 2026-10-30 17:05:00 UTC }
+TimersCalendar={ OnCalendar=Mon..Fri 2026-10-12..30 12:05:00 America/New_York ; next_elapse=Fri 2026-10-30 16:05:00 UTC }
+TimersCalendar={ OnCalendar=Mon..Fri 2026-10-12..30 11:05:00 America/New_York ; next_elapse=Fri 2026-10-30 15:05:00 UTC }
+TimersCalendar={ OnCalendar=Mon..Fri 2026-10-12..30 10:05:00 America/New_York ; next_elapse=Fri 2026-10-30 14:05:00 UTC }
+TimersCalendar={ OnCalendar=Mon..Fri 2026-10-12..30 08:55:00 America/New_York ; next_elapse=Fri 2026-10-30 12:55:00 UTC }

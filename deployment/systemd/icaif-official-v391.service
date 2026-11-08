@@ -1,0 +1,22 @@
+[Unit]
+Description=ICAIF 2026 Official V39 gated single writer
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=icaif
+Group=icaif
+UMask=0077
+WorkingDirectory=/opt/icaif2026/official_v391_release
+# REDACTED (environment/credential directive)
+# REDACTED (environment/credential directive)
+ExecStart=/opt/icaif2026/.venv/bin/python -B /opt/icaif2026/official_v391_release/icaif_v39_live_writer.py --official-submit-armed
+TimeoutStartSec=600
+Restart=no
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/icaif2026/official_clean_bootstrap_v28_unarmed/data
+ReadWritePaths=/opt/icaif2026/.icaif/official_v39
