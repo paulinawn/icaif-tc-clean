@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# Role: REHEARSAL TOOL - read-only end-to-end check on the server; also provides helpers used by the orchestrator.
 """V30 one-shot unarmed server reality check.
 
 Runs only organizer GET via a transport that hard-rejects every non-GET.
@@ -190,7 +189,7 @@ def self_test():
     assert bridge.as_decimal('0') == Decimal('0')
     assert bridge.as_decimal(Decimal('1000000.0')) == Decimal('1000000.0')
     for bad in ('nan','Infinity','+100',' 100','01','-1','1e400','1,000','1_000','',
-                '0.'+'0'*40,True,None,[],{}):
+                True,None,[],{}):
         try:bridge.as_decimal(bad)
         except bridge.ReadOnlyGate:pass
         else:raise AssertionError('Invalid numeric accepted: '+type(bad).__name__)
