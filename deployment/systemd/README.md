@@ -28,3 +28,5 @@ How the agent was scheduled and sandboxed on the Linux server during the competi
 ## How fixes were deployed
 
 Each fix shipped as a new release folder plus a drop-in that pointed `ExecStart` at it. The timer and the main service file never changed. This made each change small, reviewable and easy to roll back.
+
+For a template of how the refactored layout would be deployed, see [example/](example/README.md).

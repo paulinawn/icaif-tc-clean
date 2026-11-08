@@ -1,0 +1,36 @@
+# Example only: how the refactored layout could be deployed.
+# Not the configuration that ran in the competition (see ../systemd/).
+
+[Unit]
+Description=ICAIF trading agent: one decision cycle
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+
+# Dedicated unprivileged user; new files private to it
+User=icaif
+Group=icaif
+UMask=0077
+
+WorkingDirectory=/opt/icaif-agent
+
+# Credentials live outside the repository, readable only by the service user
+EnvironmentFile=/etc/icaif-agent/credentials.env
+Environment=PYTHONPATH=/opt/icaif-agent/agent/strategy:/opt/icaif-agent/agent
+
+# Dry-run by default. Live submission uses --official-submit-armed and
+# additionally requires the owner-only arm marker checked by the orchestrator.
+ExecStart=/opt/icaif-agent/.venv/bin/python -B agent/live/orchestrator.py --get-only
+
+# One short run per round: stop after 10 minutes, never retry automatically
+TimeoutStartSec=600
+Restart=no
+
+# Sandboxing: no privilege gain, read-only system, only the state folder writable
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/icaif-agent

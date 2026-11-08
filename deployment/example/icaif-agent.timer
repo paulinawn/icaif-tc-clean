@@ -1,0 +1,19 @@
+# Example only: seven runs per trading day, shortly before each round deadline.
+
+[Unit]
+Description=ICAIF trading agent: seven runs per trading day
+
+[Timer]
+OnCalendar=Mon..Fri 08:55:00 America/New_York
+OnCalendar=Mon..Fri 10:05:00 America/New_York
+OnCalendar=Mon..Fri 11:05:00 America/New_York
+OnCalendar=Mon..Fri 12:05:00 America/New_York
+OnCalendar=Mon..Fri 13:05:00 America/New_York
+OnCalendar=Mon..Fri 14:05:00 America/New_York
+OnCalendar=Mon..Fri 15:05:00 America/New_York
+AccuracySec=15s
+Persistent=false
+Unit=icaif-agent.service
+
+[Install]
+WantedBy=timers.target
