@@ -8,14 +8,12 @@ candidate; --dry-run wraps every organizer HTTP method except GET in a blocker.
 """
 from __future__ import annotations
 
-import copy
 import json
-import math
 import os
 from pathlib import Path
 import sys
 import tempfile
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 
 APP = Path('/opt/icaif2026')
 V23 = APP/'official_staging_v23_unarmed'/'code'
@@ -553,7 +551,6 @@ def decision_payload(session, weights, row, engine):
         payload dict with submission type, team credentials, phase, round
         id, and float weights for every engine symbol.
     """
-    from kit.contracts import validate_payload
     values = {s: float(weights[s]) for s in engine.SYMBOLS}
     payload = {'submission_type': 'decision', 'team_id': session._team()['team_id'],
                'team_token': session._team()['team_token'], 'phase': 'official',

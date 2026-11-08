@@ -141,14 +141,6 @@ if __name__ == '__main__':
         check()
     except Exception as e:
         msg = str(e)
-        allowed = ('STATE_NOT_CONFIRMED_PRIMARY', 'DIFFERENT_LAST_EXECUTED_TRADE',
-                   'FIRST_TRADE_NOT_CONFIRMED', 'PENDING_UPLOAD_INTENT', 'PRIVATE_AUTH_MISSING',
-                   'INVALID_ORGANIZER_CLOCK', 'NOT_PRE_R3_DEPLOYMENT_WINDOW',
-                   'UNEXPECTED_CURRENT_ROUND', 'ROUND_SCHEDULE_MISSING', 'PRIOR_ROUND_NOT_COMPLETED',
-                   'R3_SCHEDULE_NOT_VERIFIED', 'R3_SCHEDULE_MISSING',
-                   'UNFILTERED_PRIOR_MATERIAL_HISTORY', 'UNEXPECTED_MATERIAL_SUBMISSION',
-                   'POSITIONS_NOT_30', 'UNEXPECTED_PREVIOUS_MARKET_DAY', 'MARKET_TARGET_ILLEGAL',
-                   'NON_GET_ORGANIZER_OPERATION', 'WRONG_REFRESH_MODULE_LOADED')
         import re
         code = (msg if isinstance(msg, str) and re.fullmatch(r'[A-Z][A-Z0-9_]{3,90}', msg) else 'CHECK_FAILED')
         print('V3932_PREFLIGHT_FAIL_CLOSED', type(e).__name__, code, flush=True)

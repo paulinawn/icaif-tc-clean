@@ -18,7 +18,6 @@ except ImportError:  # Windows offline tests only; actual writer requires Linux.
 import json
 import os
 from pathlib import Path
-import stat
 import sys
 import tempfile
 from datetime import datetime, timezone, timedelta
@@ -495,7 +494,7 @@ def cycle(session, journal, *, live, engine, machine, original, prior, refresh, 
     own_round = session.round(round_row['id'])
     # The 3-minute deadline buffer is checked once before refresh and again
     # afterwards, as the refresh might cross the deadline.
-    round_data, now = original.authenticated_round(schedule, own_round, engine.SYMBOLS, local_time=datetime.now(UTC))
+    round_data, _ = original.authenticated_round(schedule, own_round, engine.SYMBOLS, local_time=datetime.now(UTC))
     if not bridge37.eligible_for_market_refresh(round_data, journal['state']):
         print('V37_HOLD_UNSCHEDULED_REVIEW', flush=True)
         return journal, 'HOLD'
@@ -527,7 +526,6 @@ def cycle(session, journal, *, live, engine, machine, original, prior, refresh, 
     payload = bridge37.decision_payload(session, target, round_row2, engine)
     # Same native organizer validation method used by actual first-party uploader.
     from kit.contracts import validate_payload
-    import tempfile
     with tempfile.TemporaryDirectory(prefix='icaif_v37_schedule_') as td:
         schedule_path = Path(td) / 'schedule.json'
         schedule_path.write_text(json.dumps(schedule2), encoding='utf-8')
@@ -598,7 +596,7 @@ def run(*, live=False):
                    timeout=18, result_timeout=35, poll_interval=3) as session:
                 j = machine.read_journal(journal_path, engine) if journal_path.exists() else None
                 saved = (lambda x: persist(x, engine, machine, journal_path))
-                state, kind = cycle(session, j, live=live, engine=engine, machine=machine,
+                _, kind = cycle(session, j, live=live, engine=engine, machine=machine,
                                  original=original, prior=prior, refresh=refresh, save=saved)
                 if not live:
                     must(bool(gate.attempts) and set(gate.attempts) == {'GET'}, 'NON_GET_REQUEST_ATTEMPTED')

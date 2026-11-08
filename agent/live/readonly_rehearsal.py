@@ -9,7 +9,6 @@ under /tmp; it is deleted before process exit. No state journal is advanced.
 """
 from __future__ import annotations
 
-import copy
 import hashlib
 import json
 import os
@@ -94,7 +93,6 @@ def validate_snapshot_meta(snapshot, manifest, csvpath):
     # Import the same canonical hash function and parser as V28, then check
     # the complete stored data. Does not fetch or modify files.
     import market_support as market
-    from collections import defaultdict
     canonical = {}
     for r in market.load_csv(csvpath):
         key = (r['symbol'], market.utc_stamp(r['timestamp']).isoformat())
