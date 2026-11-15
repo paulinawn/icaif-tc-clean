@@ -470,9 +470,12 @@ def cycle(session, journal, *, live, engine, machine, original, prior, refresh, 
         Halt: Any fail-closed reason code from the checks below.
     """
     # All GETs originate from authenticated session; complete pagination checked.
+    # Collect and initialize journal
     schedule, portfolio, history, ledger = bridge37.collect(session, machine)
     journal = initial_only(journal, history, ledger, portfolio, engine, machine)
     native_operations_fenced(session, journal)
+
+    # Reconcile and confirm prior executions
     journal = bridge37.reconcile(session, journal, schedule, portfolio, history, ledger, machine, engine)
     if live:
         save(journal)
@@ -484,6 +487,8 @@ def cycle(session, journal, *, live, engine, machine, original, prior, refresh, 
             recover_existing(session, journal, schedule.get('current_round'), machine, engine, history, ledger)
         print('V37_HOLD_PENDING_EXECUTION', len(pending), flush=True)
         return journal, 'HOLD'
+    
+    # Pick active official round
     round_row = bridge37.candidate_round(schedule, engine)
     if round_row is not None and round_row.get('status') != 'OPEN':
         print('V37_HOLD_CURRENT_ROUND_NOT_MARKED_OPEN', flush=True)
@@ -499,6 +504,8 @@ def cycle(session, journal, *, live, engine, machine, original, prior, refresh, 
         print('V37_HOLD_UNSCHEDULED_REVIEW', flush=True)
         return journal, 'HOLD'
     snapshot = None
+
+    # Refresh market data and load snapshot
     try:
         refresh.run('refresh', now=datetime.now(UTC))
         snapshot = bridge37.load_snapshot(prior)
@@ -509,10 +516,13 @@ def cycle(session, journal, *, live, engine, machine, original, prior, refresh, 
     must(round_row2 is not None and round_row2['id'] == round_row['id'], 'ROUND_CHANGED_DURING_REFRESH')
     own_round2 = session.round(round_row['id'])
     original.authenticated_round(schedule2, own_round2, engine.SYMBOLS, local_time=datetime.now(UTC))
-    # No new/unknown submission appears during refresh or before upload.
+    
+    # Consistency proof: No new/unknown submission appears during refresh or before upload.
     must(history2['decisions'] == history['decisions'], 'HISTORY_CHANGED_DURING_REFRESH')
     same_executed_holdings(portfolio, portfolio2, original)
     must(ledger2.get('rounds') == ledger.get('rounds'), 'LEDGER_CHANGED_DURING_REFRESH')
+    
+    # Ask strategy ofr an action
     round_row2, result = bridge37.choose(schedule2, portfolio2, history2, ledger2, own_round2,
                          snapshot, journal, original, engine, machine, datetime.now(UTC), session=session)
     if result['action'] == 'HOLD':
@@ -523,6 +533,8 @@ def cycle(session, journal, *, live, engine, machine, original, prior, refresh, 
         print('V37_HOLD_NO_UPLOAD', result['note'], flush=True)
         return new_journal, 'HOLD'
     target = result['target']
+    
+    # Build submission
     payload = bridge37.decision_payload(session, target, round_row2, engine)
     # Same native organizer validation method used by actual first-party uploader.
     from kit.contracts import validate_payload
@@ -570,6 +582,8 @@ def run(*, live=False):
     import market_data_fetcher as refresh
     from kit.config import load_environment
     from kit.original_client import OriginalSession, load_profile
+    
+    # Check if live and load credentials
     if live:
         check_live_arming()
         setup_private_dir()
@@ -580,6 +594,8 @@ def run(*, live=False):
     profile = load_profile(env_profile)
     token = os.environ.get('CODABENCH_TOKEN', '')
     must(bool(token), 'NO_PLATFORM_TOKEN')
+    
+    # Setup temporary directory
     with tempfile.TemporaryDirectory(prefix='icaif_v37_') as temp:
         if live:
             checkpoint = PRIVATE / 'native_checkpoint.json'
@@ -589,11 +605,15 @@ def run(*, live=False):
             checkpoint = Path(temp) / 'checkpoint.json'
             journal_path = Path(temp) / 'journal.json'
             lock_file = Path(temp) / 'single_writer.lock'
+        
+        # Single-writer invariant enforced
         with Exclusive(lock_file):
             gate = prior.GetOnlyTransport(httpx.HTTPTransport()) if not live else None
             with OriginalSession(profile=profile, token=token, checkpoint=checkpoint,
                    credentials=APP / '.icaif' / 'credentials.json', transport=gate,
                    timeout=18, result_timeout=35, poll_interval=3) as session:
+                
+                # Reads existing journal, atomically writes, calls cycle
                 j = machine.read_journal(journal_path, engine) if journal_path.exists() else None
                 saved = (lambda x: persist(x, engine, machine, journal_path))
                 _, kind = cycle(session, j, live=live, engine=engine, machine=machine,
